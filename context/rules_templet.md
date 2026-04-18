@@ -103,7 +103,7 @@ If you add a top-level folder, you must:
 - `data/interim/`: cached transforms and temporary outputs.
   - Always gitignored.
 - `data/processed/`: meaningful derived datasets you expect to reuse.
-  - Track only if small enough and legally allowed; otherwise export manifests + pointers.
+  - In **DataTide**, `data/**` is **gitignored** (except `.gitkeep`); processed Parquet is **local-only**. Document the canonical schema in `context/GROUND_TRUTH_SCHEMA.md` and regenerate with `scripts/process/build_ground_truth_dataset.py`. Other projects may commit small processed sets when policy allows.
 - `data/external/`: reference data, schemas, metadata tables, mappings.
 
 ### 2.2 “No mystery preprocessing”

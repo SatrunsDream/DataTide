@@ -1,0 +1,194 @@
+# Data pull configuration — used by scripts/fetch/*.py
+#
+# Time window:
+#   Default pull 2010–2025 so you have extra years when aggregating; drop messy early years in the
+#   aggregate step if needed (e.g. keep 2015+ or 2018+ for modeling). Adjust end to null to pull through today.
+fetch:
+  date_range:
+    start: "2010-01-01"
+    end: "2025-12-31"
+  output_root: data/raw
+  http_timeout_sec: 120
+  # Bacteria results CSV is very large (~1.5GB+); use a generous timeout for streaming.
+  http_timeout_sec_large: 7200
+  user_agent: "DataTide/0.1 (research; contact: see repo README)"
+
+# --- Tier 1: California beach water quality (data.ca.gov downloads) ----------
+# Portal hub: https://lab.data.ca.gov/dataset/beach-water-quality-postings-and-closures
+# Files are served from data.ca.gov (streaming download). CKAN fallback uses same registry UUID.
+ca_swrcb:
+  ckan_action_url: "https://data.ca.gov/api/3/action"
+  resources:
+    - key: bacteria
+      output_dir: ca_swrcb_bacteria
+      package_id: "b9c8ce91-40ff-4ad3-8164-bc17c46afb44"
+      # Use datastore dump if /download/ returns 403 (WAF); same tabular data as CSV export.
+      direct_url: "https://data.ca.gov/datastore/dump/7bd961cf-abe4-433b-8033-378161237ff3?format=csv"
+    - key: stations
+      output_dir: ca_swrcb_stations
+      package_id: "b9c8ce91-40ff-4ad3-8164-bc17c46afb44"
+      direct_url: "https://data.ca.gov/datastore/dump/98e628ff-d012-4982-ad32-b9f9ad8ab524?format=csv"
+    - key: beach_detail
+      output_dir: ca_swrcb_beach_detail
+      package_id: "b9c8ce91-40ff-4ad3-8164-bc17c46afb44"
+      direct_url: "https://data.ca.gov/datastore/dump/fcbc9250-06e3-437d-b0c6-3cc5ddde93fc?format=csv"
+
+# --- Tier 2: CDIP (realtime NetCDF per buoy; add archive THREDDS paths for long history) ---
+cdip:
+  output_dir: cdip
+  bundles:
+    - name: cdip_045
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/045p1_rt.nc"
+    - name: cdip_100
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/100p1_rt.nc"
+    - name: cdip_191
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/191p1_rt.nc"
+    - name: cdip_201
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/201p1_rt.nc"
+    - name: cdip_220
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/220p1_rt.nc"
+
+# --- Tier 2: NOAA Tides & Currents -----------------------------------------
+# Use high/low predictions only (`hilo`), not hourly — matches **daily (site, date)** modeling
+# and week-by-week operational updates without huge JSON payloads. Yearly chunks stay safe for API limits.
+# From `hilo`, derive daily features in aggregation (e.g. tidal range, mean high/low for that date).
+# Stations: all California entries with tidal predictions from CO-OPS mdapi (north → south).
+noaa_tides:
+  output_dir: noaa_tides
+  base_url: "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+  stations:
+    - id: "9419750"
+      name: crescent_city
+    - id: "9418767"
+      name: north_spit
+    - id: "9416841"
+      name: arena_cove
+    - id: "9416131"
+      name: port_west_sacramento
+    - id: "9415144"
+      name: port_chicago
+    - id: "9415102"
+      name: martinez_amorco_pier
+    - id: "9415020"
+      name: point_reyes
+    - id: "9414863"
+      name: richmond
+    - id: "9414290"
+      name: san_francisco
+    - id: "9414750"
+      name: alameda
+    - id: "9414523"
+      name: redwood_city
+    - id: "9413450"
+      name: monterey
+    - id: "9412110"
+      name: port_san_luis
+    - id: "9411340"
+      name: santa_barbara
+    - id: "9410840"
+      name: santa_monica
+    - id: "9410660"
+      name: los_angeles
+    - id: "9410230"
+      name: la_jolla
+    - id: "9410170"
+      name: san_diego
+  product: "predictions"
+  datum: "MLLW"
+  interval: "hilo"
+  units: "metric"
+
+# --- Tier 2: NOAA precipitation (NCEI Climate Data Online) -------------------
+# Requires NOAA_CDO_TOKEN environment variable (free registration).
+noaa_precip:
+  output_dir: noaa_precip
+  cdo_data_url: "https://www.ncdc.noaa.gov/cdo-web/api/v2/data"
+  datasetid: "GHCND"
+  datatypeid: "PRCP"
+  limit: 1000
+  # Pause between CDO calls to reduce 503 / rate-limit errors when pulling many stations × years.
+  request_delay_sec: 0.75
+  max_retries: 5
+  # Regional GHCN-Daily stations for coastal CA rainfall context (nearest-station join in ETL).
+  stations:
+    - name: crescent_city
+      stationid: "GHCND:USW00024283"
+    - name: eureka
+      stationid: "GHCND:USW00024243"
+    - name: san_francisco
+      stationid: "GHCND:USW00023234"
+    - name: monterey
+      stationid: "GHCND:USW00023259"
+    - name: santa_barbara
+      stationid: "GHCND:USW00023129"
+    - name: los_angeles
+      stationid: "GHCND:USW00023174"
+    - name: san_diego
+      stationid: "GHCND:USW00023188"
+
+# --- Tier 3: SCCOOS ERDDAP (tabledap monthly CSV shards) -------------------
+# Mooring / pier products vary in time coverage; 404 months are skipped with a warning.
+sccoos_erddap:
+  output_dir: sccoos_erddap
+  base_url: "https://erddap.sccoos.org/erddap"
+  datasets:
+    - name: delmar_temperature
+      tabledap_id: delmar_temperature
+      variables: [time, T_1m, latitude, longitude]
+    - name: delmar_salinity
+      tabledap_id: delmar_salinity
+      variables: [time, S_1m, latitude, longitude]
+    # Optional (narrow time coverage — expect many 404s on full 2010–2025):
+    # - name: ph_newport
+    #   tabledap_id: pH-Newport
+    #   variables: [time, temperature, pH]
+
+# --- Tier 3: HF radar (IOOS / NOAA ERDDAP griddap; rolling NRT window) -------
+hf_radar:
+  output_dir: hf_radar
+  erddap_base: "https://coastwatch.pfeg.noaa.gov/erddap"
+  griddap_id: ucsdHfrW6
+  variables: [water_u, water_v]
+  # Southern California bight subset (adjust for other regions / ucsdHfr* products).
+  lat_min: 32.4
+  lat_max: 33.2
+  lon_min: -118.1
+  lon_max: -117.25
+  # Sample interval along the dataset time axis (seconds). 21600 = 6 h.
+  time_stride_seconds: 21600
+
+# --- Tier 4: CCE moorings (NDBC THREDDS fileServer or OPeNDAP) ------------
+# OceanSITES CCE1 — add more `bundles` entries from the THREDDS catalog as needed:
+#   https://dods.ndbc.noaa.gov/thredds/catalog/oceansites/DATA/CCE1/catalog.html
+cce_moorings:
+  output_dir: cce_moorings
+  bundles:
+    - name: cce1_13_adcp
+      nc_url: "https://dods.ndbc.noaa.gov/thredds/fileServer/oceansites/DATA/CCE1/OS_CCE1_13_D_ADCP.nc"
+    - name: cce1_13_ctd
+      nc_url: "https://dods.ndbc.noaa.gov/thredds/fileServer/oceansites/DATA/CCE1/OS_CCE1_13_D_CTD.nc"
+    - name: cce1_15_adcp
+      nc_url: "https://dods.ndbc.noaa.gov/thredds/fileServer/oceansites/DATA/CCE1/OS_CCE1_15_D_ADCP.nc"
+    - name: cce1_15_ctd
+      nc_url: "https://dods.ndbc.noaa.gov/thredds/fileServer/oceansites/DATA/CCE1/OS_CCE1_15_D_CTD.nc"
+
+# --- Tier 4: Surfrider BWTF -------------------------------------------------
+# Bulk GraphQL requires a Cognito Id token — see .env.example (BWTF_COGNITO_ID_TOKEN).
+surfrider_bwtf:
+  output_dir: surfrider_bwtf
+  portal_url: "https://bwtf.surfrider.org/"
+  graphql_url: "https://esvbxbhkmzgh5ojw3g2hvsx7du.appsync-api.us-west-2.amazonaws.com/graphql"
+  page_size: 200
+  request_delay_sec: 0.35
+
+# --- Tier 5: San Diego County (Socrata) ------------------------------------
+sd_county:
+  output_dir: sd_county_beach
+  soda_resource: "https://data.sandiegocounty.gov/resource/es8q-83pq.json"
+  soda_limit: 50000
+
+# --- Tier 5: IBWC (endpoint must be verified) -------------------------------
+ibwc:
+  output_dir: ibwc
+  # Legacy text feed — may block bots; confirm active URL before relying on automation.
+  legacy_gauge_text_url: "https://www.ibwc.gov/wad/013300_a.txt"

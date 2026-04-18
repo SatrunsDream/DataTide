@@ -22,11 +22,11 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data (large / mutable — keep folder placeholders only)
-data/raw/**
-!data/raw/.gitkeep
-data/interim/**
-!data/interim/.gitkeep
+# Data — local only (not pushed to GitHub). Recreate with fetch + process scripts.
+# Track only `.gitkeep` placeholders so empty `data/*` dirs exist in clone.
+data/**
+!data/**/
+!data/**/.gitkeep
 
 # OS / editor
 .DS_Store

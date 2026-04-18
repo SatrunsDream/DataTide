@@ -1,0 +1,114 @@
+# ETL — canonical build: scripts/process/build_ground_truth_dataset.py
+# (build_modeling_dataset.py remains as a thin alias for backwards compatibility.)
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+
+# Latest wins if multiple downloads exist under each Tier-1 folder.
+inputs:
+  bacteria_glob: ca_swrcb_bacteria/download_*.csv
+  stations_glob: ca_swrcb_stations/download_*.csv
+  beach_detail_glob: ca_swrcb_beach_detail/download_*.csv
+  sd_county_glob: sd_county_beach/beach_advisories_*.json
+
+output:
+  parquet_name: datatide_ground_truth.parquet
+  meta_name: datatide_ground_truth_meta.json
+  # Previous name (Tier-1 + precip + tide only); kept optional for comparison.
+  legacy_parquet_name: datatide_modeling_daily_env.parquet
+
+# SCCOOS Del Mar mooring (32.93°N): only joined for these counties — regional nearshore water, not statewide.
+sccoos_join_counties:
+  - Orange
+  - San Diego
+  - Los Angeles
+  - Long Beach City
+  - Ventura
+
+# Chunk size for streaming the bacteria CSV (memory vs. speed tradeoff).
+bacteria_chunk_rows: 200000
+
+# Map Tier-1 CountyName (as in the bacteria export) → regional GHCN precip bucket
+# (must match `name` in configs/fetch.yaml noaa_precip.stations) and a CO-OPS station# id present in fetched tides_hilo JSON.
+county_to_env:
+  Orange:
+    precip_bucket: los_angeles
+    tide_station_id: "9410840"
+  San Diego:
+    precip_bucket: san_diego
+    tide_station_id: "9410170"
+  Los Angeles:
+    precip_bucket: los_angeles
+    tide_station_id: "9410660"
+  San Mateo:
+    precip_bucket: san_francisco
+    tide_station_id: "9414290"
+  Santa Cruz:
+    precip_bucket: monterey
+    tide_station_id: "9413450"
+  Long Beach City:
+    precip_bucket: los_angeles
+    tide_station_id: "9410660"
+  Ventura:
+    precip_bucket: los_angeles
+    tide_station_id: "9410840"
+  Santa Barbara:
+    precip_bucket: santa_barbara
+    tide_station_id: "9411340"
+  San Francisco:
+    precip_bucket: san_francisco
+    tide_station_id: "9414290"
+  Marin:
+    precip_bucket: san_francisco
+    tide_station_id: "9414290"
+  San Luis Obispo:
+    precip_bucket: monterey
+    tide_station_id: "9412110"
+  Humboldt:
+    precip_bucket: eureka
+    tide_station_id: "9418767"
+  Mendocino:
+    precip_bucket: eureka
+    tide_station_id: "9418767"
+  East Bay Parks District:
+    precip_bucket: san_francisco
+    tide_station_id: "9414863"
+  Monterey:
+    precip_bucket: monterey
+    tide_station_id: "9413450"
+  Sonoma:
+    precip_bucket: san_francisco
+    tide_station_id: "9415020"
+
+# Columns retained from the bacteria CSV (plus derived join fields).
+bacteria_columns:
+  - RESULTS id
+  - SampleDate
+  - StartTime
+  - Parameter
+  - Qualifier
+  - Result
+  - Unit
+  - SampleType
+  - AnalysisMethod
+  - CountyName
+  - Station_id
+  - Station_Name
+  - Beach_Name
+  - Station_UpperLat
+  - Station_UpperLon
+  - Beach_UpperLat
+  - Beach_UpperLon
+  - WaterBodyName
+  - Agency_Name
+  - TidalHeight
+  - Weather
+  - SurfHeight
+  - Turbidity
+  - WaterColor
+  - LabID
+  - BeachName_id
+  - BeachType
+  - AB411Beach
+  - USEPAID
