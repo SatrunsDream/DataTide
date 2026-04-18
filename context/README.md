@@ -29,6 +29,7 @@ pytest
 | Outputs | `artifacts/` |
 | App / serving | `app/` |
 | Containers | `docker/` |
+| Research papers | `resources/paper/` |
 
 Use `src.utils.paths.repo_root()` for paths relative to the repo (see [`rules_templet.md`](rules_templet.md)).
 
