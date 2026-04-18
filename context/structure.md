@@ -1,0 +1,107 @@
+# structure.md
+
+Single source of truth for repository layout, artifact index, and results log.  
+**Path on disk:** `context/structure.md` (paths below are still relative to the **repository root** unless noted).
+
+---
+
+## Project map
+
+### Top-level (repo root)
+
+| Path | Purpose |
+|------|---------|
+| `README.md` | Short pointer to `context/README.md` |
+| `requirements.txt` | Python dependencies |
+| `pyproject.toml` | Pytest `pythonpath` so `import src` works from repo root |
+| `.gitignore` | Ignored paths (data tiers, caches, secrets) |
+
+### Documentation (`context/`)
+
+| Path | Purpose |
+|------|---------|
+| `context/README.md` | Project intro, install, how to run |
+| `context/development_rules.md` | Pointer to `rules_templet.md` |
+| `context/rules_templet.md` | Full architecture + notebook/artifact rules |
+| `context/structure.md` | This file: map + artifact index + results log |
+| `context/DECISIONS.md` | Architectural and modeling decisions |
+| `context/ASSUMPTIONS.md` | Data and modeling assumptions |
+| `context/CHANGELOG.md` | Milestones and notable changes |
+| `context/PROJECT_BRIEF.md`, `GLOSSARY.md`, `DATASETS.md`, `INTERFACES.md`, `STATUS.md`, `RISKS.md` | Team context |
+
+### Folders
+
+| Path | Purpose |
+|------|---------|
+| `configs/` | YAML/JSON for experiments and pipelines |
+| `data/raw/` | Immutable source inputs (usually not committed) |
+| `data/interim/` | Cached transforms (not committed) |
+| `data/processed/` | Derived datasets for reuse (commit selectively) |
+| `data/external/` | Reference tables, schemas, lookups |
+| `notebooks/eda/` | Exploratory analysis (`01_*.ipynb`, …) |
+| `notebooks/modeling/` | Training, validation, model comparison notebooks |
+| `notebooks/reporting/` | Reporting and narrative around modeling results |
+| `src/` | Reusable Python package (`io`, `preprocessing`, `modeling`, …) |
+| `scripts/` | CLI entrypoints (`train.py`, `eval.py`, …) |
+| `tests/` | Unit and smoke tests |
+| `artifacts/` | Generated outputs only (never hand-edited) |
+| `app/` | Application layer for later deployment (API or UI) |
+| `docker/` | Container definitions for local/prod |
+| `site/` | Optional static site / report source |
+
+### Artifacts subtree
+
+| Path | Purpose |
+|------|---------|
+| `artifacts/figures/` | Exported plots |
+| `artifacts/tables/` | CSV/HTML tables |
+| `artifacts/data/` | Important derived datasets (Parquet/CSV) |
+| `artifacts/models/` | Serialized models |
+| `artifacts/reports/` | Auto-generated HTML/PDF/MD |
+| `artifacts/logs/runs/<run_id>/` | Per-run metadata bundles |
+| `artifacts/logs/prompts/` | Optional LLM prompt snapshots |
+| `artifacts/provenance/` | Manifests/hashes for traceability |
+
+---
+
+## Artifact index
+
+*(Add entries as you produce reportable outputs.)*
+
+### Figures
+
+- *(none yet)*
+
+### Tables
+
+- *(none yet)*
+
+### Datasets (`artifacts/data/`)
+
+- *(none yet)*
+
+### Models
+
+- *(none yet)*
+
+---
+
+## Results log (by notebook / script)
+
+*(Append a section per notebook or script when you have meaningful outputs.)*
+
+### Template
+
+**Notebook/script:** `notebooks/<eda|modeling|reporting>/NN_<topic>.ipynb`  
+**Purpose:** …  
+**Inputs:** …  
+**Outputs:** … (paths under `artifacts/`)  
+**Key findings:** …  
+**Next steps:** …
+
+---
+
+## Current status
+
+- Notebooks organized under `notebooks/eda/`, `notebooks/modeling/`, `notebooks/reporting/`; documentation markdown lives in `context/`.
+- Next: add data to `data/raw/` (or document sources in `context/DATASETS.md`), then first EDA notebook under `notebooks/eda/`.

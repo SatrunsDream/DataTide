@@ -1,0 +1,9 @@
+# Default pipeline / experiment config — extend per project.
+project_name: datatide
+random_seed: 42
+
+paths:
+  data_raw: data/raw
+  data_interim: data/interim
+  data_processed: data/processed
+  artifacts: artifacts
