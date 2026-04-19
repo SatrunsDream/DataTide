@@ -1,0 +1,48 @@
+{
+  "built_at_utc": "2026-04-19T14:31:02Z",
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2025-12-31"
+  },
+  "sources": {
+    "ground_truth": "data/processed/datatide_ground_truth.parquet",
+    "enterococcus_panel": "artifacts/data/panel/enterococcus_panel.parquet"
+  },
+  "tables": {
+    "dim_date": {
+      "file": "POWER BI/data/dim_date.parquet",
+      "rows": 4018,
+      "columns": 14
+    },
+    "dim_station": {
+      "file": "POWER BI/data/dim_station.parquet",
+      "rows": 736,
+      "columns": 24
+    },
+    "dim_parameter": {
+      "file": "POWER BI/data/dim_parameter.parquet",
+      "rows": 4,
+      "columns": 2
+    },
+    "fact_beach_day": {
+      "file": "POWER BI/data/fact_beach_day.parquet",
+      "rows": 2356638,
+      "columns": 30
+    },
+    "fact_lab_results": {
+      "file": "POWER BI/data/fact_lab_results.parquet",
+      "rows": 904333,
+      "columns": 37
+    },
+    "fact_model_predictions_template": {
+      "file": "POWER BI/data/fact_model_predictions_template.parquet",
+      "rows": 0,
+      "columns": 12
+    },
+    "fact_model_predictions_template_csv": {
+      "file": "POWER BI/data/fact_model_predictions_template.csv",
+      "rows": 0,
+      "columns": 12
+    }
+  }
+}
