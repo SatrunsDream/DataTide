@@ -1,0 +1,25 @@
+{
+  "tag": "winner_test",
+  "n_rows": 57100,
+  "n_samples": 2000,
+  "date_min": "2024-01-01",
+  "date_max": "2024-12-01",
+  "exceedance_threshold_mpn": 104.0,
+  "forecast_path": "winner_test_forecast.parquet",
+  "samples_path": "winner_test_samples.npz",
+  "index_path": "winner_test_index.parquet",
+  "winner": "B3 XGBoost log10",
+  "test_score": {
+    "model": "B3 XGBoost log10",
+    "fold_val_year": 2024,
+    "n_val": 57100,
+    "counts-MAE": 8542.892357724746,
+    "counts-MedAE": 11.765552520751953,
+    "log-RMSE": 0.6981095801601449,
+    "Brier": 0.10200355710157617,
+    "ECE": 0.0548069527145359,
+    "cov-50": 0.45786339754816113,
+    "cov-80": 0.6678458844133099,
+    "cov-95": 0.8514886164623467
+  }
+}

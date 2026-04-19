@@ -1,0 +1,50 @@
+{
+  "winner": "B3 XGBoost log10",
+  "rung": null,
+  "is_bayesian": false,
+  "nuts": null,
+  "metric_suite": [
+    "counts-MAE",
+    "counts-MedAE",
+    "Brier",
+    "ECE",
+    "cov-50",
+    "cov-80",
+    "cov-95",
+    "log-RMSE"
+  ],
+  "test_score": {
+    "model": "B3 XGBoost log10",
+    "fold_val_year": 2024,
+    "n_val": 57100,
+    "counts-MAE": 8542.892357724746,
+    "counts-MedAE": 11.765552520751953,
+    "log-RMSE": 0.6981095801601449,
+    "Brier": 0.10200355710157617,
+    "ECE": 0.0548069527145359,
+    "cov-50": 0.45786339754816113,
+    "cov-80": 0.6678458844133099,
+    "cov-95": 0.8514886164623467
+  },
+  "dev_folds": [
+    2022,
+    2023
+  ],
+  "all_folds": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "test_years": [
+    2024
+  ],
+  "artifacts": {
+    "test_forecast": "winner_test_forecast.parquet",
+    "test_samples": "winner_test_samples.npz",
+    "test_index": "winner_test_index.parquet",
+    "test_meta": "winner_test_meta.json",
+    "model_bundle": null,
+    "inferencedata": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tag": "winner_next_week",
+  "n_rows": 5446,
+  "n_samples": 2000,
+  "date_min": "2026-01-01",
+  "date_max": "2026-01-07",
+  "exceedance_threshold_mpn": 104.0,
+  "forecast_path": "winner_next_week_forecast.parquet",
+  "samples_path": "winner_next_week_samples.npz",
+  "index_path": "winner_next_week_index.parquet",
+  "winner": "B3 XGBoost log10",
+  "rung": null,
+  "horizon_days": 7,
+  "weather_strategy": "monthly climatology (pre-2024)",
+  "start_date": "2026-01-01"
+}

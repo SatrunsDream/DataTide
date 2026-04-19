@@ -48,14 +48,26 @@ cells: list[dict] = []
 cells.append(md(r"""
 # Predict \u2014 reload the winner model and forecast the next week
 
-Scheduled-forecast companion to `model.ipynb`. There is **no MCMC here** \u2014
-we load the posterior parameter samples saved by `model.ipynb \u00a77` and push
-them through the validation-side of the model on a synthetic future fold.
+Scheduled-forecast companion to `model.ipynb`. We pick up whichever model
+won in `model.ipynb \u00a74` (recorded in `winner_run_meta.json`) and produce a
+next-week forecast bundle for the dashboards. Two code paths, one output:
 
-Inputs (all written by `model.ipynb`):
+| winner kind       | how we recover the fitted model                     | time  |
+|-------------------|-----------------------------------------------------|-------|
+| Bayesian (v0\u2013v4) | `BayesianRung.from_saved(winner_model.npz)` \u2014 no MCMC | ~1 s  |
+| XGBoost / OLS / naive baseline | re-fit the baseline class on the same train+val slice \u00a76 used (no bundle to save) | 30\u201360 s |
 
-- `artifacts/modeling/winner_model.npz`      \u2014 posterior parameter samples
-- `artifacts/modeling/winner_run_meta.json`  \u2014 rung, NUTS config, provenance
+Inputs (written by `model.ipynb \u00a77`):
+
+- `winner_run_meta.json`  \u2014 winner name, kind, metrics (under whatever
+  `ARTIFACT_DIR` the training kernel used \u2014 often
+  `notebooks/modeling/artifacts/modeling/` if Jupyter\u2019s cwd was
+  `notebooks/modeling/`)
+- `winner_model.npz`      \u2014 **Bayesian only**: posterior parameter samples
+
+This notebook **auto-finds** the meta file under the repo root or
+`notebooks/modeling/artifacts/modeling/`. Override with env
+`DATATIDE_MODELING_ARTIFACTS` if yours lives elsewhere.
 
 Outputs (written by this notebook):
 
@@ -96,15 +108,55 @@ sys.path.insert(0, str(PROJ))
 
 from src.modeling.cv         import load_panel
 from src.modeling.inference  import BayesianRung
+from src.modeling.baselines  import NaiveSeasonalMeanCounts, OLSLog10, XGBoostLog10
 from src.modeling.production import (
     build_future_fold, compute_climatology, export_forecast_bundle,
     read_forecast_frame,
 )
+from src.evaluation.compare  import FoldData
 
 plt.rcParams.update({"figure.dpi": 100, "font.size": 9})
-ARTIFACT_DIR = PROJ / "artifacts" / "modeling"
+
+
+def _resolve_modeling_artifact_dir(proj: Path) -> Path:
+    # Where model.ipynb wrote winner_run_meta.json.
+    # model.ipynb uses Path("artifacts/modeling") relative to the kernel cwd.
+    # If Jupyter cwd is notebooks/modeling/, artifacts are under
+    # notebooks/modeling/artifacts/modeling/, not repo-root artifacts/modeling/.
+    # Override: export DATATIDE_MODELING_ARTIFACTS=/abs/path/to/dir_with_meta
+    meta_name = "winner_run_meta.json"
+    env = os.environ.get("DATATIDE_MODELING_ARTIFACTS", "").strip()
+    if env:
+        p = Path(env).expanduser().resolve()
+        if not (p / meta_name).is_file():
+            raise FileNotFoundError(
+                f"DATATIDE_MODELING_ARTIFACTS={env!r} but {meta_name} not found there"
+            )
+        return p
+
+    candidates = [
+        proj / "artifacts" / "modeling",
+        proj / "notebooks" / "modeling" / "artifacts" / "modeling",
+        Path.cwd().resolve() / "artifacts" / "modeling",
+        Path.cwd().resolve() / "notebooks" / "modeling" / "artifacts" / "modeling",
+    ]
+    for c in candidates:
+        c = c.resolve()
+        if (c / meta_name).is_file():
+            return c
+
+    return (proj / "artifacts" / "modeling").resolve()
+
+
+ARTIFACT_DIR = _resolve_modeling_artifact_dir(PROJ)
 print(f"project root : {PROJ}")
-print(f"artifact dir : {ARTIFACT_DIR}")
+print(f"artifact dir : {ARTIFACT_DIR}  (exists={ARTIFACT_DIR.is_dir()})")
+if not (ARTIFACT_DIR / "winner_run_meta.json").is_file():
+    print(
+        "  \u26a0  winner_run_meta.json not found in any standard location.\n"
+        "     Run model.ipynb through \u00a77 first, or set env DATATIDE_MODELING_ARTIFACTS,\n"
+        "     or assign:  ARTIFACT_DIR = Path(\".../artifacts/modeling\")"
+    )
 """))
 
 # -----------------------------------------------------------------------------
@@ -112,36 +164,110 @@ print(f"artifact dir : {ARTIFACT_DIR}")
 # -----------------------------------------------------------------------------
 
 cells.append(md(r"""
-## \u00a71. Reload the winner \u2014 no refit
+## \u00a71. Recover the winner
 
-`BayesianRung.from_saved(...)` rebuilds the numpyro model closure and plugs
-the saved posterior parameter samples back in, so `.predict(fold)` is
-immediately available. If you get a `FileNotFoundError` here, re-run
-`model.ipynb \u00a76\u2013\u00a77` first.
+Reads `winner_run_meta.json` and dispatches on the winner kind:
+
+- **Bayesian winner** \u2192 `BayesianRung.from_saved(winner_model.npz)`. Instant,
+  no MCMC. The posterior parameter samples come out of the `.npz` the
+  training run wrote.
+- **Baseline winner** (naive / OLS / XGBoost) \u2192 rebuild the class fresh and
+  `.fit(...)` it on the exact same pre-2024 slice (`cv_val_year >= 0`) that
+  `model.ipynb \u00a76` retrained on. Baselines are cheap to fit (~30 s for
+  XGBoost on ~300 K rows) so we don't bother pickling them.
+
+Either way, `final_model.predict(fold)` afterwards conforms to the same
+`Forecaster` protocol, so the rest of this notebook is winner-agnostic.
 """))
 
 cells.append(code(r"""
-with open(ARTIFACT_DIR / "winner_run_meta.json") as fh:
+RUN_META = ARTIFACT_DIR / "winner_run_meta.json"
+if not RUN_META.is_file():
+    raise FileNotFoundError(
+        f"Missing {RUN_META}\n"
+        f"Resolved ARTIFACT_DIR = {ARTIFACT_DIR}\n\n"
+        "model.ipynb writes ARTIFACT_DIR = Path('artifacts/modeling') relative to the "
+        "Jupyter kernel cwd. If you ran it from notebooks/modeling/, the meta file is "
+        "usually at:\n"
+        f"  {(PROJ / 'notebooks' / 'modeling' / 'artifacts' / 'modeling' / 'winner_run_meta.json')}\n\n"
+        "Fix: re-run model.ipynb through \u00a77, or set env DATATIDE_MODELING_ARTIFACTS to the "
+        "directory that contains winner_run_meta.json, or after the setup cell assign:\n"
+        "  ARTIFACT_DIR = Path(\"notebooks/modeling/artifacts/modeling\").resolve()"
+    )
+
+with open(RUN_META) as fh:
     run_meta = json.load(fh)
+
 print("winner        :", run_meta["winner"])
 print("rung          :", run_meta["rung"])
 print("is_bayesian   :", run_meta["is_bayesian"])
 print("test counts-MAE  :", run_meta["test_score"].get("counts-MAE"))
 
-if not run_meta["is_bayesian"]:
-    raise RuntimeError(
-        "The selected winner is a baseline \u2014 refit it in model.ipynb \u00a76 and "
-        "call .predict() directly on the future fold (this predict.ipynb only "
-        "knows how to reload a Bayesian rung)."
+BASELINE_CLASSES = {
+    "B1 naive seasonal-mean (by month)": NaiveSeasonalMeanCounts,
+    "B2 OLS log10":                       OLSLog10,
+    "B3 XGBoost log10":                   XGBoostLog10,
+}
+
+
+def _build_baseline_train_fold(bundle, train_mask):
+    # Shape-compatible FoldData carrying only training data.
+    # Baselines' .fit(fold) reads the _train side only; we stub the _val
+    # side with zero-length arrays so the dataclass is valid. Actual future
+    # rows get supplied later via build_future_fold(...) + .predict(...).
+    return FoldData(
+        fold_val_year=-1,
+        y_log_train=bundle.y_log[train_mask],
+        month_train=bundle.month[train_mask],
+        station_idx_train=bundle.station_idx[train_mask],
+        county_idx_train=bundle.county_idx[train_mask],
+        X_smooth_train=bundle.X_smooth[train_mask],
+        X_linear_train=bundle.X_linear[train_mask],
+        miss_smooth_train=bundle.miss_smooth[train_mask],
+        miss_linear_train=bundle.miss_linear[train_mask],
+        left_mask_train=bundle.left_mask[train_mask],
+        right_mask_train=bundle.right_mask[train_mask],
+        det_low_log_train=bundle.det_low_log[train_mask],
+        det_high_log_train=bundle.det_high_log[train_mask],
+        y_log_val=np.zeros(0, dtype=np.float32),
+        month_val=np.zeros(0, dtype=np.int8),
+        station_idx_val=np.zeros(0, dtype=np.int32),
+        county_idx_val=np.zeros(0, dtype=np.int32),
+        X_smooth_val=np.zeros((0, bundle.X_smooth.shape[1]), dtype=np.float32),
+        X_linear_val=np.zeros((0, bundle.X_linear.shape[1]), dtype=np.float32),
+        miss_smooth_val=np.zeros((0, bundle.miss_smooth.shape[1]), dtype=np.int8),
+        miss_linear_val=np.zeros((0, bundle.miss_linear.shape[1]), dtype=np.int8),
+        smooth_features=list(bundle.smooth_features),
+        linear_features=list(bundle.linear_features),
+        n_stations=bundle.n_stations,
+        n_counties=bundle.n_counties,
     )
 
-winner_path = ARTIFACT_DIR / run_meta["artifacts"]["model_bundle"]
-t0 = time.time()
-final_model = BayesianRung.from_saved(winner_path)
-print(f"reloaded winner in {time.time()-t0:.2f}s \u2014 {final_model.name}")
-print(f"posterior sample keys: {list(final_model._posterior_samples.keys())}")
-n_draws = next(iter(final_model._posterior_samples.values())).shape[0]
-print(f"total posterior draws (chains merged): {n_draws}")
+
+if run_meta["is_bayesian"]:
+    winner_path = ARTIFACT_DIR / run_meta["artifacts"]["model_bundle"]
+    t0 = time.time()
+    final_model = BayesianRung.from_saved(winner_path)
+    print(f"\nreloaded Bayesian winner in {time.time()-t0:.2f}s  \u2014  {final_model.name}")
+    print(f"posterior sample keys : {list(final_model._posterior_samples.keys())}")
+    n_draws = next(iter(final_model._posterior_samples.values())).shape[0]
+    print(f"total posterior draws : {n_draws}")
+else:
+    cls = BASELINE_CLASSES.get(run_meta["winner"])
+    if cls is None:
+        raise RuntimeError(
+            f"Unknown baseline winner name {run_meta['winner']!r}; "
+            f"supported: {list(BASELINE_CLASSES)}"
+        )
+    bundle_for_fit = load_panel()
+    train_mask = (bundle_for_fit.cv_val_year >= 0)          # pre-2024 = train \u222a val
+    train_fold = _build_baseline_train_fold(bundle_for_fit, train_mask)
+
+    final_model = cls()
+    print(f"\nrefitting baseline {cls.__name__} on {int(train_mask.sum()):,} rows \u2026")
+    t0 = time.time()
+    final_model.fit(train_fold)
+    print(f"refit in {time.time()-t0:.1f}s  \u2014  {final_model.name}")
 """))
 
 # -----------------------------------------------------------------------------
@@ -167,12 +293,17 @@ print(f"panel: n={len(bundle.y_log):,}  n_stations={bundle.n_stations}  "
       f"last date={str(np.datetime64(bundle.date_min) + np.timedelta64(int(bundle.t_idx.max()), 'D'))[:10]}")
 
 clim = compute_climatology(bundle, use_rows=(bundle.cv_val_year >= 0))
+
+# Carry the pre-2024 slice through on the train side so, for baseline winners,
+# `final_model.predict(future_fold)` still has the right design reference
+# (Bayesian winners ignore the train side \u2014 harmless either way).
 future_fold, future_index = build_future_fold(
     bundle,
     start_date=START_DATE,
     horizon_days=HORIZON_DAYS,
     climatology=clim,
     weather_override=WEATHER_OVERRIDE,
+    training_mask=(bundle.cv_val_year >= 0),
 )
 print(f"future fold: {len(future_index):,} rows  "
       f"({future_index['date'].min().date()} \u2192 {future_index['date'].max().date()})")
@@ -184,12 +315,22 @@ future_index.head()
 # -----------------------------------------------------------------------------
 
 cells.append(md(r"""
-## \u00a73. Posterior-predictive draws for the future fold
+## \u00a73. Predictive draws for the future fold
 
-`final_model.predict(future_fold)` vectorises over every posterior parameter
-draw and every future row, yielding a `(S, N_future)` matrix of log10 MPN
-samples. The point forecast is `median(10**samples)` per row; intervals are
-quantiles of `10**samples`.
+`final_model.predict(future_fold)` returns a `(S, N_future)` matrix of log10
+MPN draws. The semantics depend on the winner kind:
+
+- **Bayesian winner:** genuine posterior-predictive samples \u2014 propagates
+  parameter uncertainty + observation noise.
+- **Baseline winner (naive / OLS / XGBoost):** point prediction +
+  `Normal(mu_hat, sigma_train_resid)` noise, i.e. a residual-based
+  pseudo-predictive (see `MODELING_PLAN.md \u00a76.3`). It does **not** capture
+  parameter uncertainty for XGBoost, so 80/95 % PI from this bundle under-
+  covers relative to the Bayesian version \u2014 teammates should expect
+  narrower intervals if the winner was a baseline.
+
+Point forecast is `median(10**samples)` per row in either case; intervals
+are quantiles of `10**samples`.
 """))
 
 cells.append(code(r"""
