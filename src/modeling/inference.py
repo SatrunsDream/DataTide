@@ -52,6 +52,12 @@ class NutsConfig:
     max_tree_depth: int = 10
     seed: int = 0
     progress_bar: bool = False
+    # How to dispatch multiple chains:
+    #   "sequential" \u2014 one chain at a time (safe everywhere, slow on GPU)
+    #   "parallel"   \u2014 vmap across chains on a single device (best on GPU/TPU)
+    #   "vectorized" \u2014 single big draw, num_chains stacked (also GPU-friendly)
+    #   None         \u2014 auto: "parallel" if on GPU/TPU/METAL, else "sequential"
+    chain_method: str | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -142,13 +148,20 @@ class BayesianRung:
             target_accept_prob=self.nuts.target_accept_prob,
             max_tree_depth=self.nuts.max_tree_depth,
         )
+        chain_method = self.nuts.chain_method
+        if chain_method is None:
+            # Auto-select: parallelise across chains on an accelerator, stay
+            # sequential on CPU (parallel on CPU is usually *slower* because
+            # vmap forces one big XLA program with no threading headroom).
+            backend = jax.default_backend()
+            chain_method = "parallel" if backend in ("gpu", "tpu", "metal") else "sequential"
         mcmc = MCMC(
             kernel,
             num_warmup=self.nuts.num_warmup,
             num_samples=self.nuts.num_samples,
             num_chains=self.nuts.num_chains,
             progress_bar=self.nuts.progress_bar,
-            chain_method="sequential",
+            chain_method=chain_method,
         )
         rng = jax.random.PRNGKey(self.nuts.seed)
         mcmc.run(
