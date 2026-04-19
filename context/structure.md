@@ -27,7 +27,7 @@ Single source of truth for repository layout, artifact index, and results log.
 | `context/DECISIONS.md` | Architectural and modeling decisions |
 | `context/ASSUMPTIONS.md` | Data and modeling assumptions |
 | `context/CHANGELOG.md` | Milestones and notable changes |
-| `context/PROJECT_BRIEF.md`, `GLOSSARY.md`, `DATASETS.md`, `GROUND_TRUTH_SCHEMA.md`, `INTERFACES.md`, `STATUS.md`, `RISKS.md` | Team context |
+| `context/PROJECT_BRIEF.md`, `GLOSSARY.md`, `DATASETS.md`, `GROUND_TRUTH_SCHEMA.md`, `plan.md`, `INTERFACES.md`, `STATUS.md`, `RISKS.md`, `DECISIONS.md`, `ASSUMPTIONS.md` | Team context |
 
 ### Folders
 
@@ -117,3 +117,4 @@ Regenerate with `python scripts/process/build_ground_truth_dataset.py` after fet
 - Notebooks organized under `notebooks/eda/`, `notebooks/modeling/`, `notebooks/reporting/`; documentation markdown lives in `context/`.
 - **Data on disk:** not in Git — populate `data/raw/` via `scripts/fetch/` then `data/processed/` via `scripts/process/build_ground_truth_dataset.py` (`context/README.md`).
 - **Schema reference:** `context/GROUND_TRUTH_SCHEMA.md` (columns, sources, aggregation).
+- **Modeling methodology:** `context/plan.md` (full narrative + math); adopted decisions in `context/DECISIONS.md`, `ASSUMPTIONS.md`, `RISKS.md`; sprint state in `context/STATUS.md`.

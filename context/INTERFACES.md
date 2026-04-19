@@ -8,10 +8,17 @@ Contracts for **tabular modeling**: column semantics, keys, time cutoff, and **t
 
 ## Prediction unit (grain)
 
-- **Modeling grain:** **daily** rows: `(station_id_or_beach_key, date)` — one row per beach-site per calendar day (or per sample day aligned to monitoring).
-- **`as_of_time`:** still defined for leakage (features through end of *D−1* or start of *D*); all environmental inputs are **aggregated to that calendar day** (or previous days for lags), **not** left at hourly resolution in the training table.
-- **Operational cadence:** you may **retrain, evaluate, or publish forecasts week-by-week** (e.g. rolling 7-day batches); that is a **schedule**, not an hourly tide series requirement.
-- **Target** = label tied to a **documented** sampling or posting window (e.g. exceedance on day *D* given features through cutoff on *D* or *D−1*).
+### Tabular / ML baseline (site–day)
+
+- **Default feature table grain:** **daily** rows: `(station_id, date)` with environmental lags aligned to an **`as_of_time`** (features through end of *D−1* or start of *D* per `ASSUMPTIONS.md`).
+- **Operational cadence:** **week-by-week** retrain or score is a **schedule**, not a requirement that every beach samples weekly—cadence varies by program (`DECISIONS.md`).
+
+### Hierarchical Bayesian model (planned)
+
+- **Latent process:** continuous **daily** \(\eta_{s,t}\) (e.g. log or \(\log_{10}\) expected concentration) per station \(s\).
+- **Observations:** **irregular**—only on days with Tier 1 lab results; likelihood with **censoring** at detection limits (`DECISIONS.md`).
+- **Do not assume** uniform weekly sampling; aggregating to forced weekly bins before modeling discards information and misstates uncertainty.
+- **Public / dashboard display:** optional **7-day rolling** summary of posterior **median** for communication only—distinct from the latent daily process (`context/plan.md`).
 
 ---
 
@@ -26,8 +33,8 @@ Names are **suggested**; rename consistently in `configs/*.yaml` and code.
 | `county` | string | **Tier 1** | |
 | `latitude`, `longitude` | float | **Tier 1** | For spatial joins to buoys, tides, radar. |
 | `day_of_year` | int | Calendar | From `as_of_date`. |
-| `fib_lag1d` | float | **Tier 1** (primary) | Prior **official** FIB reading; optional **Tier 10** only as separate columns if merged carefully. |
-| `rain_sum_24h` … `rain_sum_7d` | float | **Tier 2** NOAA precip | Windows end at feature cutoff. |
+| `fib_lag1d` | float | **Tier 1** (primary) | Prior **official** FIB reading (not BWTF as default spine); optional **Tier 10** only as separate columns if merged carefully. |
+| `rain_sum_24h` … `rain_sum_7d` (or `log_rain_*`) | float | **Tier 2** NOAA precip | Windows end at feature cutoff; **HSGP**-friendly nonlinear transforms per `DECISIONS.md`. |
 | `dry_days_since_rain` | int | Derived | From precip series. |
 | `tide_*` (e.g. range, mean high/low) | float | **Tier 2** NOAA Tides | Built from **high/low predictions** (`hilo`) aggregated **per calendar day** at join station — not hourly tide series in the feature matrix. |
 | `wave_hs_mean`, `wave_tp_mean`, `wave_dir` | float | **Tier 2** CDIP | Nearest / best buoy from mapping table. |
@@ -56,10 +63,36 @@ Names are **suggested**; rename consistently in `configs/*.yaml` and code.
 | Field | Type | Meaning |
 |-------|------|---------|
 | `station_id` / `beach_key` | string | |
-| `as_of_time` | ISO8601 | Feature cutoff. |
-| `p_exceedance` | float [0,1] | |
-| `binary_alert` | int {0,1} | After tuned threshold. |
+| `as_of_time` or `prediction_date` | ISO8601 / date | Feature cutoff / forecast day. |
+| `pred_p05` … `pred_p95` | float | Posterior quantiles of concentration or \(\log_{10}\) MPN (see training target convention). |
+| `pred_mean`, `pred_sd` | float | Posterior mean / SD (optional). |
+| `p_exceedance` | float [0,1] | \(\Pr(Y > \text{threshold})\) from posterior; **calibration-sensitive** if SVI understates variance (`RISKS.md`). |
+| `binary_alert` | int {0,1} | After tuned threshold on `p_exceedance` or concentration. |
+| `alert_level` | string (optional) | e.g. green / yellow / red for dashboards. |
 | `model_tier` | string (optional) | e.g. `statewide` vs `south_bay_enhanced` |
+| `run_id` | string | FK to `dim_run` for Power BI and run bundles. |
+
+### ArviZ / NetCDF
+
+- Persist **`arviz.InferenceData`** per run: `posterior`, `posterior_predictive`, `prior`, `prior_predictive`, `observed_data`, `log_likelihood`, `sample_stats`.
+- **Path:** `artifacts/models/<model_name>_<YYYY-MM-DD>.nc` (or `.nc` group per `rules_templet.md` run bundle).
+- Use for **PPC** (`az.plot_ppc`), **LOO-PIT** (`az.plot_loo_pit`), **forest** plots for REs, **trace** for NUTS subset only.
+
+### Power BI star schema (Parquet under `artifacts/data/powerbi/`)
+
+Recommended tables for import via Parquet or DuckDB:
+
+| Table | Role | Key columns (summary) |
+|-------|------|-------------------------|
+| `fact_predictions` | One row per (`station_id`, `prediction_date`, optional `parameter`) with uncertainty | `pred_p05`…`pred_p95`, `pred_mean`, `p_exceedance`, `alert_level`, `observed` (nullable), `is_censored_*`, `run_id` |
+| `dim_station` | Station / beach attributes | `station_id`, names, `county`, lat/lon, `beach_type`, nearest buoy / tide / precip ids |
+| `dim_date` | Calendar | `date`, year, month, week, DoY, season flags |
+| `dim_run` | Model run metadata | `run_id`, `model_name`, `model_version`, `inference_method` (SVI/NUTS), train window, `git_sha`, LOO / CRPS / AUC |
+| `fact_features` | Explainability drill-down | (`prediction_date`, `station_id`): rain lags, `tide_range_m`, `wave_hs_m`, SST, salinity, discharge (nullable) |
+| `fact_calibration` | Calibration tab | observed vs interval membership, PIT, CRPS per row |
+| `fact_feature_importance` | Partial dependence | (`feature_name`, `x_grid`): effect `p05`/`p50`/`p95` |
+
+**Dashboard tabs (suggested):** map of latest alerts; station time series with predictive band + observations; diagnostics (PIT, coverage by county); run leaderboard vs baselines.
 
 ---
 

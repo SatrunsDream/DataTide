@@ -21,3 +21,13 @@ Domain terms, acronyms, and field meanings for beach water quality modeling.
 | **CEDEN** | **California Environmental Data Exchange Network**—legacy/auxiliary water-quality warehouse; **not** the primary beach bacteria spine for this repo (see `DATASETS.md`). |
 | **Lag feature** | Predictor using only data **strictly before** the prediction **cutoff** time. |
 | **Nowcast / forecast** | **Nowcast** = same-day / near-real-time; **forecast** = multi-day lead—define in config/`ASSUMPTIONS.md`. |
+| **MPN / CFU** | **Most probable number** / **colony-forming units** per 100 mL—common FIB report units; often analyzed on **log** scale with **detection limits**. |
+| **Censoring (left / right)** | Reported as e.g. **<10** or **>2419.6** MPN; likelihood must account for interval data, not treat as exact counts. |
+| **HSGP** | **Hilbert Gaussian process** approximation—scalable Matérn GP basis expansion for **GAM**-like smooths in NumPyro. |
+| **NumPyro** | **Pyro**-compatible probabilistic programming on **JAX**; used for hierarchical models and SVI/NUTS. |
+| **SVI** | **Stochastic variational inference**—fast approximate posterior; requires **guide** choice and **Pareto-\(\hat k\)** diagnostics for tail credibility (`RISKS.md`). |
+| **NUTS** | **No-U-Turn Sampler**—accurate MCMC; used on **subsets** when full-data NUTS is too slow. |
+| **ArviZ** | **Python** library for **InferenceData**, PPC, LOO, calibration plots. |
+| **PSIS-LOO / Pareto-\(\hat k\)** | **Pareto-smoothed importance sampling** leave-one-out and tail index for diagnosing VI/MCMC reliability. |
+| **CRPS** | **Continuous ranked probability score**—scores probabilistic forecasts vs observations. |
+| **InferenceData** | ArviZ container (often **NetCDF**) for posterior groups and metadata. |

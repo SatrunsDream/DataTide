@@ -4,7 +4,7 @@ Where data comes from, how it maps to **model features**, and **tiered priority*
 
 **Architecture rule:** The **core** of this project is a **statewide California beach bacteria target table** from the **State Water Resources Control Board** (via **California’s beach water quality open data**), plus **station** and **beach metadata** from the same program family. **Ocean, wave, rain, tide, and runoff** features are **joined around** that spine. **Do not** build the product around **CCE moorings alone**—treat **CCE** as a **Tier 4 background** signal only.
 
-**Related:** `context/PROJECT_BRIEF.md`, `context/INTERFACES.md`, `context/GLOSSARY.md`, `resources/deep-research-report.md` (literature; may mention older CEDEN-centric paths).
+**Related:** `context/PROJECT_BRIEF.md`, `context/INTERFACES.md`, `context/GLOSSARY.md`, `context/DECISIONS.md` (target organism, likelihood, inference), `context/plan.md` (full Bayesian methodology narrative), `resources/deep-research-report.md` (literature; may mention older CEDEN-centric paths).
 
 ---
 
