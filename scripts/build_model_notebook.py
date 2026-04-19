@@ -8,7 +8,7 @@ Run `python scripts/build_model_notebook.py` to (re-)materialise
     \u00a70  Setup and configuration
     \u00a71  Panel load + CV folds + priors
     \u00a72  Phase B baselines (naive seasonal, OLS log10, XGBoost log10)
-    \u00a73  Phase A Bayesian ladder v0..v6 (with prior-predictive checks)
+    \u00a73  Phase A Bayesian ladder v0..v4 (with prior-predictive checks)
     \u00a74  Joint comparison table (fold-averaged, per-model)
     \u00a75  Winner diagnostics (trace, forest, PPC, reliability, PIT)
     \u00a76  Winner retrain on train+val and test-set evaluation (2024)
@@ -41,7 +41,7 @@ cells.append(md(r"""
 # Modeling \u2014 baselines + Bayesian ladder + winner + test-set evaluation
 
 This notebook executes the plan in `context/MODELING_PLAN.md`. Every model
-\u2014 three non-Bayesian baselines and eight Bayesian ladder rungs \u2014 implements
+\u2014 three non-Bayesian baselines and five Bayesian ladder rungs \u2014 implements
 the same `Forecaster` protocol defined in `src/evaluation/compare.py`, so the
 comparison machinery is uniform end-to-end.
 
@@ -56,8 +56,10 @@ cells.append(md(r"""
 - JAX on CPU, deterministic.
 - All data loaded from `artifacts/data/panel/` (built by the EDA notebook).
 - NUTS defaults are intentionally moderate (`num_warmup=300`, `num_samples=300`,
-  `num_chains=1`) for Phase-A development speed. The winner is re-fit with
-  production-grade settings (`800 / 800 / 2`) in \u00a76.
+  `num_chains=2`, `progress_bar=True`) for Phase-A development speed. The
+  winner is re-fit with production-grade settings (`800 / 800 / 4`) in \u00a76.
+  Per-chain tqdm bars print during every fit so you can watch each chain
+  advance through warmup and sampling.
 """))
 
 cells.append(code(r"""
@@ -99,8 +101,18 @@ cells.append(code(r"""
 DEV_FOLDS     = [2022, 2023]                # quick Phase-A ladder folds
 ALL_FOLDS     = [2020, 2021, 2022, 2023]    # full fold set for Phase-B baselines
 TEST_YEARS    = [2024]                      # held-out test window
-NUTS_DEV      = NutsConfig(num_warmup=300, num_samples=300, num_chains=1, progress_bar=False)
-NUTS_PROD     = NutsConfig(num_warmup=800, num_samples=800, num_chains=2, progress_bar=False)
+# Dev-fast config: short chains, cap tree depth at 8 (=256 leapfrog steps/iter
+# instead of the default 1024), and train on 20% of rows. Ladder *ranking* is
+# stable under subsampling; the full-data re-fit happens in \u00a76 with NUTS_PROD.
+NUTS_DEV      = NutsConfig(
+    num_warmup=300, num_samples=300, num_chains=2,
+    max_tree_depth=8, subsample_frac=0.2, progress_bar=True,
+)
+# Production config for the winner only: full data, deeper trees, more chains.
+NUTS_PROD     = NutsConfig(
+    num_warmup=800, num_samples=800, num_chains=4,
+    max_tree_depth=10, subsample_frac=1.0, progress_bar=True,
+)
 ARTIFACT_DIR  = Path("artifacts/modeling")
 ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
 print(f"dev folds {DEV_FOLDS}  |  all folds {ALL_FOLDS}  |  test {TEST_YEARS}")
@@ -183,7 +195,7 @@ baseline_summary[['model', 'counts-MAE', 'counts-MedAE', 'Brier', 'ECE', 'cov-50
 # ---------------------------------------------------------------------------
 
 cells.append(md(r"""
-## \u00a73. Phase A \u2014 Bayesian ladder v0 \u2192 v6
+## \u00a73. Phase A \u2014 Bayesian ladder v0 \u2192 v4
 
 Each rung adds exactly one structural element, building on the seasonal
 scaffold the EDA justified (see `MODELING_PLAN \u00a75`):
@@ -194,22 +206,21 @@ scaffold the EDA justified (see `MODELING_PLAN \u00a75`):
 | v1   | + `alpha_month[m]` scaffold | categorical |
 | v2   | + station/county hierarchy (non-centred) | categorical |
 | v3   | + linear weather covariates | categorical |
-| v4   | polynomial(doy, deg=3) **replaces** month | polynomial |
-| v5   | natural cubic spline(doy, 6 knots) **replaces** polynomial | spline |
-| v6   | periodic Fourier HSGP(doy) + shared-amplitude rain slopes | HSGP |
+| v4   | natural cubic spline(doy, 6 knots) **replaces** month | spline |
 
 Censored log-normal likelihood on log10 is identical across rungs \u2014 any metric
 change is attributable to `mu_it` structure alone.
 
 For Phase-A development we run on two folds (2022, 2023) with short chains
-(300 warmup, 300 samples, 1 chain). The winner is re-fit with production
-settings (2 chains, 800/800) in \u00a76.
+(300 warmup, 300 samples, 2 chains). The winner is re-fit with production
+settings (4 chains, 800/800) in \u00a76. Per-chain tqdm bars print during every
+fit so you can watch sampling progress for each chain.
 """))
 
 cells.append(code(r"""
-# Prior predictive check on v0 and v6  \u2014  are implied y_log draws plausible?
+# Prior predictive check on simplest + most complex rung \u2014  are implied y_log draws plausible?
 fig, axes = plt.subplots(1, 2, figsize=(10, 3.2))
-rungs_to_check = [Rung.v0, Rung.v6]
+rungs_to_check = [Rung.v0, Rung.v4]
 for ax, rung in zip(axes, rungs_to_check):
     m = BayesianRung(rung=rung, priors=bundle.priors, nuts=NUTS_DEV)
     prior_y = m.prior_predictive(dev_folds[DEV_FOLDS[-1]], num_samples=400)
@@ -351,7 +362,7 @@ if is_bayesian:
     idata = winner.to_inferencedata()
     az_summary = az.summary(idata, var_names=[
         v for v in ['alpha_0', 'sigma_month', 'sigma_station', 'sigma_county',
-                    'sigma_obs', 'hsgp_amp_doy', 'hsgp_amp_rain']
+                    'sigma_obs']
         if v in idata.posterior.data_vars
     ], round_to=3)
     print(az_summary)

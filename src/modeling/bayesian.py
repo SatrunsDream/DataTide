@@ -1,24 +1,28 @@
 """
-Bayesian ladder rungs v0..v6 implemented in NumPyro.
+Bayesian ladder rungs v0..v4 implemented in NumPyro.
 
 Design is a single parameterised model function plus per-rung design-matrix
 builders, so the ladder lives in one place and every rung produces identical
 prior / posterior / posterior-predictive output shapes. Rungs differ only in
-which blocks of `mu_it` are active \u2014 exactly as specified in
-`context/MODELING_PLAN.md \u00a75`:
+which blocks of `mu_it` are active:
 
-    v0: alpha_0                                       (pooled intercept)
-    v1: + alpha_month[m(i)]                            (month scaffold)
-    v2: + alpha_station[s(i)] + alpha_county[c(i)]    (hierarchy on top)
-    v3: + beta . X_linear (no doy_sin, no doy_cos)    (linear weather)
-    v4: replace alpha_month with polynomial_3(doy)    (polynomial season)
-    v5: replace polynomial with natural spline(doy)   (spline season)
-    v6: replace spline with periodic-HSGP(doy)        (HSGP season)
-        + shared-amplitude rain slope block           (HSGP rain)
+    v0: alpha_0                                        (pooled intercept)
+    v1: + alpha_month[m(i)]                             (month scaffold)
+    v2: + alpha_station[s(i)] + alpha_county[c(i)]     (hierarchy on top)
+    v3: + beta . X_linear  (weather, no doy_sin/cos)    (linear weather)
+    v4: replace alpha_month with natural spline(doy)   (spline season)
 
 Censored log-normal likelihood on log10 at every rung \u2014 censoring handling is
 constant across the ladder so that any accuracy lift is attributable to
 `mu_it` structure alone.
+
+Memory note: earlier revisions of this module registered `mu` and
+`doy_effect` as `numpyro.deterministic` sites. Those tensors are (N_train,)-
+shaped, so NumPyro would cache `2 \u00d7 num_chains \u00d7 num_samples \u00d7 N_train`
+floats of state per rung, which blew up to >1 GB per fit and OOM-killed the
+more complex rungs. The deterministics are now removed entirely \u2014 `mu` is
+reconstructed from the sampled parameters at predict time via `Predictive`,
+which is exactly what the posterior-predictive pipeline already does.
 
 Priors are taken from `artifacts/data/panel/enterococcus_panel_meta.json["priors"]`
 and elicited empirically in `notebooks/modeling/eda.ipynb` section 13.
@@ -30,12 +34,12 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any
 
-from src.modeling import _jax_compat  # noqa: F401  (must precede jax / numpyro import)
-
 import jax
 import jax.numpy as jnp
 import jax.scipy.stats as jss
 import numpy as np
+
+from src.modeling import _jax_compat  # noqa: F401  (must precede numpyro import)
 
 import numpyro
 import numpyro.distributions as dist
@@ -52,8 +56,6 @@ class Rung(str, Enum):
     v2 = "v2"
     v3 = "v3"
     v4 = "v4"
-    v5 = "v5"
-    v6 = "v6"
 
 
 RUNG_LABELS: dict[Rung, str] = {
@@ -61,9 +63,7 @@ RUNG_LABELS: dict[Rung, str] = {
     Rung.v1: "v1 + month scaffold",
     Rung.v2: "v2 + station/county hierarchy",
     Rung.v3: "v3 + linear weather",
-    Rung.v4: "v4 polynomial season",
-    Rung.v5: "v5 spline season",
-    Rung.v6: "v6 HSGP season + HSGP rain",
+    Rung.v4: "v4 spline season",
 }
 
 
@@ -71,31 +71,12 @@ RUNG_LABELS: dict[Rung, str] = {
 # feature-index book-keeping  (which columns are rainfall, which are doy, etc)
 # ---------------------------------------------------------------------------
 
-RAIN_FEATURES = ["rain_24h_mm", "rain_48h_mm", "rain_72h_mm", "rain_7d_mm"]
 DOY_FOURIER_FEATURES = ["doy_sin", "doy_cos"]
 
 
-def _col_indices(names: list[str], wanted: list[str]) -> np.ndarray:
-    """Return 1-d int32 array of indices of `wanted` in `names` (missing \u2192 skipped)."""
-    name_to_idx = {n: i for i, n in enumerate(names)}
-    return np.array([name_to_idx[w] for w in wanted if w in name_to_idx], dtype=np.int32)
-
-
 # ---------------------------------------------------------------------------
-# basis constructors  (polynomial, spline, periodic-Fourier for HSGP-on-doy)
+# basis constructor  (natural spline on day-of-year for v4)
 # ---------------------------------------------------------------------------
-
-def _polynomial_basis(doy: np.ndarray, degree: int = 3) -> np.ndarray:
-    """Centred / scaled polynomial basis of day-of-year, degree `degree`.
-
-    Centring at day 183 (summer solstice-ish) and scaling by 365/2 keeps the
-    columns O(1) so that Normal(0, 1) priors on coefficients imply O(1) log10
-    seasonal effect \u2014 the prior predictive check will sanity-tune this.
-    """
-    t = (doy - 183.0) / 182.5
-    cols = [t ** k for k in range(1, degree + 1)]
-    return np.stack(cols, axis=1).astype(np.float32)
-
 
 def _natural_spline_basis(doy: np.ndarray, n_knots: int = 6) -> np.ndarray:
     """Truncated-power natural cubic spline basis on doy in [1, 365].
@@ -113,20 +94,6 @@ def _natural_spline_basis(doy: np.ndarray, n_knots: int = 6) -> np.ndarray:
     return np.stack(cols, axis=1).astype(np.float32)
 
 
-def _periodic_fourier_basis(doy: np.ndarray, K: int = 8) -> tuple[np.ndarray, np.ndarray]:
-    """Periodic Fourier basis for periodic HSGP on day-of-year.
-
-    Returns `(Phi_cos, Phi_sin)`, each shape `(N, K)`. With a spectral-decay
-    prior `b_k ~ Normal(0, amplitude / k^decay)` the resulting function is a
-    smooth periodic GP on the annual cycle. K=8 captures sub-monthly structure;
-    K=4 is already enough to capture winter/summer asymmetry.
-    """
-    theta = 2.0 * np.pi * (doy / DAYS_PER_YEAR)
-    k = np.arange(1, K + 1)[None, :]                           # (1, K)
-    arg = theta[:, None] * k                                   # (N, K)
-    return np.cos(arg).astype(np.float32), np.sin(arg).astype(np.float32)
-
-
 # ---------------------------------------------------------------------------
 # model specification  (what is active at each rung)
 # ---------------------------------------------------------------------------
@@ -137,24 +104,20 @@ class RungSpec:
     use_month: bool
     use_station_county: bool
     use_linear: bool
-    use_poly: bool
     use_spline: bool
-    use_hsgp: bool
-    hsgp_K: int = 8
     spline_knots: int = 6
-    poly_degree: int = 3
 
     @classmethod
     def from_rung(cls, rung: Rung) -> "RungSpec":
         r = Rung(rung)
+        # v4 replaces the month scaffold with a smooth spline, so use_month is
+        # False there. Every other rung >= v1 keeps the discrete month effect.
         return cls(
             rung=r,
             use_month=r in (Rung.v1, Rung.v2, Rung.v3),
-            use_station_county=r in (Rung.v2, Rung.v3, Rung.v4, Rung.v5, Rung.v6),
-            use_linear=r in (Rung.v3, Rung.v4, Rung.v5, Rung.v6),
-            use_poly=r is Rung.v4,
-            use_spline=r is Rung.v5,
-            use_hsgp=r is Rung.v6,
+            use_station_county=r in (Rung.v2, Rung.v3, Rung.v4),
+            use_linear=r in (Rung.v3, Rung.v4),
+            use_spline=r is Rung.v4,
         )
 
 
@@ -170,11 +133,7 @@ class Design:
     station_idx: jnp.ndarray                # (N,)  int32
     county_idx: jnp.ndarray                 # (N,)  int32
     X_linear: jnp.ndarray | None            # (N, D_linear)  or None
-    X_poly: jnp.ndarray | None              # (N, deg)
-    X_spline: jnp.ndarray | None            # (N, 3 + n_knots)
-    Phi_cos: jnp.ndarray | None             # (N, K)
-    Phi_sin: jnp.ndarray | None             # (N, K)
-    X_rain: jnp.ndarray | None              # (N, 4)
+    X_spline: jnp.ndarray | None            # (N, 3 + n_knots) or None
     n_stations: int
     n_counties: int
     n_linear: int
@@ -182,12 +141,7 @@ class Design:
 
 
 def _doy_from_fold(fold: FoldData, which: str) -> np.ndarray:
-    """Approximate day-of-year from encoded doy_sin/doy_cos columns.
-
-    Prefer the exact `FoldData.doy_*` values when available; this helper is a
-    backward-compatible fallback for callers that still construct folds
-    manually without the explicit day-of-year arrays.
-    """
+    """Recover integer doy from the encoded doy_sin/doy_cos columns."""
     if which == "train":
         X_lin = fold.X_linear_train
     else:
@@ -214,14 +168,6 @@ def _doy_from_fold(fold: FoldData, which: str) -> np.ndarray:
     return np.clip(doy, 1.0, DAYS_PER_YEAR).astype(np.float32)
 
 
-def _resolve_doy(fold: FoldData, which: str) -> np.ndarray:
-    """Use exact doy values when the fold provides them, else fall back."""
-    doy = fold.doy_train if which == "train" else fold.doy_val
-    if doy is not None:
-        return np.asarray(doy, dtype=np.float32)
-    return _doy_from_fold(fold, which)
-
-
 def build_design(spec: RungSpec, fold: FoldData, which: str) -> Design:
     if which == "train":
         month = fold.month_train.astype(np.int32) - 1   # 0..11
@@ -237,7 +183,7 @@ def build_design(spec: RungSpec, fold: FoldData, which: str) -> Design:
         X_linear_full = fold.X_linear_val
 
     # Linear covariate block: all smooth + linear features EXCEPT doy_sin/doy_cos
-    # (the month scaffold / polynomial / spline / HSGP handles seasonality).
+    # (the month scaffold / spline handles seasonality).
     D_smooth = X_smooth.shape[1]
     lin_names_raw = fold.linear_features
     doy_exclude_idx = [i for i, n in enumerate(lin_names_raw) if n in DOY_FOURIER_FEATURES]
@@ -252,33 +198,17 @@ def build_design(spec: RungSpec, fold: FoldData, which: str) -> Design:
 
     X_linear = jnp.asarray(covariate_block) if spec.use_linear else None
 
-    X_poly = X_spline = Phi_cos = Phi_sin = X_rain = None
-    if spec.use_poly or spec.use_spline or spec.use_hsgp:
-        doy = _resolve_doy(fold, which)
-        if spec.use_poly:
-            X_poly = jnp.asarray(_polynomial_basis(doy, degree=spec.poly_degree))
-        if spec.use_spline:
-            X_spline = jnp.asarray(_natural_spline_basis(doy, n_knots=spec.spline_knots))
-        if spec.use_hsgp:
-            Pc, Ps = _periodic_fourier_basis(doy, K=spec.hsgp_K)
-            Phi_cos, Phi_sin = jnp.asarray(Pc), jnp.asarray(Ps)
-
-    if spec.use_hsgp:
-        # shared-amplitude rain slope block (the "HSGP on rain" from the plan)
-        rain_idx = _col_indices(fold.smooth_features, RAIN_FEATURES)
-        if len(rain_idx) > 0:
-            X_rain = jnp.asarray(X_smooth[:, rain_idx].astype(np.float32))
+    X_spline = None
+    if spec.use_spline:
+        doy = _doy_from_fold(fold, which)
+        X_spline = jnp.asarray(_natural_spline_basis(doy, n_knots=spec.spline_knots))
 
     return Design(
         month_idx=jnp.asarray(month),
         station_idx=jnp.asarray(station),
         county_idx=jnp.asarray(county),
         X_linear=X_linear,
-        X_poly=X_poly,
         X_spline=X_spline,
-        Phi_cos=Phi_cos,
-        Phi_sin=Phi_sin,
-        X_rain=X_rain,
         n_stations=fold.n_stations,
         n_counties=fold.n_counties,
         n_linear=int(covariate_block.shape[1]),
@@ -305,15 +235,21 @@ def make_model(spec: RungSpec, priors: dict):
 
     Priors:
     - `alpha_0`      ~ Normal(loc=priors.intercept.loc, scale=1.0)
-    - `sigma_month`  ~ HalfNormal(scale=priors.sigma_month.scale)     [v1..v3]
-    - `alpha_month`  ~ non-centred Normal(0, sigma_month) of shape (12,)
-    - `sigma_station`/`sigma_county` ~ HalfNormal(scale=priors...)    [v2+]
-    - `alpha_station` / `alpha_county` non-centred
+    - `sigma_month`  ~ HalfNormal(priors.sigma_month.scale)           [v1..v3]
+    - `z_month`      ~ Normal(0, 1)^12, alpha_month = z * sigma_month
+    - `sigma_station`/`sigma_county` ~ HalfNormal(...)                [v2+]
+    - `z_station`/`z_county` non-centred, alpha = z * sigma
     - `beta_linear[k]` ~ Normal(0, priors.beta_linear.scale)          [v3+]
-    - `beta_poly[k]` ~ Normal(0, 0.5)                                 [v4]
-    - `beta_spline[k]` ~ Normal(0, 0.5)                               [v5]
-    - HSGP amplitudes and Fourier coefficients                        [v6]
-    - `sigma_obs`    ~ HalfNormal(scale=priors.sigma_obs.scale)
+    - `beta_spline[k]` ~ Normal(0, 0.5)                               [v4]
+    - `sigma_obs`    ~ HalfNormal(priors.sigma_obs.scale)
+
+    Important: we intentionally DO NOT register `mu` or any (N_train,)-shape
+    tensor as a `numpyro.deterministic`. Doing so would force NumPyro to cache
+    an (num_chains, num_samples, N_train) array that can easily exceed 1 GB
+    on this panel and has no downstream use (Predictive reconstructs mu on
+    the validation design at predict time). Small entity-level deterministics
+    (alpha_month[12], alpha_station[~800], alpha_county[~16]) are fine and are
+    kept for post-hoc interpretation.
     """
 
     alpha_0_loc = _prior_loc(priors, "intercept", 1.5)
@@ -323,8 +259,6 @@ def make_model(spec: RungSpec, priors: dict):
     sigma_county_scale = _prior_scale(priors, "sigma_county", 0.34)
     sigma_obs_scale = _prior_scale(priors, "sigma_obs", 0.70)
     beta_linear_scale = _prior_scale(priors, "beta_linear", 0.5)
-    hsgp_doy_amp_scale = _prior_scale(priors, "hsgp_amplitude_seasonal", 0.23)
-    hsgp_rain_amp_scale = _prior_scale(priors, "hsgp_amplitude_rain", 0.24)
 
     def model(design: Design,
               y_log: jnp.ndarray | None = None,
@@ -363,36 +297,11 @@ def make_model(spec: RungSpec, priors: dict):
             )
             mu = mu + design.X_linear @ beta_linear
 
-        if spec.use_poly and design.X_poly is not None:
-            D = design.X_poly.shape[1]
-            beta_poly = numpyro.sample("beta_poly", dist.Normal(0.0, 0.5).expand([D]))
-            mu = mu + design.X_poly @ beta_poly
-
         if spec.use_spline and design.X_spline is not None:
             D = design.X_spline.shape[1]
             beta_spline = numpyro.sample("beta_spline", dist.Normal(0.0, 0.5).expand([D]))
             mu = mu + design.X_spline @ beta_spline
 
-        if spec.use_hsgp and design.Phi_cos is not None and design.Phi_sin is not None:
-            K = design.Phi_cos.shape[1]
-            amp_doy = numpyro.sample("hsgp_amp_doy", dist.HalfNormal(hsgp_doy_amp_scale))
-            # spectral-decay prior: harmonic k has SD = amp / k  (Matern-like)
-            k_vec = jnp.arange(1, K + 1, dtype=jnp.float32)
-            b_cos = numpyro.sample("b_cos", dist.Normal(0.0, 1.0).expand([K]))
-            b_sin = numpyro.sample("b_sin", dist.Normal(0.0, 1.0).expand([K]))
-            doy_effect = amp_doy * (
-                (design.Phi_cos @ (b_cos / k_vec)) + (design.Phi_sin @ (b_sin / k_vec))
-            )
-            mu = mu + numpyro.deterministic("doy_effect", doy_effect)
-
-            if design.X_rain is not None:
-                R = design.X_rain.shape[1]
-                amp_rain = numpyro.sample("hsgp_amp_rain", dist.HalfNormal(hsgp_rain_amp_scale))
-                z_rain = numpyro.sample("z_rain", dist.Normal(0.0, 1.0).expand([R]))
-                beta_rain = numpyro.deterministic("beta_rain", amp_rain * z_rain)
-                mu = mu + design.X_rain @ beta_rain
-
-        mu = numpyro.deterministic("mu", mu)
         sigma_obs = numpyro.sample("sigma_obs", dist.HalfNormal(sigma_obs_scale))
 
         # prior-predictive / posterior-predictive: no y \u2192 sample y from the likelihood
