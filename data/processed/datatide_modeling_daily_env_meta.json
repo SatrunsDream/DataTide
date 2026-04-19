@@ -1,0 +1,9 @@
+{
+  "built_at_utc": "2026-04-18T23:27:21Z",
+  "bacteria_csv": "data\\raw\\ca_swrcb_bacteria\\download_20260418T221034Z.csv",
+  "output_parquet": "data\\processed\\datatide_modeling_daily_env.parquet",
+  "total_rows": 1410146,
+  "chunks": 8,
+  "precip_rows": 40860,
+  "tide_daily_rows": 105175
+}

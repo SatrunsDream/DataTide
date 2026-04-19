@@ -1,0 +1,70 @@
+{
+  "built_at_utc": "2026-04-19T02:50:22Z",
+  "bacteria_csv": "data/raw/ca_swrcb_bacteria/download_20260418T221034Z.csv",
+  "output_parquet": "data/processed/datatide_ground_truth.parquet",
+  "total_rows": 482318,
+  "chunks": 8,
+  "precip_rows": 40860,
+  "tide_daily_rows": 105175,
+  "sccoos_daily_rows": 4075,
+  "cdip_daily_rows": 2482,
+  "cdip_buoys": [
+    {
+      "cdip_bundle": "cdip_045",
+      "cdip_buoy_lat": 33.18080139160156,
+      "cdip_buoy_lon": -117.4749984741211
+    },
+    {
+      "cdip_bundle": "cdip_100",
+      "cdip_buoy_lat": 32.93000030517578,
+      "cdip_buoy_lon": -117.39199829101562
+    },
+    {
+      "cdip_bundle": "cdip_191",
+      "cdip_buoy_lat": 32.51753234863281,
+      "cdip_buoy_lon": -117.42528533935547
+    },
+    {
+      "cdip_bundle": "cdip_201",
+      "cdip_buoy_lat": 32.86785125732422,
+      "cdip_buoy_lon": -117.26667022705078
+    },
+    {
+      "cdip_bundle": "cdip_220",
+      "cdip_buoy_lat": 32.74941635131836,
+      "cdip_buoy_lon": -117.49849700927734
+    }
+  ],
+  "sd_coastal_monthly_rows": 51,
+  "beach_detail_rows": 576,
+  "hf_radar_days": 1,
+  "ibwc_daily_rows": 31,
+  "bwtf_state_daily_rows": 0,
+  "cce_moorings": [
+    {
+      "cce_mooring_id": 13,
+      "cce_mooring_lat": 33.47233,
+      "cce_mooring_lon": -122.528
+    },
+    {
+      "cce_mooring_id": 15,
+      "cce_mooring_lat": 33.47467,
+      "cce_mooring_lon": -122.54583
+    }
+  ],
+  "cce_daily_rows": 686,
+  "layers": [
+    "tier1_bacteria_spine",
+    "tier1_station_supplement",
+    "tier1_beach_detail_supplement",
+    "tier2_ghcn_regional_precip",
+    "tier2_coops_tidal_range",
+    "tier2_cdip_nearest_buoy_waves",
+    "tier3_sccoos_delmar_ts_regional",
+    "tier3_hf_radar_nearest_grid",
+    "tier4_cce_mooring_nearest_daily",
+    "tier4_bwtf_state_daily_summary_optional",
+    "tier5_sd_county_monthly_coastal_context",
+    "tier5_ibwc_tijuana_daily"
+  ]
+}
