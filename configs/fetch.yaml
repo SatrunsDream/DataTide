@@ -144,12 +144,17 @@ sccoos_erddap:
     #   variables: [time, temperature, pH]
 
 # --- Tier 3: HF radar (IOOS / NOAA ERDDAP griddap; rolling NRT window) -------
+# Coverage is **not** “all of California” by default: `griddap_id` + bbox pick one grid/product.
+# SoCal bight here is **project default**, not a platform limit — see `context/GROUND_TRUTH_SCHEMA.md`
+# (heading “Geographic coverage: NorCal vs SoCal…”). NorCal/CenCal: widen bbox if the dataset supports it, or point
+# `griddap_id` at another IOOS HF product (e.g. other ucsdHfr* / regional grids). If you add
+# multiple regional pulls, extend ETL (today’s builder uses the latest single u/v CSV pair under hf_radar/).
 hf_radar:
   output_dir: hf_radar
   erddap_base: "https://coastwatch.pfeg.noaa.gov/erddap"
   griddap_id: ucsdHfrW6
   variables: [water_u, water_v]
-  # Southern California bight subset (adjust for other regions / ucsdHfr* products).
+  # Southern California bight subset — change for northern/central coverage (different bbox and/or product).
   lat_min: 32.4
   lat_max: 33.2
   lon_min: -118.1

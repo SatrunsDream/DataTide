@@ -93,6 +93,8 @@ Where data comes from, how it maps to **model features**, and **tiered priority*
 - **SCCOOS overview:** [https://sccoos.org/high-frequency-radar/](https://sccoos.org/high-frequency-radar/)
 - **IOOS HF radar:** [https://ioos.noaa.gov/project/hf-radar/](https://ioos.noaa.gov/project/hf-radar/)
 
+**Regional coverage in this repo:** `configs/fetch.yaml` → `hf_radar` selects **one** ERDDAP `griddap_id` and a **latitude/longitude box**. The default targets the **Southern California bight**—not because HF data lack NorCal, but as a **project default**. **Northern or Central California** currents require a **different product and/or bbox** (and possibly ETL changes if you keep multiple regional files). See **`context/GROUND_TRUTH_SCHEMA.md`** → *Geographic coverage: NorCal vs SoCal*.
+
 ---
 
 ## Tier 4 — Useful secondary

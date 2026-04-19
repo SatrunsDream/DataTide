@@ -82,6 +82,38 @@ Use **station** coords for anything tied to how joins were computed; use beach c
 
 ---
 
+## Geographic coverage: NorCal vs SoCal, NaNs, and what is fixable
+
+The statewide **Tier‑1 bacteria spine** includes beaches **throughout California**. Several **environmental joins are regional or period-limited by configuration**, so **Northern and Central California rows often see more NaNs** on those columns. That is expected; it is **not** a bug in the state export.
+
+### By design today (narrow footprint on purpose)
+
+| Layer | Why it looks “SoCal-heavy” | Changeable? |
+|--------|----------------------------|-------------|
+| **HF radar** (`hf_*`) | `configs/fetch.yaml` → `hf_radar` uses one **IOOS griddap** (`ucsdHfrW6` by default) and a **bounding box** over the **Southern California bight** (`lat_min`/`lat_max`/`lon_min`/`lon_max`). Stations **outside that box** get **no** HF join (NaNs). | **Yes.** Widen the bbox **if that product’s grid covers it**, or switch **`griddap_id`** to another HF radar product that covers **Northern or Central California** (discoverable on the same ERDDAP server). The ETL currently loads the **latest single** `water_u` / `water_v` CSV pair under `data/raw/hf_radar/`; supporting **multiple regions** cleanly may require a second fetch + a small ETL extension (e.g. merge by station bbox or run two pulls into tagged files). |
+| **SCCOOS Del Mar** (`sccoos_delmar_*`) | **One mooring** near Del Mar; columns are **nulled outside** `sccoos_join_counties` in `configs/process.yaml` (Orange, San Diego, Los Angeles, Long Beach City, Ventura). **All NorCal counties** → **100% NaN** for these fields by rule. | **Yes, if you add data.** Add other **SCCOOS (or ERDDAP) time series** for northern/central sites, new loader logic, and extend `process.yaml` county allowlists / join keys. Not automatic from the current single Del Mar pull. |
+| **SD coastal** (`sd_coastal_*`) | **San Diego County** program only; other counties get nulls for those columns. | By design for that program; not “NorCal fixable” except by adding **other county** feeds. |
+| **IBWC** (`ibwc_*`) | **Tijuana River** context; merged by **date** to every row. Sparse if the gauge file has few days or no overlap with sample dates. | More overlap if you fetch **longer history** or fix the source URL; still **not** a NorCal ocean substitute. |
+
+### Fixable but still “wrong coast” if you only add SoCal instruments
+
+| Layer | Note |
+|--------|------|
+| **CDIP** (`cdip_*`) | Config lists **buoys** (`cdip.bundles`). You can **add NorCal CDIP (or other) buoy IDs** and archive THREDDS URLs for **historical** waves; otherwise **realtime** NetCDF yields **mostly NaN** for old sample dates statewide. |
+| **CCE** (`cce_*`) | Moorings **13 / 15** sit **off Central California** (~33.5°N). **NorCal beaches** still get a **nearest** mooring merge, but values are **not local surf-zone** water. Adding **other NetCDF bundles** (or regions) in `fetch.yaml` + ETL would improve **northern offshore** context, not duplicate a Del Mar mooring. |
+
+### Generally statewide (county mapping)
+
+**Precipitation** (`regional_ghcn_prcp_mm`) and **tidal range** (`tide_range_hilo_m`) use **`CountyName` → `county_to_env`** in `process.yaml`. **NorCal counties are included** where listed; remaining NaNs are usually **unmapped county labels**, missing raw JSON years, or date gaps—not “HF bbox” effects.
+
+### Summary
+
+- **HF bbox “only Southern California”** is a **default project scope** in `fetch.yaml`, **not** a law of nature: **more northern coverage is an option** if you point the fetch at the right **product + bbox** (and adjust ETL if you maintain multiple regional files).
+- **Del Mar SCCOOS nulls in NorCal** are **intentional** until you add **northern** analog products and wiring.
+- For a longer write-up of **why many env columns are NaN** (time overlap, NRT windows), see discussion under **Provenance** and the **`datatide_ground_truth_meta.json`** row counts after each build.
+
+---
+
 ## Column reference
 
 Columns appear in a stable order in Parquet; the list below groups them by role.
