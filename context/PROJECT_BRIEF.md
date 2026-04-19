@@ -2,7 +2,7 @@
 
 ## Goal
 
-Build **machine learning** and a future **app** that support **prediction of unsafe California beach water** (fecal indicator bacteria—**FIB**), with **Enterococcus** and other indicators as published in **official statewide monitoring**.
+Build **machine learning** and a future **app** that support **prediction of unsafe California beach water** (fecal indicator bacteria—**FIB**), with **Enterococcus** and other indicators as published in **official statewide monitoring**. **Product vision for the app / web** (personas, screens, design system, surf/weather parity via Open-Meteo): **`APP_PRODUCT.md`**.
 
 **Probabilistic layer (project plan):** Quantify **uncertainty** in concentrations and **exceedance** probabilities suitable for **decision support** and dashboards—not only point predictions. The preferred path is a **hierarchical** model in **JAX + NumPyro** with **HSGP** smooths for nonlinear environmental effects and a **censored log-normal** observation model for detection limits; **SVI** on full data plus **NUTS** on a subset for calibration checks within time budget (`context/plan.md`, `DECISIONS.md`). **Naive baselines** (persistence, climatology, logistic, **LightGBM**) are mandatory comparators.
 

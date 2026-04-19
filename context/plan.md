@@ -1,4 +1,4 @@
-> **Repo note:** The actionable, repo-aligned decisions from this document are summarized in **`context/DECISIONS.md`**, **`ASSUMPTIONS.md`**, **`RISKS.md`**, and **`STATUS.md`**. Data pipeline and column-level ETL: **`GROUND_TRUTH_SCHEMA.md`**, **`DATASETS.md`**. Interfaces, ArviZ, Power BI tables: **`INTERFACES.md`**. The text below retains the full working plan, critique, and mathematical detail.
+> **Repo note:** The actionable, repo-aligned decisions from this document are summarized in **`context/DECISIONS.md`**, **`ASSUMPTIONS.md`**, **`RISKS.md`**, and **`STATUS.md`**. Data pipeline and column-level ETL: **`GROUND_TRUTH_SCHEMA.md`**, **`DATASETS.md`**. Interfaces, ArviZ, Power BI tables: **`INTERFACES.md`**. **Consumer app / web UX, personas, design system, Open-Meteo roadmap:** **`APP_PRODUCT.md`** (separate from the modeling narrative below). **Demo/mock data shapes (`pred_*`, `p_exceedance`, 7-day strip):** **`MODEL_OUTPUTS_FOR_DEMO.md`**. The text below retains the full working plan, critique, and mathematical detail.
 
 ---
 
