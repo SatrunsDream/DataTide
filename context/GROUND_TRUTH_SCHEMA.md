@@ -41,6 +41,47 @@ This document describes the **canonical processed table** used for EDA and downs
 
 ---
 
+## Overlapping vs distinct columns
+
+Some fields describe the **same kind of quantity** (e.g. beach name, agency, coordinates) but come from **different exports** or **different geometry**. The wide table keeps both so you can audit joins and catch mismatches; for modeling you typically **choose one column per concept** unless you explicitly want redundancy checks.
+
+### Same concept, two Tier-1 sources (often aligned, not guaranteed identical)
+
+- **On the bacteria row:** `Beach_Name`, `BeachType`, `AB411Beach`, `USEPAID`, `WaterBodyName`, `Agency_Name`, `Beach_UpperLat`, `Beach_UpperLon`, etc.
+- **From the beach-detail merge:** `beach_detail_Beach_Name`, `beach_detail_BeachType`, `beach_detail_AB411Beach`, `beach_detail_USEPAID`, `beach_detail_WaterBodyName`, `beach_detail_Agency_Name`, `beach_detail_Beach_UpperLat`, `beach_detail_Beach_UpperLon`, etc.
+
+**Join key:** `BeachName_id`. If the two programs disagree (refresh lag, spelling, or correction in one file only), both columns remain useful for QA.
+
+### Coordinates: same “family,” different points (not duplicates)
+
+| Column group | Meaning |
+|--------------|---------|
+| `Station_UpperLat` / `Station_UpperLon` | Monitoring **station** location on the result row—used for **nearest** CDIP, HF radar, and CCE mooring assignment. |
+| `Beach_UpperLat` / `Beach_UpperLon` | **Beach** point from the bacteria export. |
+| `beach_detail_Beach_UpperLat` / `…Lon` / `…LowerLat` / `…LowerLon` | Beach-detail file **extent / corners** when provided. |
+
+Use **station** coords for anything tied to how joins were computed; use beach coords for maps or beach-centric narratives.
+
+### Dates and join keys
+
+- **`SampleDate`** — raw value from the state CSV (often `M/D/YYYY` text).
+- **`sample_date`** — normalized **`YYYY-MM-DD`** for all environmental merges.
+
+`precip_bucket` and `tide_station_id` are **lookup keys** (county → regional rain bucket / CO-OPS gauge), not measurements.
+
+### Environmental layers: different instruments or footprints
+
+- **`regional_ghcn_prcp_mm`** — daily rain at a **regional GHCN** station, not at the water’s edge.
+- **`sccoos_delmar_*`** — **one** nearshore mooring (Del Mar); nulled outside `sccoos_join_counties` in `process.yaml`.
+- **`cdip_*`** — **nearest CDIP buoy** wave statistics (realtime files → often short history unless archive URLs are used).
+- **`cce_*`** — **nearest CCE1 mooring** (IDs 13/15 in current config); offshore CTD/ADCP at shallow depth—**not** surf-zone water.
+- **`hf_*`** — HF radar **surface** currents (grid nearest station); **not** the same as mooring `cce_ucur` / `cce_vcur`.
+- **`ibwc_*`** — **Tijuana River** stage/discharge (runoff / transboundary context), not beach concentration.
+- **`bwtf_*`** — **Statewide same-day summary** of community BWTF numeric results in a CA bounding box when JSON shards exist; **not** the Tier-1 lab result on that row.
+- **`sd_coastal_*`** — **Monthly** San Diego county program aggregates; different temporal grain than a single lab result.
+
+---
+
 ## Column reference
 
 Columns appear in a stable order in Parquet; the list below groups them by role.

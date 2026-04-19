@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **`GROUND_TRUTH_SCHEMA.md`:** section **Overlapping vs distinct columns** (when bacteria vs `beach_detail_*` overlap; station vs beach vs beach-detail geometry; dates/keys; how env layers differ—CDIP, SCCOOS, CCE, HF, IBWC, BWTF, SD coastal).
 - **Modeling plan adoption:** `context/plan.md` (Bayesian hierarchical + HSGP + censored likelihood + SVI/NUTS protocol) distilled into `DECISIONS.md`, `ASSUMPTIONS.md`, `RISKS.md`; `STATUS.md` sprint checklist; `INTERFACES.md` extended (latent daily grain, ArviZ, Power BI star schema); `PROJECT_BRIEF` and `GLOSSARY` updated.
 - **Ground-truth ETL:** `datatide_ground_truth.parquet` builder, `GROUND_TRUTH_SCHEMA.md`, `data/processed/README.md`; `data/**` gitignored except `.gitkeep`.
 - Initial repository layout for DataTide (science + deployment paths).

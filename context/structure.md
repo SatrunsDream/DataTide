@@ -116,5 +116,5 @@ Regenerate with `python scripts/process/build_ground_truth_dataset.py` after fet
 
 - Notebooks organized under `notebooks/eda/`, `notebooks/modeling/`, `notebooks/reporting/`; documentation markdown lives in `context/`.
 - **Data on disk:** not in Git — populate `data/raw/` via `scripts/fetch/` then `data/processed/` via `scripts/process/build_ground_truth_dataset.py` (`context/README.md`).
-- **Schema reference:** `context/GROUND_TRUTH_SCHEMA.md` (columns, sources, aggregation).
+- **Schema reference:** `context/GROUND_TRUTH_SCHEMA.md` (columns, sources, aggregation, overlapping vs distinct fields).
 - **Modeling methodology:** `context/plan.md` (full narrative + math); adopted decisions in `context/DECISIONS.md`, `ASSUMPTIONS.md`, `RISKS.md`; sprint state in `context/STATUS.md`.

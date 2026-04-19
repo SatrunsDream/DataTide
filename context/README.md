@@ -2,7 +2,7 @@
 
 End-to-end data science layout: exploration and reporting in `notebooks/` (by phase), reusable code in `src/`, governed data under `data/`, generated outputs in `artifacts/`, and an `app/` layer for later deployment.
 
-**Documentation in this folder:** operational rules in [`rules_templet.md`](rules_templet.md) (see [`development_rules.md`](development_rules.md)), repo map and results log in [`structure.md`](structure.md), decisions in [`DECISIONS.md`](DECISIONS.md), assumptions in [`ASSUMPTIONS.md`](ASSUMPTIONS.md), changelog in [`CHANGELOG.md`](CHANGELOG.md). Supporting notes: [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md), [`DATASETS.md`](DATASETS.md) (**tiered source stack—start with State Water Board `lab.data.ca.gov` Tier 1**), [`GROUND_TRUTH_SCHEMA.md`](GROUND_TRUTH_SCHEMA.md) (**processed Parquet: every column, source, join**), [`plan.md`](plan.md) (**Bayesian modeling plan + critique; see DECISIONS/ASSUMPTIONS for adopted summary**), [`GLOSSARY.md`](GLOSSARY.md), [`INTERFACES.md`](INTERFACES.md), [`STATUS.md`](STATUS.md), [`RISKS.md`](RISKS.md).
+**Documentation in this folder:** operational rules in [`rules_templet.md`](rules_templet.md) (see [`development_rules.md`](development_rules.md)), repo map and results log in [`structure.md`](structure.md), decisions in [`DECISIONS.md`](DECISIONS.md), assumptions in [`ASSUMPTIONS.md`](ASSUMPTIONS.md), changelog in [`CHANGELOG.md`](CHANGELOG.md). Supporting notes: [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md), [`DATASETS.md`](DATASETS.md) (**tiered source stack—start with State Water Board `lab.data.ca.gov` Tier 1**), [`GROUND_TRUTH_SCHEMA.md`](GROUND_TRUTH_SCHEMA.md) (**processed Parquet: columns, sources, joins, overlapping vs distinct fields**), [`plan.md`](plan.md) (**Bayesian modeling plan + critique; see DECISIONS/ASSUMPTIONS for adopted summary**), [`GLOSSARY.md`](GLOSSARY.md), [`INTERFACES.md`](INTERFACES.md), [`STATUS.md`](STATUS.md), [`RISKS.md`](RISKS.md).
 
 ## Quick start
 
@@ -88,7 +88,7 @@ import pandas as pd
 df = pd.read_parquet("data/processed/datatide_ground_truth.parquet")
 ```
 
-**Column dictionary and join logic:** [`GROUND_TRUTH_SCHEMA.md`](GROUND_TRUTH_SCHEMA.md).  
+**Column dictionary, join logic, and redundant-field guidance:** [`GROUND_TRUTH_SCHEMA.md`](GROUND_TRUTH_SCHEMA.md).  
 **Parquet vs IDE “line count”:** [`data/processed/README.md`](../data/processed/README.md).
 
 ## Where things live
