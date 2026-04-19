@@ -1,0 +1,3570 @@
+{
+  "1": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Santa Ana River Trail, Huntington Beach, Orange County, California, 92663, United States",
+    "lat": 33.62929,
+    "lon": -117.95968,
+    "county": "Orange"
+  },
+  "2": {
+    "name": "Puesta del Sol",
+    "county_nominatim": "Ventura County",
+    "display": "Puesta del Sol, Rincon Point, Ventura County, California, 93013, United States",
+    "lat": 34.373398,
+    "lon": -119.476088,
+    "county": "Ventura"
+  },
+  "7": {
+    "name": "State Beach Access Road",
+    "county_nominatim": "Ventura County",
+    "display": "State Beach Access Road, Ventura County, California, 93001, United States",
+    "lat": 34.290996,
+    "lon": -119.338068,
+    "county": "Ventura"
+  },
+  "9": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92646, United States",
+    "lat": 33.64866,
+    "lon": -117.99236,
+    "county": "Orange"
+  },
+  "11": {
+    "name": "Ventura",
+    "county_nominatim": "Ventura County",
+    "display": "Omer Rains Coastal Bikeway, Ventura, Ventura County, California, 93001, United States",
+    "lat": 34.27301,
+    "lon": -119.3050308,
+    "county": "Ventura"
+  },
+  "13": {
+    "name": "Ventura",
+    "county_nominatim": "Ventura County",
+    "display": "Ventura Promenade, Ventura, Ventura County, California, 93001, United States",
+    "lat": 34.274409,
+    "lon": -119.297644,
+    "county": "Ventura"
+  },
+  "15": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92646, United States",
+    "lat": 33.65201,
+    "lon": -117.99736,
+    "county": "Orange"
+  },
+  "16": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "West Ocean Front, Newport Village, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.60563,
+    "lon": -117.92425,
+    "county": "Orange"
+  },
+  "20": {
+    "name": "Ventura",
+    "county_nominatim": "Ventura County",
+    "display": "Omer Rains Coastal Bike Trail, Ventura, Ventura County, California, 93001, United States",
+    "lat": 34.272228,
+    "lon": -119.285178,
+    "county": "Ventura"
+  },
+  "25": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92648, United States",
+    "lat": 33.66385,
+    "lon": -118.01322,
+    "county": "Orange"
+  },
+  "26": {
+    "name": "Balboa Village",
+    "county_nominatim": "Orange County",
+    "display": "Adams Street, Balboa Village, Balboa Peninsula, Newport Beach, Orange County, California, 92661, United States",
+    "lat": 33.6009,
+    "lon": -117.90283,
+    "county": "Orange"
+  },
+  "30": {
+    "name": "Ventura",
+    "county_nominatim": "Ventura County",
+    "display": "Spinnaker Drive, Ventura, Ventura County, California, 93003, United States",
+    "lat": 34.23971,
+    "lon": -119.2668381,
+    "county": "Ventura"
+  },
+  "33": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92648, United States",
+    "lat": 33.67565,
+    "lon": -118.02853,
+    "county": "Orange"
+  },
+  "34": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "Channel Road, Balboa Peninsula, Newport Beach, Orange County, California, 92661, United States",
+    "lat": 33.59426,
+    "lon": -117.88161,
+    "county": "Orange"
+  },
+  "38": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Breakers Drive, Corona del Mar, Newport Beach, Orange County, California, 92625, United States",
+    "lat": 33.59315,
+    "lon": -117.87556,
+    "county": "Orange"
+  },
+  "44": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Harbour, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.68818,
+    "lon": -118.042,
+    "county": "Orange"
+  },
+  "46": {
+    "name": "Oxnard",
+    "county_nominatim": "Ventura County",
+    "display": "Ocean Drive, Hollywood Beach, Oxnard, Ventura County, California, 93035, United States",
+    "lat": 34.16328,
+    "lon": -119.2302933,
+    "county": "Ventura"
+  },
+  "48": {
+    "name": "Oxnard",
+    "county_nominatim": "Ventura County",
+    "display": "Coast Guard Access, Oxnard, Ventura County, California, 93035, United States",
+    "lat": 34.16167,
+    "lon": -119.22215,
+    "county": "Ventura"
+  },
+  "50": {
+    "name": "Channel Islands Beach",
+    "county_nominatim": "Ventura County",
+    "display": "San Nicholas Avenue, Channel Islands Beach, Ventura County, California, 93035, United States",
+    "lat": 34.15727,
+    "lon": -119.2254257,
+    "county": "Ventura"
+  },
+  "51": {
+    "name": "Silver Strand",
+    "county_nominatim": "Ventura County",
+    "display": "Ocean Drive, Silver Strand, Ventura County, California, 93043, United States",
+    "lat": 34.15244,
+    "lon": -119.2201004,
+    "county": "Ventura"
+  },
+  "52": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Harbour, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.70208,
+    "lon": -118.05494,
+    "county": "Orange"
+  },
+  "53": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Newport Coast, Newport Beach, Orange County, California, 92657, United States",
+    "lat": 33.57833,
+    "lon": -117.84916,
+    "county": "Orange"
+  },
+  "54": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92646, United States",
+    "lat": 33.63311,
+    "lon": -117.96602,
+    "county": "Orange"
+  },
+  "55": {
+    "name": "Newport Shores",
+    "county_nominatim": "Orange County",
+    "display": "Orange Street, Newport Shores, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.6265,
+    "lon": -117.95384,
+    "county": "Orange"
+  },
+  "57": {
+    "name": "Port Hueneme",
+    "county_nominatim": "Ventura County",
+    "display": "Port Hueneme, Ventura County, California, 93043, United States",
+    "lat": 34.14739,
+    "lon": -119.2168274,
+    "county": "Ventura"
+  },
+  "58": {
+    "name": "Port Hueneme",
+    "county_nominatim": "Ventura County",
+    "display": "Jonathan Sharkey Memorial Walkway, Port Hueneme, Ventura County, California, 93043, United States",
+    "lat": 34.14134,
+    "lon": -119.1951523,
+    "county": "Ventura"
+  },
+  "59": {
+    "name": "Port Hueneme",
+    "county_nominatim": "Ventura County",
+    "display": "Ocean View Drive, Port Hueneme, Ventura County, California, 93043, United States",
+    "lat": 34.13899,
+    "lon": -119.1892395,
+    "county": "Ventura"
+  },
+  "60": {
+    "name": "Oxnard",
+    "county_nominatim": "Ventura County",
+    "display": "Perkins Road, Oxnard, Ventura County, California, 93043, United States",
+    "lat": 34.13577,
+    "lon": -119.1836472,
+    "county": "Ventura"
+  },
+  "61": {
+    "name": "Oxnard",
+    "county_nominatim": "Ventura County",
+    "display": "Arnold Road, Oxnard, Ventura County, California, 93042, United States",
+    "lat": 34.11953,
+    "lon": -119.160408,
+    "county": "Ventura"
+  },
+  "70": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92646, United States",
+    "lat": 33.63838,
+    "lon": -117.97541,
+    "county": "Orange"
+  },
+  "71": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "53rd Street, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.62222,
+    "lon": -117.94431,
+    "county": "Orange"
+  },
+  "72": {
+    "name": "Faria Beach",
+    "county_nominatim": "Ventura County",
+    "display": "Faria Beach, Ventura County, California, United States",
+    "lat": 34.31897,
+    "lon": -119.3917542,
+    "county": "Ventura"
+  },
+  "75": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Huntington Beach Trail, Huntington Beach, Orange County, California, 92646, United States",
+    "lat": 33.6417,
+    "lon": -117.98126,
+    "county": "Orange"
+  },
+  "76": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "38th Street, West Newport, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.61665,
+    "lon": -117.93684,
+    "county": "Orange"
+  },
+  "94": {
+    "name": "San Mateo",
+    "county_nominatim": "San Mateo County",
+    "display": "Seal Court, San Mateo, San Mateo County, California, 94403, United States",
+    "lat": 37.56022,
+    "lon": -122.2911306,
+    "county": "San Mateo"
+  },
+  "97": {
+    "name": "Naples",
+    "county_nominatim": "Los Angeles County",
+    "display": "East Seaside Walk, The Peninsula, Naples, Long Beach, Los Angeles County, California, 90803, United States",
+    "lat": 33.74454,
+    "lon": -118.1191635,
+    "county": "Long Beach City"
+  },
+  "100": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "54th Place, Belmont Shore, Long Beach, Los Angeles County, California, 90803, United States",
+    "lat": 33.75447,
+    "lon": -118.1320419,
+    "county": "Long Beach City"
+  },
+  "110": {
+    "name": "Long Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "East Appian Way, Long Beach, Los Angeles County, California, 90803, United States",
+    "lat": 33.77062,
+    "lon": -118.13475,
+    "county": "Long Beach City"
+  },
+  "111": {
+    "name": "Long Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "East Appian Way, Long Beach, Los Angeles County, California, 90803, United States",
+    "lat": 33.7712,
+    "lon": -118.13435,
+    "county": "Long Beach City"
+  },
+  "125": {
+    "name": "Long Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Long Beach, Los Angeles County, California, 90802, United States",
+    "lat": 33.76393,
+    "lon": -118.1784286,
+    "county": "Long Beach City"
+  },
+  "132": {
+    "name": "Long Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Long Beach, Los Angeles County, California, 90802, United States",
+    "lat": 33.76345,
+    "lon": -118.1736221,
+    "county": "Long Beach City"
+  },
+  "137": {
+    "name": "Long Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Long Beach, Los Angeles County, California, 90814, United States",
+    "lat": 33.76135,
+    "lon": -118.1624527,
+    "county": "Long Beach City"
+  },
+  "141": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Belmont Shore, Long Beach, Los Angeles County, California, 90814, United States",
+    "lat": 33.755,
+    "lon": -118.1403809,
+    "county": "Long Beach City"
+  },
+  "144": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "Bay Shore Avenue, Belmont Shore, Long Beach, Los Angeles County, California, 90803, United States",
+    "lat": 33.75806,
+    "lon": -118.1302185,
+    "county": "Long Beach City"
+  },
+  "147": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Belmont Shore, Long Beach, Los Angeles County, California, 90814, United States",
+    "lat": 33.75956,
+    "lon": -118.1549377,
+    "county": "Long Beach City"
+  },
+  "149": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Belmont Shore, Long Beach, Los Angeles County, California, 90814, United States",
+    "lat": 33.75786,
+    "lon": -118.1485214,
+    "county": "Long Beach City"
+  },
+  "150": {
+    "name": "Belmont Shore",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoreline Beach Bike Path, Belmont Shore, Long Beach, Los Angeles County, California, 90814, United States",
+    "lat": 33.75641,
+    "lon": -118.1441803,
+    "county": "Long Beach City"
+  },
+  "151": {
+    "name": "Sommerville Road",
+    "county_nominatim": "Marin County",
+    "display": "Sommerville Road, Marin County, California, 94965, United States",
+    "lat": 37.83352,
+    "lon": -122.4747,
+    "county": "Marin"
+  },
+  "152": {
+    "name": "Moore Road",
+    "county_nominatim": "Marin County",
+    "display": "Moore Road, Marin County, California, 94965, United States",
+    "lat": 37.83317,
+    "lon": -122.4778,
+    "county": "Marin"
+  },
+  "153": {
+    "name": "Moore Road",
+    "county_nominatim": "Marin County",
+    "display": "Moore Road, Marin County, California, 94965, United States",
+    "lat": 37.83212,
+    "lon": -122.4774167,
+    "county": "Marin"
+  },
+  "173": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "East Beach Road, San Francisco, California, 94129, United States",
+    "lat": 37.8066,
+    "lon": -122.4519,
+    "county": "San Francisco"
+  },
+  "174": {
+    "name": "Fisherman's Wharf",
+    "county_nominatim": null,
+    "display": "Hyde Street Pier, Fisherman's Wharf, San Francisco, California, 94123, United States",
+    "lat": 37.80899,
+    "lon": -122.4212947,
+    "county": "San Francisco"
+  },
+  "175": {
+    "name": "Fisherman's Wharf",
+    "county_nominatim": null,
+    "display": "Jefferson Street, Fisherman's Wharf, San Francisco, California, 90214, United States",
+    "lat": 37.8078,
+    "lon": -122.4221,
+    "county": "San Francisco"
+  },
+  "176": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "Harney Way, San Francisco, California, 94134, United States",
+    "lat": 37.7096,
+    "lon": -122.3899,
+    "county": "San Francisco"
+  },
+  "177": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "Hunters Point Expressway, San Francisco, California, 94188, United States",
+    "lat": 37.70917,
+    "lon": -122.3823,
+    "county": "San Francisco"
+  },
+  "178": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "Donner Avenue, San Francisco, California, 94188, United States",
+    "lat": 37.711025,
+    "lon": -122.380136,
+    "county": "San Francisco"
+  },
+  "179": {
+    "name": "Baja Malibu",
+    "county_nominatim": "Municipio de Tijuana",
+    "display": "Mezcala, San Antonio del Mar, Baja Malibu, Delegaci\u00f3n Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22565, M\u00e9xico",
+    "lat": 32.4191,
+    "lon": -117.0973,
+    "county": "San Diego"
+  },
+  "180": {
+    "name": "Playas de Tijuana Secc Costa Azul",
+    "county_nominatim": "Municipio de Tijuana",
+    "display": "Privada Manzana, Playas de Tijuana Secc Costa Azul, Delegaci\u00f3n Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22506, M\u00e9xico",
+    "lat": 32.4987,
+    "lon": -117.123,
+    "county": "San Diego"
+  },
+  "181": {
+    "name": "Playas de Tijuana Secc Costa",
+    "county_nominatim": "Municipio de Tijuana",
+    "display": "Malecon de Tijuana, Playas de Tijuana Secc Costa, Playas de Tijuana, Delegaci\u00f3n Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22504, M\u00e9xico",
+    "lat": 32.5257,
+    "lon": -117.124,
+    "county": "San Diego"
+  },
+  "182": {
+    "name": "South Cove",
+    "county_nominatim": "Orange County",
+    "display": "Puerto Place, South Cove, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.4595,
+    "lon": -117.6905,
+    "county": "Orange"
+  },
+  "183": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Dana Point Harbor Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46133,
+    "lon": -117.7055,
+    "county": "Orange"
+  },
+  "184": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Dana Point Harbor Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46216,
+    "lon": -117.705,
+    "county": "Orange"
+  },
+  "185": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Ensenada Place, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46233,
+    "lon": -117.7043333,
+    "county": "Orange"
+  },
+  "186": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Ensenada Place, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.4625,
+    "lon": -117.7043333,
+    "county": "Orange"
+  },
+  "187": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Ensenada Place, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46233,
+    "lon": -117.7045,
+    "county": "Orange"
+  },
+  "188": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Dana Point Harbor Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46166,
+    "lon": -117.70622,
+    "county": "Orange"
+  },
+  "189": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Ensenada Place, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46202,
+    "lon": -117.70349,
+    "county": "Orange"
+  },
+  "191": {
+    "name": "Bean Hollow State Beach",
+    "county_nominatim": "San Mateo County",
+    "display": "Bean Hollow State Beach, San Mateo County, California, 94060, United States",
+    "lat": 37.22551,
+    "lon": -122.4091799,
+    "county": "San Mateo"
+  },
+  "192": {
+    "name": "Sunset Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Sunset Beach, Huntington Harbour, Huntington Beach, Orange County, California, 92648, United States",
+    "lat": 33.71718,
+    "lon": -118.06924,
+    "county": "Orange"
+  },
+  "194": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Humboldt Drive, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.72527,
+    "lon": -118.05648,
+    "county": "Orange"
+  },
+  "196": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Trinidad Lane, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.72895,
+    "lon": -118.0647,
+    "county": "Orange"
+  },
+  "197": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Channel Lane, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.72094,
+    "lon": -118.07125,
+    "county": "Orange"
+  },
+  "198": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Sagamore Drive, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.72658,
+    "lon": -118.06579,
+    "county": "Orange"
+  },
+  "199": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Coral Cay Lane, Huntington Harbour, Huntington Beach, Orange County, California, 90742, United States",
+    "lat": 33.72045,
+    "lon": -118.06514,
+    "county": "Orange"
+  },
+  "200": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Alert Lane, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.72644,
+    "lon": -118.07126,
+    "county": "Orange"
+  },
+  "201": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Coral Cay Lane, Huntington Harbour, Huntington Beach, Orange County, California, 90742, United States",
+    "lat": 33.71617,
+    "lon": -118.06443,
+    "county": "Orange"
+  },
+  "204": {
+    "name": "Public Access Trail",
+    "county_nominatim": "Sonoma County",
+    "display": "Public Access Trail, Sonoma County, California, 95497, United States",
+    "lat": 38.68346,
+    "lon": -123.4324089,
+    "county": "Sonoma"
+  },
+  "207": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "North Bay Front, Balboa Island, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.60871,
+    "lon": -117.89053,
+    "county": "Orange"
+  },
+  "208": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "North Bay Front, Balboa Island, Balboa Peninsula, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.60833,
+    "lon": -117.89493,
+    "county": "Orange"
+  },
+  "209": {
+    "name": "Bayshores",
+    "county_nominatim": "Orange County",
+    "display": "Bayshore Drive, Bayshores, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.61259,
+    "lon": -117.90758,
+    "county": "Orange"
+  },
+  "210": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "Via Lido Nord, Lido Isle, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.61495,
+    "lon": -117.91957,
+    "county": "Orange"
+  },
+  "211": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "River Avenue, West Newport, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.62082,
+    "lon": -117.93664,
+    "county": "Orange"
+  },
+  "212": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "38th Street, West Newport, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.61834,
+    "lon": -117.93426,
+    "county": "Orange"
+  },
+  "213": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "32nd Street, Newport Village, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.61614,
+    "lon": -117.93092,
+    "county": "Orange"
+  },
+  "215": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "West Bay Avenue, Newport Village, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.60898,
+    "lon": -117.92571,
+    "county": "Orange"
+  },
+  "216": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "15th Street, Lido Isle, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.60838,
+    "lon": -117.92035,
+    "county": "Orange"
+  },
+  "217": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "West Bay Avenue, Lido Isle, Balboa Peninsula, Newport Beach, Orange County, California, 92661, United States",
+    "lat": 33.60637,
+    "lon": -117.91278,
+    "county": "Orange"
+  },
+  "218": {
+    "name": "Balboa Village",
+    "county_nominatim": "Orange County",
+    "display": "Edgewater Avenue, Balboa Village, Balboa Peninsula, Newport Beach, Orange County, California, 92661, United States",
+    "lat": 33.60556,
+    "lon": -117.9037,
+    "county": "Orange"
+  },
+  "220": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "South Bay Front, Balboa Island, Balboa Peninsula, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.60415,
+    "lon": -117.88799,
+    "county": "Orange"
+  },
+  "221": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "N Street, Balboa Peninsula, Newport Beach, Orange County, California, 92661, United States",
+    "lat": 33.59875,
+    "lon": -117.88257,
+    "county": "Orange"
+  },
+  "223": {
+    "name": "Island Lagoon",
+    "county_nominatim": "Orange County",
+    "display": "Back Bay Loop, Newport Dunes Waterfront Resort & Marina, Island Lagoon, Newport Beach, Orange County, California, 92660, United States",
+    "lat": 33.61595,
+    "lon": -117.89215,
+    "county": "Orange"
+  },
+  "224": {
+    "name": "Island Lagoon",
+    "county_nominatim": "Orange County",
+    "display": "Back Bay Loop, Newport Dunes Waterfront Resort & Marina, Island Lagoon, Newport Beach, Orange County, California, 92660, United States",
+    "lat": 33.61515,
+    "lon": -117.89376,
+    "county": "Orange"
+  },
+  "225": {
+    "name": "Villa Point",
+    "county_nominatim": "Orange County",
+    "display": "Back Bay Drive, Villa Point, Island Lagoon, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.61786,
+    "lon": -117.89194,
+    "county": "Orange"
+  },
+  "226": {
+    "name": "Island Lagoon",
+    "county_nominatim": "Orange County",
+    "display": "Back Bay Loop, Newport Dunes Waterfront Resort & Marina, Island Lagoon, Newport Beach, Orange County, California, 92660, United States",
+    "lat": 33.6153,
+    "lon": -117.89459,
+    "county": "Orange"
+  },
+  "229": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Whitecliffs Drive, Newport Beach, Orange County, California, 92660, United States",
+    "lat": 33.62455,
+    "lon": -117.8933333,
+    "county": "Orange"
+  },
+  "230": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Bayside Drive, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.61327,
+    "lon": -117.89902,
+    "county": "Orange"
+  },
+  "231": {
+    "name": "Bayshores",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Bayshores, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.61711,
+    "lon": -117.90402,
+    "county": "Orange"
+  },
+  "232": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "South Bay Front, Balboa Island, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.60639,
+    "lon": -117.89939,
+    "county": "Orange"
+  },
+  "233": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "Via Lido Soud, Lido Isle, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.60976,
+    "lon": -117.91425,
+    "county": "Orange"
+  },
+  "234": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Bayside Drive, Corona del Mar, Newport Beach, Orange County, California, 92625, United States",
+    "lat": 33.60226,
+    "lon": -117.8828,
+    "county": "Orange"
+  },
+  "235": {
+    "name": "Balboa Peninsula",
+    "county_nominatim": "Orange County",
+    "display": "The Grand Canal, Balboa Island, Balboa Peninsula, Newport Beach, Orange County, California, 92662, United States",
+    "lat": 33.60576,
+    "lon": -117.88877,
+    "county": "Orange"
+  },
+  "236": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Newport Boulevard, West Newport, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.6203,
+    "lon": -117.9286667,
+    "county": "Orange"
+  },
+  "237": {
+    "name": "Newport Shores",
+    "county_nominatim": "Orange County",
+    "display": "Lancaster Street, Newport Shores, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.62741,
+    "lon": -117.94732,
+    "county": "Orange"
+  },
+  "238": {
+    "name": "Newport Shores",
+    "county_nominatim": "Orange County",
+    "display": "Grant Street, Newport Shores, Balboa Peninsula, Newport Beach, Orange County, California, 92663, United States",
+    "lat": 33.62977,
+    "lon": -117.95287,
+    "county": "Orange"
+  },
+  "241": {
+    "name": "Bolinas",
+    "county_nominatim": "Marin County",
+    "display": "Crescente Avenue, Bolinas, Marin County, California, 94924, United States",
+    "lat": 37.90515,
+    "lon": -122.6829833,
+    "county": "Marin"
+  },
+  "251": {
+    "name": "Carmel-by-the-Sea",
+    "county_nominatim": "Monterey County",
+    "display": "Del Mar Avenue, Carmel-by-the-Sea, Monterey County, California, 93922, United States",
+    "lat": 36.5545,
+    "lon": -121.93053,
+    "county": "Monterey"
+  },
+  "255": {
+    "name": "Seahaven",
+    "county_nominatim": "Marin County",
+    "display": "Sir Francis Drake Boulevard, Seahaven, Marin County, California, 94937, United States",
+    "lat": 38.109741,
+    "lon": -122.8646,
+    "county": "Marin"
+  },
+  "276": {
+    "name": "San Mateo",
+    "county_nominatim": "San Mateo County",
+    "display": "Promenade Trail, San Mateo, San Mateo County, California, 94401, United States",
+    "lat": 37.5893,
+    "lon": -122.328,
+    "county": "San Mateo"
+  },
+  "282": {
+    "name": "Las Flores",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Las Flores, Malibu, Los Angeles County, California, United States",
+    "lat": 34.0367,
+    "lon": -118.61012,
+    "county": "Los Angeles"
+  },
+  "283": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.03757,
+    "lon": -118.67631,
+    "county": "Los Angeles"
+  },
+  "284": {
+    "name": "Malibu Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu Colony Drive, Malibu Beach, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.03143,
+    "lon": -118.68204,
+    "county": "Los Angeles"
+  },
+  "285": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.03329,
+    "lon": -118.73389,
+    "county": "Los Angeles"
+  },
+  "286": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Latigo Shore Drive, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.02908,
+    "lon": -118.75366,
+    "county": "Los Angeles"
+  },
+  "287": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Paradise Cove Road, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.02071,
+    "lon": -118.78616,
+    "county": "Los Angeles"
+  },
+  "288": {
+    "name": "Malibu Riviera",
+    "county_nominatim": "Los Angeles County",
+    "display": "Westward Beach Road, Malibu Riviera, Malibu, Los Angeles County, California, United States",
+    "lat": 34.01393,
+    "lon": -118.81942,
+    "county": "Los Angeles"
+  },
+  "289": {
+    "name": "Trancas",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Trancas, Malibu, Los Angeles County, California, United States",
+    "lat": 34.0296,
+    "lon": -118.84182,
+    "county": "Los Angeles"
+  },
+  "290": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Nicholas Beach Road, Malibu, Los Angeles County, California, United States",
+    "lat": 34.04241,
+    "lon": -118.91559,
+    "county": "Los Angeles"
+  },
+  "291": {
+    "name": "Unincorporated Santa Monica Mountains",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Unincorporated Santa Monica Mountains, Los Angeles County, California, United States",
+    "lat": 34.04558,
+    "lon": -118.93336,
+    "county": "Los Angeles"
+  },
+  "292": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Los Angeles, Los Angeles County, California, United States",
+    "lat": 34.03934,
+    "lon": -118.55052,
+    "county": "Los Angeles"
+  },
+  "293": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Los Angeles, Los Angeles County, California, 90272, United States",
+    "lat": 34.03833,
+    "lon": -118.54393,
+    "county": "Los Angeles"
+  },
+  "294": {
+    "name": "Pacific Palisades",
+    "county_nominatim": "Los Angeles County",
+    "display": "Marvin's Beach Bike Path, Pacific Palisades, Los Angeles, Los Angeles County, California, 90402, United States",
+    "lat": 34.03477,
+    "lon": -118.53611,
+    "county": "Los Angeles"
+  },
+  "295": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Santa Monica Beach Path, Downtown Santa Monica, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.02,
+    "lon": -118.51038,
+    "county": "Los Angeles"
+  },
+  "296": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Santa Monica Beach Path, Downtown Santa Monica, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.01475,
+    "lon": -118.50405,
+    "county": "Los Angeles"
+  },
+  "297": {
+    "name": "Ocean Park",
+    "county_nominatim": "Los Angeles County",
+    "display": "The Promenade, Ocean Park, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.00199,
+    "lon": -118.48979,
+    "county": "Los Angeles"
+  },
+  "298": {
+    "name": "Venice Canal Historic District",
+    "county_nominatim": "Los Angeles County",
+    "display": "Venice Beach Bike Path, Venice Canal Historic District, Venice, Los Angeles, Los Angeles County, California, 90292, United States",
+    "lat": 33.98933,
+    "lon": -118.47857,
+    "county": "Los Angeles"
+  },
+  "299": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "1800, Los Angeles, Los Angeles County, California, 90291, United States",
+    "lat": 33.97826,
+    "lon": -118.46714,
+    "county": "Los Angeles"
+  },
+  "300": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Ocean Front Walk, Los Angeles, Los Angeles County, California, 90296, United States",
+    "lat": 33.96768,
+    "lon": -118.45994,
+    "county": "Los Angeles"
+  },
+  "301": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, Los Angeles, Los Angeles County, California, 90245, United States",
+    "lat": 33.94064,
+    "lon": -118.44226,
+    "county": "Los Angeles"
+  },
+  "302": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, Los Angeles, Los Angeles County, California, 90245, United States",
+    "lat": 33.92331,
+    "lon": -118.43326,
+    "county": "Los Angeles"
+  },
+  "303": {
+    "name": "El Segundo",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, El Segundo, Los Angeles County, California, 90245, United States",
+    "lat": 33.91592,
+    "lon": -118.42926,
+    "county": "Los Angeles"
+  },
+  "304": {
+    "name": "Manhattan Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Manhattan Beach, Los Angeles County, California, 90266, United States",
+    "lat": 33.89441,
+    "lon": -118.41868,
+    "county": "Los Angeles"
+  },
+  "305": {
+    "name": "Hermosa Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "The Strand, Hermosa Beach, Los Angeles County, California, 90254, United States",
+    "lat": 33.87146,
+    "lon": -118.40663,
+    "county": "Los Angeles"
+  },
+  "306": {
+    "name": "Redondo Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Hopkins Way, Redondo Beach, Los Angeles County, California, 90277, United States",
+    "lat": 33.85203,
+    "lon": -118.39971,
+    "county": "Los Angeles"
+  },
+  "307": {
+    "name": "Clifton",
+    "county_nominatim": "Los Angeles County",
+    "display": "International Boardwalk, Clifton, Redondo Beach, Los Angeles County, California, 90277, United States",
+    "lat": 33.83207,
+    "lon": -118.39071,
+    "county": "Los Angeles"
+  },
+  "314": {
+    "name": "Del Monte",
+    "county_nominatim": "Monterey County",
+    "display": "Monterey Bay Coastal Trail, Del Monte, Monterey, Monterey County, California, 93940, United States",
+    "lat": 36.60104,
+    "lon": -121.88727,
+    "county": "Monterey"
+  },
+  "315": {
+    "name": "Doran Beach Road",
+    "county_nominatim": "Sonoma County",
+    "display": "Doran Beach Road, Sonoma County, California, 94923, United States",
+    "lat": 38.3134,
+    "lon": -123.043222,
+    "county": "Sonoma"
+  },
+  "317": {
+    "name": "Marin County",
+    "county_nominatim": "Marin County",
+    "display": "Marin County, California, 94937, United States",
+    "lat": 38.08278,
+    "lon": -122.9327833,
+    "county": "Marin"
+  },
+  "318": {
+    "name": "Half Moon Bay",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Half Moon Bay, San Mateo County, California, 94019, United States",
+    "lat": 37.4823,
+    "lon": -122.453,
+    "county": "San Mateo"
+  },
+  "319": {
+    "name": "South Seacoast",
+    "county_nominatim": "San Diego County",
+    "display": "Cortez Avenue, South Seacoast, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.572665227,
+    "lon": -117.133201012,
+    "county": "San Diego"
+  },
+  "322": {
+    "name": "Seacoast",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Boulevard, Seacoast, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.57875,
+    "lon": -117.133186,
+    "county": "San Diego"
+  },
+  "325": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Boulevard, Coronado, San Diego County, California, 92118, United States",
+    "lat": 32.68184,
+    "lon": -117.18526,
+    "county": "San Diego"
+  },
+  "328": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Sherman Road, Coronado, San Diego County, California, 92135, United States",
+    "lat": 32.685586,
+    "lon": -117.194319,
+    "county": "San Diego"
+  },
+  "330": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "4th Street, Coronado, San Diego County, California, 92118, United States",
+    "lat": 32.69012298,
+    "lon": -117.164403749,
+    "county": "San Diego"
+  },
+  "332": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Bayshore Bikeway, Coronado, San Diego County, California, 92155, United States",
+    "lat": 32.63631,
+    "lon": -117.1411,
+    "county": "San Diego"
+  },
+  "343": {
+    "name": "Little Portugal",
+    "county_nominatim": "San Diego County",
+    "display": "Shelter Island Drive, Little Portugal, San Diego, San Diego County, California, 92147, United States",
+    "lat": 32.714767645,
+    "lon": -117.224159725,
+    "county": "San Diego"
+  },
+  "351": {
+    "name": "Mission Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Front Walk, Mission Beach, San Diego, San Diego County, California, 92109, United States",
+    "lat": 32.7945,
+    "lon": -117.2562,
+    "county": "San Diego"
+  },
+  "355": {
+    "name": "Beach Barber Tract",
+    "county_nominatim": "San Diego County",
+    "display": "Neptune Place, Beach Barber Tract, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.8263,
+    "lon": -117.2795,
+    "county": "San Diego"
+  },
+  "357": {
+    "name": "Beach Barber Tract",
+    "county_nominatim": "San Diego County",
+    "display": "Neptune Place, Beach Barber Tract, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.8294,
+    "lon": -117.2805,
+    "county": "San Diego"
+  },
+  "358": {
+    "name": "Beach Barber Tract",
+    "county_nominatim": "San Diego County",
+    "display": "Fern Glen, Beach Barber Tract, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.8341,
+    "lon": -117.2815,
+    "county": "San Diego"
+  },
+  "360": {
+    "name": "La Jolla",
+    "county_nominatim": "San Diego County",
+    "display": "Coast Boulevard, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.839387,
+    "lon": -117.281998,
+    "county": "San Diego"
+  },
+  "362": {
+    "name": "Village of La Jolla",
+    "county_nominatim": "San Diego County",
+    "display": "Coast Boulevard, Village of La Jolla, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.8467,
+    "lon": -117.278863,
+    "county": "San Diego"
+  },
+  "365": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Vallecitos, La Jolla Shores, San Diego, San Diego County, California, 02037, United States",
+    "lat": 32.8556,
+    "lon": -117.2581,
+    "county": "San Diego"
+  },
+  "366": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "La Vereda Drive, La Jolla Shores, San Diego, San Diego County, California, 02037, United States",
+    "lat": 32.859,
+    "lon": -117.256,
+    "county": "San Diego"
+  },
+  "367": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "El Paseo Grande, La Jolla Shores, San Diego, San Diego County, California, 02037, United States",
+    "lat": 32.863,
+    "lon": -117.2547,
+    "county": "San Diego"
+  },
+  "373": {
+    "name": "Del Mar",
+    "county_nominatim": "San Diego County",
+    "display": "Coast Boulevard, Del Mar, San Diego County, California, 92014, United States",
+    "lat": 32.96,
+    "lon": -117.268555777,
+    "county": "San Diego"
+  },
+  "375": {
+    "name": "Del Mar",
+    "county_nominatim": "San Diego County",
+    "display": "Sandy Lane, Del Mar, San Diego County, California, 92075, United States",
+    "lat": 32.9753,
+    "lon": -117.270605452,
+    "county": "San Diego"
+  },
+  "377": {
+    "name": "Cardiff-by-the-Sea",
+    "county_nominatim": "San Diego County",
+    "display": "South Coast Highway, Cardiff-by-the-Sea, Encinitas, San Diego County, California, 92007, United States",
+    "lat": 33.0283,
+    "lon": -117.2889,
+    "county": "San Diego"
+  },
+  "380": {
+    "name": "Encinitas",
+    "county_nominatim": "San Diego County",
+    "display": "1st Street, Encinitas, San Diego County, California, 92924, United States",
+    "lat": 33.0344,
+    "lon": -117.2931,
+    "county": "San Diego"
+  },
+  "381": {
+    "name": "Encinitas",
+    "county_nominatim": "San Diego County",
+    "display": "5th Street, Encinitas, San Diego County, California, 92924, United States",
+    "lat": 33.0481,
+    "lon": -117.2989,
+    "county": "San Diego"
+  },
+  "384": {
+    "name": "Ponto",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Ponto, Carlsbad, San Diego County, California, 92011, United States",
+    "lat": 33.0866,
+    "lon": -117.313433196,
+    "county": "San Diego"
+  },
+  "388": {
+    "name": "Carlsbad",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Carlsbad, San Diego County, California, 92008, United States",
+    "lat": 33.1454,
+    "lon": -117.3451,
+    "county": "San Diego"
+  },
+  "394": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "Saint Malo Beach, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.1644,
+    "lon": -117.3591,
+    "county": "San Diego"
+  },
+  "398": {
+    "name": "San Onofre",
+    "county_nominatim": "San Diego County",
+    "display": "California Coastal Trail, San Onofre, San Diego County, California, United States",
+    "lat": 33.3805,
+    "lon": -117.5785,
+    "county": "San Diego"
+  },
+  "399": {
+    "name": "Pange",
+    "county_nominatim": "San Diego County",
+    "display": "California Coastal Trail, Pange, San Clemente, San Diego County, California, 92763, United States",
+    "lat": 33.3855,
+    "lon": -117.5952,
+    "county": "San Diego"
+  },
+  "400": {
+    "name": "Ponto",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Ponto, Carlsbad, San Diego County, California, 92011, United States",
+    "lat": 33.10061,
+    "lon": -117.3194,
+    "county": "San Diego"
+  },
+  "401": {
+    "name": "Ponto",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Ponto, Carlsbad, San Diego County, California, 92011, United States",
+    "lat": 33.106306,
+    "lon": -117.321583,
+    "county": "San Diego"
+  },
+  "402": {
+    "name": "Carlsbad",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Carlsbad, San Diego County, California, 92011, United States",
+    "lat": 33.11572,
+    "lon": -117.3255,
+    "county": "San Diego"
+  },
+  "403": {
+    "name": "Carlsbad",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Carlsbad, San Diego County, California, 92011, United States",
+    "lat": 33.119222,
+    "lon": -117.327111,
+    "county": "San Diego"
+  },
+  "404": {
+    "name": "Farr",
+    "county_nominatim": "San Diego County",
+    "display": "Carlsbad Boulevard, Farr, Carlsbad, San Diego County, California, 92008, United States",
+    "lat": 33.1285,
+    "lon": -117.333806,
+    "county": "San Diego"
+  },
+  "408": {
+    "name": "Seal Cove",
+    "county_nominatim": "San Mateo County",
+    "display": "Bluff Trail, Seal Cove, San Mateo County, California, 94038, United States",
+    "lat": 37.5242,
+    "lon": -122.5177731,
+    "county": "San Mateo"
+  },
+  "409": {
+    "name": "Ocean Beach",
+    "county_nominatim": "San Diego County",
+    "display": "San Diego River Bikeway, Ocean Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.7561,
+    "lon": -117.253576204,
+    "county": "San Diego"
+  },
+  "411": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Chelsea Street, Bird Rock, San Diego, San Diego County, California, 92109, United States",
+    "lat": 32.805,
+    "lon": -117.2628,
+    "county": "San Diego"
+  },
+  "413": {
+    "name": "Beach Barber Tract",
+    "county_nominatim": "San Diego County",
+    "display": "Neptune Place, Beach Barber Tract, La Jolla, San Diego, San Diego County, California, 92037, United States",
+    "lat": 32.8299,
+    "lon": -117.2807,
+    "county": "San Diego"
+  },
+  "415": {
+    "name": "Village of La Jolla",
+    "county_nominatim": "San Diego County",
+    "display": "Village of La Jolla, La Jolla, San Diego, San Diego County, California, 02037, United States",
+    "lat": 32.85045,
+    "lon": -117.2727,
+    "county": "San Diego"
+  },
+  "416": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "La Vereda Drive, La Jolla Shores, San Diego, San Diego County, California, 02037, United States",
+    "lat": 32.8548,
+    "lon": -117.2598,
+    "county": "San Diego"
+  },
+  "418": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "North Torrey Pines Road, San Diego, San Diego County, California, 92014, United States",
+    "lat": 32.9345,
+    "lon": -117.261955166,
+    "county": "San Diego"
+  },
+  "419": {
+    "name": "Half Moon Bay",
+    "county_nominatim": "San Mateo County",
+    "display": "Coastal Trail, Half Moon Bay, San Mateo County, California, 94019, United States",
+    "lat": 37.46721,
+    "lon": -122.446792,
+    "county": "San Mateo"
+  },
+  "422": {
+    "name": "Cabrillo Highway",
+    "county_nominatim": "San Mateo County",
+    "display": "Cabrillo Highway, San Mateo County, California, United States",
+    "lat": 37.16531,
+    "lon": -122.3630524,
+    "county": "San Mateo"
+  },
+  "424": {
+    "name": "Jenner",
+    "county_nominatim": "Sonoma County",
+    "display": "State Park Road, Jenner, Sonoma County, California, United States",
+    "lat": 38.44084,
+    "lon": -123.125277,
+    "county": "Sonoma"
+  },
+  "427": {
+    "name": "Gualala",
+    "county_nominatim": "Mendocino County",
+    "display": "Gualala Bluff Trail, Gualala, Mendocino County, California, 95445, United States",
+    "lat": 38.76225,
+    "lon": -123.5312859,
+    "county": "Sonoma"
+  },
+  "435": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Shoshonean Road, Port of Los Angeles, San Pedro Arts and Cultural District, Los Angeles, Los Angeles County, California, 90734, United States",
+    "lat": 33.71333,
+    "lon": -118.283,
+    "county": "Los Angeles"
+  },
+  "436": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Port of Los Angeles, San Pedro Arts and Cultural District, Los Angeles, Los Angeles County, California, 90733, United States",
+    "lat": 33.71138,
+    "lon": -118.2831,
+    "county": "Los Angeles"
+  },
+  "437": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.0351,
+    "lon": -118.67853,
+    "county": "Los Angeles"
+  },
+  "439": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Marvin Braude Bike Trail, Los Angeles, Los Angeles County, California, 90296, United States",
+    "lat": 33.95702,
+    "lon": -118.45196,
+    "county": "Los Angeles"
+  },
+  "440": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, Los Angeles, Los Angeles County, California, 90245, United States",
+    "lat": 33.93071,
+    "lon": -118.43711,
+    "county": "Los Angeles"
+  },
+  "447": {
+    "name": "Topanga Beach Drive",
+    "county_nominatim": "Los Angeles County",
+    "display": "Topanga Beach Drive, Los Angeles County, California, United States",
+    "lat": 34.0385,
+    "lon": -118.58196,
+    "county": "Los Angeles"
+  },
+  "448": {
+    "name": "Pacific Palisades",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Pacific Palisades, Los Angeles, Los Angeles County, California, 90272, United States",
+    "lat": 34.03744,
+    "lon": -118.54191,
+    "county": "Los Angeles"
+  },
+  "449": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Marvin's Beach Bike Path, Los Angeles, Los Angeles County, California, 90402, United States",
+    "lat": 34.02645,
+    "lon": -118.51955,
+    "county": "Los Angeles"
+  },
+  "450": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Santa Monica Pier Trail Underpass, Downtown Santa Monica, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.00806,
+    "lon": -118.49657,
+    "county": "Los Angeles"
+  },
+  "451": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Bay Street Path, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.00497,
+    "lon": -118.49296,
+    "county": "Los Angeles"
+  },
+  "452": {
+    "name": "Ocean Park",
+    "county_nominatim": "Los Angeles County",
+    "display": "1800, Ocean Park, Santa Monica, Los Angeles County, California, 90291, United States",
+    "lat": 33.99662,
+    "lon": -118.48488,
+    "county": "Los Angeles"
+  },
+  "453": {
+    "name": "Venice Canal Historic District",
+    "county_nominatim": "Los Angeles County",
+    "display": "Venice Beach Bike Path, Venice Canal Historic District, Venice, Los Angeles, Los Angeles County, California, 90292, United States",
+    "lat": 33.98625,
+    "lon": -118.47635,
+    "county": "Los Angeles"
+  },
+  "454": {
+    "name": "William Burke Marina Walk Promenade",
+    "county_nominatim": "Los Angeles County",
+    "display": "William Burke Marina Walk Promenade, Marina del Rey, Los Angeles County, California, 90292, United States",
+    "lat": 33.98084,
+    "lon": -118.45802,
+    "county": "Los Angeles"
+  },
+  "455": {
+    "name": "Imperial Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Coastal Trail South, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.53595,
+    "lon": -117.1243,
+    "county": "San Diego"
+  },
+  "456": {
+    "name": "Imperial Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Coastal Trail North, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.543409572,
+    "lon": -117.125227806,
+    "county": "San Diego"
+  },
+  "457": {
+    "name": "Imperial Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Seacoast Trail, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.555139,
+    "lon": -117.129323,
+    "county": "San Diego"
+  },
+  "458": {
+    "name": "Imperial Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Seacoast Trail, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.562869026,
+    "lon": -117.132590456,
+    "county": "San Diego"
+  },
+  "459": {
+    "name": "South Seacoast",
+    "county_nominatim": "San Diego County",
+    "display": "Seacoast Trail, South Seacoast, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.566577296,
+    "lon": -117.133205028,
+    "county": "San Diego"
+  },
+  "460": {
+    "name": "Seacoast",
+    "county_nominatim": "San Diego County",
+    "display": "Carnation Avenue, Seacoast, Imperial Beach, San Diego County, California, 91932, United States",
+    "lat": 32.585678574,
+    "lon": -117.133049366,
+    "county": "San Diego"
+  },
+  "461": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Silver Strand Boulevard, Coronado, San Diego County, California, 92155, United States",
+    "lat": 32.6358,
+    "lon": -117.14317,
+    "county": "San Diego"
+  },
+  "462": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Avenida Del Sol, Coronado, San Diego County, California, 92118, United States",
+    "lat": 32.6775,
+    "lon": -117.17727,
+    "county": "San Diego"
+  },
+  "469": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Royal Palms Drive, Los Angeles, Los Angeles County, California, 90732, United States",
+    "lat": 33.71773,
+    "lon": -118.32182,
+    "county": "Los Angeles"
+  },
+  "471": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Oliver Vickery Circle Way, Port of Los Angeles, San Pedro Arts and Cultural District, Los Angeles, Los Angeles County, California, 90734, United States",
+    "lat": 33.70936,
+    "lon": -118.28302,
+    "county": "Los Angeles"
+  },
+  "475": {
+    "name": "Pacific Grove Acres",
+    "county_nominatim": "Monterey County",
+    "display": "Grand Avenue, Pacific Grove Acres, Pacific Grove, Monterey County, California, 93950, United States",
+    "lat": 36.624,
+    "lon": -121.916,
+    "county": "Monterey"
+  },
+  "494": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Mission Bay Drive, Bay Park, San Diego, San Diego County, California, 92140, United States",
+    "lat": 32.7969,
+    "lon": -117.2119,
+    "county": "San Diego"
+  },
+  "496": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Wildlife Friendly Lane, San Diego, San Diego County, California, 92109, United States",
+    "lat": 32.7949,
+    "lon": -117.2213,
+    "county": "San Diego"
+  },
+  "530": {
+    "name": "Seaside",
+    "county_nominatim": "Monterey County",
+    "display": "Monterey Bay Coastal Trail, Seaside, Monterey County, California, 93955, United States",
+    "lat": 36.61187,
+    "lon": -121.85772,
+    "county": "Monterey"
+  },
+  "532": {
+    "name": "South Cove",
+    "county_nominatim": "Orange County",
+    "display": "Dana Drive, South Cove, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.45841,
+    "lon": -117.69322,
+    "county": "Orange"
+  },
+  "533": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Ensenada Place, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46218,
+    "lon": -117.70406,
+    "county": "Orange"
+  },
+  "534": {
+    "name": "South Cove",
+    "county_nominatim": "Orange County",
+    "display": "Dana Drive, South Cove, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.45695,
+    "lon": -117.6948,
+    "county": "Orange"
+  },
+  "535": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Warner Avenue, Huntington Harbour, Huntington Beach, Orange County, California, 92647, United States",
+    "lat": 33.7121,
+    "lon": -118.05581,
+    "county": "Orange"
+  },
+  "536": {
+    "name": "Surfside",
+    "county_nominatim": "Orange County",
+    "display": "Park Circle Drive, Surfside, Seal Beach, Orange County, California, 90743, United States",
+    "lat": 33.72734,
+    "lon": -118.07557,
+    "county": "Orange"
+  },
+  "537": {
+    "name": "Huntington Harbour",
+    "county_nominatim": "Orange County",
+    "display": "Davenport Drive, Huntington Harbour, Huntington Beach, Orange County, California, 92649, United States",
+    "lat": 33.71686,
+    "lon": -118.05816,
+    "county": "Orange"
+  },
+  "538": {
+    "name": "Sunset Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Sunset Beach, Huntington Beach, Orange County, California, 90742, United States",
+    "lat": 33.72471,
+    "lon": -118.07639,
+    "county": "Orange"
+  },
+  "545": {
+    "name": "Marina",
+    "county_nominatim": "Monterey County",
+    "display": "Reservation Road, Marina, Monterey County, California, United States",
+    "lat": 36.69841,
+    "lon": -121.80962,
+    "county": "Monterey"
+  },
+  "546": {
+    "name": "Jetty Road",
+    "county_nominatim": "Monterey County",
+    "display": "Jetty Road, Monterey County, California, 95039, United States",
+    "lat": 36.80803,
+    "lon": -121.78874,
+    "county": "Monterey"
+  },
+  "556": {
+    "name": "Watsonville",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Pelican Point, Watsonville, Santa Cruz County, California, 95039, United States",
+    "lat": 36.85119,
+    "lon": -121.81022,
+    "county": "Santa Cruz"
+  },
+  "557": {
+    "name": "Port Watsonvile",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Sunset Drive, Port Watsonvile, Watsonville, Santa Cruz County, California, United States",
+    "lat": 36.89547,
+    "lon": -121.83907,
+    "county": "Santa Cruz"
+  },
+  "558": {
+    "name": "La Selva Beach",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Gospodnevich Road, La Selva Beach, Santa Cruz County, California, United States",
+    "lat": 36.93181,
+    "lon": -121.86295,
+    "county": "Santa Cruz"
+  },
+  "559": {
+    "name": "Rio del Mar",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Via Gaviota, Rio del Mar, Santa Cruz County, California, 95003, United States",
+    "lat": 36.95698,
+    "lon": -121.88885,
+    "county": "Santa Cruz"
+  },
+  "560": {
+    "name": "Seacliff",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Las Olas Drive, Seacliff, Santa Cruz County, California, 95003, United States",
+    "lat": 36.96891,
+    "lon": -121.90765,
+    "county": "Santa Cruz"
+  },
+  "561": {
+    "name": "Seacliff",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Las Olas Drive, Seacliff, Santa Cruz County, California, 95003, United States",
+    "lat": 36.97167,
+    "lon": -121.91395,
+    "county": "Santa Cruz"
+  },
+  "562": {
+    "name": "Capitola",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Beach Trail, Capitola, Santa Cruz County, California, 95010, United States",
+    "lat": 36.97814,
+    "lon": -121.93862,
+    "county": "Santa Cruz"
+  },
+  "563": {
+    "name": "Capitola",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Grand Avenue, Capitola, Santa Cruz County, California, 95010, United States",
+    "lat": 36.9717,
+    "lon": -121.94977,
+    "county": "Santa Cruz"
+  },
+  "564": {
+    "name": "Capitola Esplanade",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Monterey Avenue, Capitola Esplanade, Capitola, Santa Cruz County, California, 95010, United States",
+    "lat": 36.97125,
+    "lon": -121.95011,
+    "county": "Santa Cruz"
+  },
+  "565": {
+    "name": "Pleasure Point",
+    "county_nominatim": "Santa Cruz County",
+    "display": "East Cliff Drive Parkway, Pleasure Point, Santa Cruz County, California, 95010, United States",
+    "lat": 36.95564,
+    "lon": -121.9717,
+    "county": "Santa Cruz"
+  },
+  "566": {
+    "name": "Pleasure Point",
+    "county_nominatim": "Santa Cruz County",
+    "display": "East Cliff Drive, Pleasure Point, Santa Cruz County, California, 95010, United States",
+    "lat": 36.95609,
+    "lon": -121.97853,
+    "county": "Santa Cruz"
+  },
+  "567": {
+    "name": "20th Avenue",
+    "county_nominatim": "Santa Cruz County",
+    "display": "20th Avenue, Santa Cruz County, California, 95062, United States",
+    "lat": 36.95968,
+    "lon": -121.98611,
+    "county": "Santa Cruz"
+  },
+  "568": {
+    "name": "Sunny Cove Drive",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Sunny Cove Drive, Santa Cruz County, California, 95062, United States",
+    "lat": 36.96034,
+    "lon": -121.98948,
+    "county": "Santa Cruz"
+  },
+  "569": {
+    "name": "Seabright",
+    "county_nominatim": "Santa Cruz County",
+    "display": "East Cliff Drive, Seabright, Santa Cruz County, California, 95062, United States",
+    "lat": 36.96162,
+    "lon": -121.99801,
+    "county": "Santa Cruz"
+  },
+  "570": {
+    "name": "Seabright",
+    "county_nominatim": "Santa Cruz County",
+    "display": "East Cliff Accent, Seabright, Santa Cruz, Santa Cruz County, California, 95062, United States",
+    "lat": 36.96306,
+    "lon": -122.00858,
+    "county": "Santa Cruz"
+  },
+  "571": {
+    "name": "Seabright",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Boardwalk, Beach & Boardwalk Commercial District, Seabright, Santa Cruz, Santa Cruz County, California, 95062, United States",
+    "lat": 36.96337,
+    "lon": -122.01484,
+    "county": "Santa Cruz"
+  },
+  "572": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Boardwalk, Beach & Boardwalk Commercial District, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.96297,
+    "lon": -122.01974,
+    "county": "Santa Cruz"
+  },
+  "573": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Municipal Wharf, Beach & Boardwalk Commercial District, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.9614,
+    "lon": -122.02386,
+    "county": "Santa Cruz"
+  },
+  "574": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "West Cliff Multipurpose Cycleway, Lighthouse/West Cliff, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.95776,
+    "lon": -122.02566,
+    "county": "Santa Cruz"
+  },
+  "575": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "West Cliff Multipurpose Cycleway, Lighthouse/West Cliff, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.95174,
+    "lon": -122.02849,
+    "county": "Santa Cruz"
+  },
+  "576": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "West Cliff Multipurpose Cycleway, Lighthouse/West Cliff, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.95258,
+    "lon": -122.04134,
+    "county": "Santa Cruz"
+  },
+  "577": {
+    "name": "Santa Cruz",
+    "county_nominatim": "Santa Cruz County",
+    "display": "West Cliff Drive, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.94967,
+    "lon": -122.05785,
+    "county": "Santa Cruz"
+  },
+  "578": {
+    "name": "Davenport",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Cabrillo Highway, Davenport, Santa Cruz County, California, 95017, United States",
+    "lat": 37.00909,
+    "lon": -122.19368,
+    "county": "Santa Cruz"
+  },
+  "579": {
+    "name": "Cabrillo Highway",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Cabrillo Highway, Santa Cruz County, California, 95017, United States",
+    "lat": 37.03921,
+    "lon": -122.2295,
+    "county": "Santa Cruz"
+  },
+  "580": {
+    "name": "Cabrillo Highway",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Cabrillo Highway, Santa Cruz County, California, United States",
+    "lat": 37.09609,
+    "lon": -122.27976,
+    "county": "Santa Cruz"
+  },
+  "581": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "Saint Malo Beach, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.165614,
+    "lon": -117.359991,
+    "county": "San Diego"
+  },
+  "582": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "Cassidy Stairway, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.172928508,
+    "lon": -117.366051164,
+    "county": "San Diego"
+  },
+  "584": {
+    "name": "Escondido Junction",
+    "county_nominatim": "San Diego County",
+    "display": "South Pacific Street, Escondido Junction, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.177814074,
+    "lon": -117.3708564,
+    "county": "San Diego"
+  },
+  "586": {
+    "name": "Escondido Junction",
+    "county_nominatim": "San Diego County",
+    "display": "Forster Street, Escondido Junction, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.182386087,
+    "lon": -117.374571149,
+    "county": "San Diego"
+  },
+  "587": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "The Strand South, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.190325855,
+    "lon": -117.381868469,
+    "county": "San Diego"
+  },
+  "590": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.201559515,
+    "lon": -117.392202744,
+    "county": "San Diego"
+  },
+  "591": {
+    "name": "Oceanside",
+    "county_nominatim": "San Diego County",
+    "display": "South Harbor Drive, Oceanside, San Diego County, California, 92054, United States",
+    "lat": 33.2044,
+    "lon": -117.3941,
+    "county": "San Diego"
+  },
+  "595": {
+    "name": "Seacliff",
+    "county_nominatim": null,
+    "display": "Coastal Trail, Seacliff, Richmond District, San Francisco, California, 94121, United States",
+    "lat": 37.7917,
+    "lon": -122.484926,
+    "county": "San Francisco"
+  },
+  "596": {
+    "name": "Seacliff",
+    "county_nominatim": null,
+    "display": "Coastal Trail, Seacliff, Richmond District, San Francisco, California, 94121, United States",
+    "lat": 37.79258,
+    "lon": -122.48465,
+    "county": "San Francisco"
+  },
+  "597": {
+    "name": "Seacliff",
+    "county_nominatim": null,
+    "display": "Sea Cliff Avenue, Seacliff, Richmond District, San Francisco, California, 94121, United States",
+    "lat": 37.78977,
+    "lon": -122.48741,
+    "county": "San Francisco"
+  },
+  "598": {
+    "name": "Seacliff",
+    "county_nominatim": null,
+    "display": "Sea Cliff Avenue, Seacliff, San Francisco, California, 94121, United States",
+    "lat": 37.78816,
+    "lon": -122.49136,
+    "county": "San Francisco"
+  },
+  "599": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "4, San Francisco, California, 94121, United States",
+    "lat": 37.77492,
+    "lon": -122.51351,
+    "county": "San Francisco"
+  },
+  "600": {
+    "name": "Sunset District",
+    "county_nominatim": null,
+    "display": "Sunset Dunes Trail, Sunset District, San Francisco, California, 94121, United States",
+    "lat": 37.7638,
+    "lon": -122.511,
+    "county": "San Francisco"
+  },
+  "602": {
+    "name": "Sunset District",
+    "county_nominatim": null,
+    "display": "Sunset Dunes, Outer Sunset, Sunset District, San Francisco, California, 94166, United States",
+    "lat": 37.73567,
+    "lon": -122.50769,
+    "county": "San Francisco"
+  },
+  "609": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Barranca Street, Laguna Beach, Orange County, California, 92652, United States",
+    "lat": 33.54658,
+    "lon": -117.80147,
+    "county": "Orange"
+  },
+  "617": {
+    "name": "Surfside",
+    "county_nominatim": "Orange County",
+    "display": "Miller Place, Surfside, Seal Beach, Orange County, California, 90743, United States",
+    "lat": 33.72719,
+    "lon": -118.08357,
+    "county": "Orange"
+  },
+  "619": {
+    "name": "Seal Beach",
+    "county_nominatim": "Orange County",
+    "display": "Seal Beach Municipal Pier, Seal Beach, Orange County, California, 90744, United States",
+    "lat": 33.73877,
+    "lon": -118.10789,
+    "county": "Orange"
+  },
+  "620": {
+    "name": "Seal Beach",
+    "county_nominatim": "Orange County",
+    "display": "14th Street, Seal Beach, Orange County, California, 90740, United States",
+    "lat": 33.73664,
+    "lon": -118.10214,
+    "county": "Orange"
+  },
+  "621": {
+    "name": "Seal Beach",
+    "county_nominatim": "Orange County",
+    "display": "Seal Beach Municipal Pier, Seal Beach, Orange County, California, 90744, United States",
+    "lat": 33.73779,
+    "lon": -118.10628,
+    "county": "Orange"
+  },
+  "624": {
+    "name": "Niguel Shores",
+    "county_nominatim": "Orange County",
+    "display": "Ritz Cove Drive, Niguel Shores, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.47611,
+    "lon": -117.72583,
+    "county": "Orange"
+  },
+  "625": {
+    "name": "Sunset Beach",
+    "county_nominatim": "Orange County",
+    "display": "14th Street, Sunset Beach, Huntington Beach, Orange County, California, 90742, United States",
+    "lat": 33.71643,
+    "lon": -118.07235,
+    "county": "Orange"
+  },
+  "626": {
+    "name": "South San Francisco",
+    "county_nominatim": "San Mateo County",
+    "display": "Oyster Point Boulevard, South San Francisco, San Mateo County, California, 94083, United States",
+    "lat": 37.6639,
+    "lon": -122.383,
+    "county": "San Mateo"
+  },
+  "632": {
+    "name": "Cabrillo Highway South",
+    "county_nominatim": "San Mateo County",
+    "display": "Cabrillo Highway South, San Mateo County, California, 94060, United States",
+    "lat": 37.26696,
+    "lon": -122.4126758,
+    "county": "San Mateo"
+  },
+  "635": {
+    "name": "Princeton-by-the-Sea",
+    "county_nominatim": "San Mateo County",
+    "display": "Princeton-by-the-Sea, San Mateo County, California, 94019, United States",
+    "lat": 37.50207,
+    "lon": -122.492821,
+    "county": "San Mateo"
+  },
+  "636": {
+    "name": "Ross' Cove Trail",
+    "county_nominatim": "San Mateo County",
+    "display": "Ross' Cove Trail, San Mateo County, California, 94038, United States",
+    "lat": 37.50025,
+    "lon": -122.4958231,
+    "county": "San Mateo"
+  },
+  "638": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Coast Guard Access, San Diego, San Diego County, California, United States",
+    "lat": 32.6653,
+    "lon": -117.2432,
+    "county": "San Diego"
+  },
+  "639": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Cabrillo Road, San Diego, San Diego County, California, United States",
+    "lat": 32.680475616,
+    "lon": -117.2488,
+    "county": "San Diego"
+  },
+  "641": {
+    "name": "Azure Vista",
+    "county_nominatim": "San Diego County",
+    "display": "Sunset Cliffs Boulevard, Azure Vista, Point Loma, San Diego, San Diego County, California, 92107, United States",
+    "lat": 32.719325627,
+    "lon": -117.256944364,
+    "county": "San Diego"
+  },
+  "643": {
+    "name": "Ocean Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Narragansett Avenue, Ocean Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.746736106,
+    "lon": -117.254942461,
+    "county": "San Diego"
+  },
+  "644": {
+    "name": "Ocean Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Front Walk, Ocean Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.7491121,
+    "lon": -117.253271417,
+    "county": "San Diego"
+  },
+  "645": {
+    "name": "Ocean Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Front Way, Ocean Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.753911912,
+    "lon": -117.25301431,
+    "county": "San Diego"
+  },
+  "646": {
+    "name": "Mission Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Front Walk, Mission Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.771314863,
+    "lon": -117.253558792,
+    "county": "San Diego"
+  },
+  "648": {
+    "name": "Cabrillo Highway South",
+    "county_nominatim": "San Mateo County",
+    "display": "Cabrillo Highway South, San Mateo County, California, United States",
+    "lat": 37.29971,
+    "lon": -122.4063376,
+    "county": "San Mateo"
+  },
+  "652": {
+    "name": "Rockaway Beach",
+    "county_nominatim": "San Mateo County",
+    "display": "Rockaway Beach, Pacifica, San Mateo County, California, 94044, United States",
+    "lat": 37.612009,
+    "lon": -122.496908,
+    "county": "San Mateo"
+  },
+  "656": {
+    "name": "Miramar",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Miramar, Half Moon Bay, San Mateo County, California, 94018, United States",
+    "lat": 37.48842,
+    "lon": -122.4562204,
+    "county": "San Mateo"
+  },
+  "658": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "38, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46195,
+    "lon": -117.68252,
+    "county": "Orange"
+  },
+  "659": {
+    "name": "Chelsea Pointe",
+    "county_nominatim": "Orange County",
+    "display": "Emergency Access, Chelsea Pointe, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46959,
+    "lon": -117.71826,
+    "county": "Orange"
+  },
+  "660": {
+    "name": "South Cove",
+    "county_nominatim": "Orange County",
+    "display": "Casitas Place, South Cove, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46071,
+    "lon": -117.6965,
+    "county": "Orange"
+  },
+  "661": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51162,
+    "lon": -117.75463,
+    "county": "Orange"
+  },
+  "662": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Wesley Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51326,
+    "lon": -117.75723,
+    "county": "Orange"
+  },
+  "663": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.45096,
+    "lon": -117.6612,
+    "county": "Orange"
+  },
+  "664": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Montage Way, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51418,
+    "lon": -117.76015,
+    "county": "Orange"
+  },
+  "666": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.44762,
+    "lon": -117.65509,
+    "county": "Orange"
+  },
+  "669": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.44125,
+    "lon": -117.64636,
+    "county": "Orange"
+  },
+  "671": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "Avenida Estacion, San Clemente, Orange County, California, 92674, United States",
+    "lat": 33.43065,
+    "lon": -117.63183,
+    "county": "Orange"
+  },
+  "672": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Beach Trail, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.42074,
+    "lon": -117.62134,
+    "county": "Orange"
+  },
+  "673": {
+    "name": "Niguel Shores",
+    "county_nominatim": "Orange County",
+    "display": "Ritz Cove Drive, Niguel Shores, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.47926,
+    "lon": -117.72423,
+    "county": "Orange"
+  },
+  "674": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "San Juan Creek Trail, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46171,
+    "lon": -117.68454,
+    "county": "Orange"
+  },
+  "675": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "California Coastal Trail, San Clemente, Orange County, California, 92763, United States",
+    "lat": 33.40515,
+    "lon": -117.60689,
+    "county": "Orange"
+  },
+  "677": {
+    "name": "Three Arch Bay",
+    "county_nominatim": "Orange County",
+    "display": "Mar Vista Lane, Three Arch Bay, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.48908,
+    "lon": -117.73584,
+    "county": "Orange"
+  },
+  "678": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46039,
+    "lon": -117.67812,
+    "county": "Orange"
+  },
+  "679": {
+    "name": "South Laguna",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, South Laguna, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.49756,
+    "lon": -117.74138,
+    "county": "Orange"
+  },
+  "681": {
+    "name": "South Laguna",
+    "county_nominatim": "Orange County",
+    "display": "Seacliff Drive, South Laguna, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50051,
+    "lon": -117.74504,
+    "county": "Orange"
+  },
+  "682": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.457868,
+    "lon": -117.673368,
+    "county": "Orange"
+  },
+  "683": {
+    "name": "South Laguna",
+    "county_nominatim": "Orange County",
+    "display": "Table Rock Drive, South Laguna, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50339,
+    "lon": -117.74719,
+    "county": "Orange"
+  },
+  "684": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Dana Point Harbor Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46044,
+    "lon": -117.70739,
+    "county": "Orange"
+  },
+  "685": {
+    "name": "South Laguna",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, South Laguna, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50499,
+    "lon": -117.74845,
+    "county": "Orange"
+  },
+  "687": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Camel Point Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50755,
+    "lon": -117.75087,
+    "county": "Orange"
+  },
+  "689": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50962,
+    "lon": -117.75237,
+    "county": "Orange"
+  },
+  "690": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.4545,
+    "lon": -117.66827,
+    "county": "Orange"
+  },
+  "691": {
+    "name": "Salmon Creek",
+    "county_nominatim": "Sonoma County",
+    "display": "Coast Highway, Salmon Creek, Carmet, Sonoma County, California, United States",
+    "lat": 38.35631,
+    "lon": -123.0685373,
+    "county": "Sonoma"
+  },
+  "693": {
+    "name": "Cabrillo Highway South",
+    "county_nominatim": "San Mateo County",
+    "display": "Cabrillo Highway South, San Mateo County, California, United States",
+    "lat": 37.32243,
+    "lon": -122.4040378,
+    "county": "San Mateo"
+  },
+  "699": {
+    "name": "Ocean View Plaza",
+    "county_nominatim": "Monterey County",
+    "display": "Cannery Row, Ocean View Plaza, New Monterey, Monterey, Monterey County, California, 93944, United States",
+    "lat": 36.60963,
+    "lon": -121.89537,
+    "county": "Monterey"
+  },
+  "702": {
+    "name": "Pacific Grove Acres",
+    "county_nominatim": "Monterey County",
+    "display": "Monarch Lane, Pacific Grove Acres, Pacific Grove, Monterey County, California, 93950, United States",
+    "lat": 36.63,
+    "lon": -121.93,
+    "county": "Monterey"
+  },
+  "703": {
+    "name": "Cedros Ave Design District",
+    "county_nominatim": "San Diego County",
+    "display": "Pacific Avenue, Cedros Ave Design District, Solana Beach, San Diego County, California, 92075, United States",
+    "lat": 32.991319,
+    "lon": -117.274819,
+    "county": "San Diego"
+  },
+  "704": {
+    "name": "Cedros Ave Design District",
+    "county_nominatim": "San Diego County",
+    "display": "Pacific Avenue, Cedros Ave Design District, Solana Beach, San Diego County, California, 92075, United States",
+    "lat": 32.996569,
+    "lon": -117.276194,
+    "county": "San Diego"
+  },
+  "705": {
+    "name": "Cedros Ave Design District",
+    "county_nominatim": "San Diego County",
+    "display": "West Circle Drive, Cedros Ave Design District, Solana Beach, San Diego County, California, 92075, United States",
+    "lat": 33.001319,
+    "lon": -117.278388,
+    "county": "San Diego"
+  },
+  "706": {
+    "name": "Cardiff-by-the-Sea",
+    "county_nominatim": "San Diego County",
+    "display": "South Coast Highway 101, Cardiff-by-the-Sea, Encinitas, San Diego County, California, 92007, United States",
+    "lat": 33.005833,
+    "lon": -117.278472,
+    "county": "San Diego"
+  },
+  "707": {
+    "name": "Cardiff-by-the-Sea",
+    "county_nominatim": "San Diego County",
+    "display": "South Coast Highway 101, Cardiff-by-the-Sea, Encinitas, San Diego County, California, 92007, United States",
+    "lat": 33.0118911,
+    "lon": -117.2803,
+    "county": "San Diego"
+  },
+  "708": {
+    "name": "Cardiff-by-the-Sea",
+    "county_nominatim": "San Diego County",
+    "display": "South Coast Highway 101, Cardiff-by-the-Sea, Encinitas, San Diego County, California, 92007, United States",
+    "lat": 33.0157,
+    "lon": -117.281912465,
+    "county": "San Diego"
+  },
+  "709": {
+    "name": "Cardiff-by-the-Sea",
+    "county_nominatim": "San Diego County",
+    "display": "Campsite Driveway, Cardiff-by-the-Sea, Encinitas, San Diego County, California, 92007, United States",
+    "lat": 33.019055,
+    "lon": -117.2842,
+    "county": "San Diego"
+  },
+  "710": {
+    "name": "Sunset Palisades",
+    "county_nominatim": "San Luis Obispo County",
+    "display": "PEYTON COURT, Sunset Palisades, Pismo Beach, San Luis Obispo County, California, 93424, United States",
+    "lat": 35.16669,
+    "lon": -120.6936686,
+    "county": "San Luis Obispo"
+  },
+  "711": {
+    "name": "Fairway Park",
+    "county_nominatim": "San Mateo County",
+    "display": "Promenade, Fairway Park, Pacifica, San Mateo County, California, 94044, United States",
+    "lat": 37.62994,
+    "lon": -122.4946839,
+    "county": "San Mateo"
+  },
+  "713": {
+    "name": "Seahaven",
+    "county_nominatim": "Marin County",
+    "display": "Johnstone Trail, Seahaven, Marin County, California, 94940, United States",
+    "lat": 38.1166,
+    "lon": -122.873228,
+    "county": "Marin"
+  },
+  "716": {
+    "name": "Spanish Bay Road",
+    "county_nominatim": "Monterey County",
+    "display": "Spanish Bay Road, Monterey County, California, 93953, United States",
+    "lat": 36.6104,
+    "lon": -121.94788,
+    "county": "Monterey"
+  },
+  "718": {
+    "name": "Sand City",
+    "county_nominatim": "Monterey County",
+    "display": "Bay Avenue, Sand City, Monterey County, California, 93955, United States",
+    "lat": 36.61535,
+    "lon": -121.85452,
+    "county": "Monterey"
+  },
+  "719": {
+    "name": "Pebble Beach",
+    "county_nominatim": "Monterey County",
+    "display": "Whitman Place, Pebble Beach, Monterey County, California, 92921, United States",
+    "lat": 36.56601,
+    "lon": -121.94146,
+    "county": "Monterey"
+  },
+  "720": {
+    "name": "Stewarts Point",
+    "county_nominatim": "Sonoma County",
+    "display": "Coast Highway, Stewarts Point, Sonoma County, California, United States",
+    "lat": 38.54697,
+    "lon": -123.2976107,
+    "county": "Sonoma"
+  },
+  "725": {
+    "name": "Half Moon Bay",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Half Moon Bay, San Mateo County, California, 94018, United States",
+    "lat": 37.499732,
+    "lon": -122.468894,
+    "county": "San Mateo"
+  },
+  "731": {
+    "name": "Half Moon Bay",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Half Moon Bay, San Mateo County, California, 94019, United States",
+    "lat": 37.4804,
+    "lon": -122.4518156,
+    "county": "San Mateo"
+  },
+  "733": {
+    "name": "Carmel Point",
+    "county_nominatim": "Monterey County",
+    "display": "Scenic Road, Carmel Point, Monterey County, California, 93922, United States",
+    "lat": 36.53965,
+    "lon": -121.93095,
+    "county": "Monterey"
+  },
+  "737": {
+    "name": "Montecito",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Bonnymede Drive, Montecito, Santa Barbara County, California, 93108, United States",
+    "lat": 34.416815,
+    "lon": -119.63439,
+    "county": "Santa Barbara"
+  },
+  "738": {
+    "name": "Santa Barbara",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Shoreline Drive, Santa Barbara, Santa Barbara County, California, 93102, United States",
+    "lat": 34.402075,
+    "lon": -119.697167,
+    "county": "Santa Barbara"
+  },
+  "739": {
+    "name": "Pond Trail",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Pond Trail, Santa Barbara County, California, 93199, United States",
+    "lat": 34.409695,
+    "lon": -119.881828,
+    "county": "Santa Barbara"
+  },
+  "740": {
+    "name": "El Capitan State Beach Road",
+    "county_nominatim": "Santa Barbara County",
+    "display": "El Capitan State Beach Road, Santa Barbara County, California, United States",
+    "lat": 34.457864,
+    "lon": -120.022201,
+    "county": "Santa Barbara"
+  },
+  "741": {
+    "name": "West Main Street",
+    "county_nominatim": "Santa Barbara County",
+    "display": "West Main Street, Santa Barbara County, California, United States",
+    "lat": 34.972529,
+    "lon": -120.649369,
+    "county": "Santa Barbara"
+  },
+  "742": {
+    "name": "Montecito",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Channel Drive Bikeway, Montecito, Santa Barbara County, California, 93108, United States",
+    "lat": 34.417426,
+    "lon": -119.647827,
+    "county": "Santa Barbara"
+  },
+  "743": {
+    "name": "Isla Vista",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Isla Vista, Santa Barbara County, California, 93107, United States",
+    "lat": 34.416985,
+    "lon": -119.825805,
+    "county": "Santa Barbara"
+  },
+  "744": {
+    "name": "Hope Ranch",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Las Olas Drive, Hope Ranch, Santa Barbara County, California, 93110, United States",
+    "lat": 34.414633,
+    "lon": -119.780135,
+    "county": "Santa Barbara"
+  },
+  "745": {
+    "name": "Hollister Ranch Road",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Hollister Ranch Road, Santa Barbara County, California, United States",
+    "lat": 34.470819,
+    "lon": -120.226901,
+    "county": "Santa Barbara"
+  },
+  "746": {
+    "name": "Jalama",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Jalama Beach Road, Jalama, Santa Barbara County, California, United States",
+    "lat": 34.512227,
+    "lon": -120.503554,
+    "county": "Santa Barbara"
+  },
+  "748": {
+    "name": "Santa Barbara",
+    "county_nominatim": "Santa Barbara County",
+    "display": "East Cabrillo Boulevard, Santa Barbara, Santa Barbara County, California, 93103, United States",
+    "lat": 34.416563,
+    "lon": -119.666755,
+    "county": "Santa Barbara"
+  },
+  "750": {
+    "name": "Waterfront",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Stearns Wharf, Waterfront, Santa Barbara, Santa Barbara County, California, 93102, United States",
+    "lat": 34.412114,
+    "lon": -119.686813,
+    "county": "Santa Barbara"
+  },
+  "753": {
+    "name": "Santa Barbara",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Cliff Drive, Santa Barbara, Santa Barbara County, California, 93109, United States",
+    "lat": 34.402583,
+    "lon": -119.742901,
+    "county": "Santa Barbara"
+  },
+  "754": {
+    "name": "Carpinteria",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Santa Cruz Loop, Carpinteria, Santa Barbara County, California, 93013, United States",
+    "lat": 34.390148,
+    "lon": -119.520418,
+    "county": "Santa Barbara"
+  },
+  "755": {
+    "name": "Aniso Trail",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Aniso Trail, Santa Barbara County, California, United States",
+    "lat": 34.462652,
+    "lon": -120.06988,
+    "county": "Santa Barbara"
+  },
+  "763": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Crystal Cove, Crystal Cove Beach Cottages, Newport Coast, Newport Beach, Orange County, California, 92657, United States",
+    "lat": 33.57416,
+    "lon": -117.84055,
+    "county": "Orange"
+  },
+  "769": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Boardwalk, Laguna Beach, Orange County, California, 92652, United States",
+    "lat": 33.54218,
+    "lon": -117.78527,
+    "county": "Orange"
+  },
+  "770": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Boardwalk, Laguna Beach, Orange County, California, 92652, United States",
+    "lat": 33.54218,
+    "lon": -117.78527,
+    "county": "Orange"
+  },
+  "771": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Corona del Mar, Newport Beach, Orange County, California, 92625, United States",
+    "lat": 33.58982,
+    "lon": -117.86869,
+    "county": "Orange"
+  },
+  "772": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Corona del Mar, Newport Beach, Orange County, California, 92625, United States",
+    "lat": 33.59,
+    "lon": -117.86833,
+    "county": "Orange"
+  },
+  "773": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Newport Coast, Newport Beach, Orange County, California, 92667, United States",
+    "lat": 33.56396,
+    "lon": -117.82836,
+    "county": "Orange"
+  },
+  "774": {
+    "name": "Pelican Point",
+    "county_nominatim": "Orange County",
+    "display": "Pelican Point Drive, Pelican Point, Newport Coast, Newport Beach, Orange County, California, 92657, United States",
+    "lat": 33.582294,
+    "lon": -117.857175,
+    "county": "Orange"
+  },
+  "775": {
+    "name": "Pelican Point",
+    "county_nominatim": "Orange County",
+    "display": "Pelican Point Drive, Pelican Point, Newport Coast, Newport Beach, Orange County, California, 92657, United States",
+    "lat": 33.58221,
+    "lon": -117.85694,
+    "county": "Orange"
+  },
+  "776": {
+    "name": "Newport Beach",
+    "county_nominatim": "Orange County",
+    "display": "Crystal Cove Access, Crystal Cove Beach Cottages, Newport Coast, Newport Beach, Orange County, California, 92657, United States",
+    "lat": 33.57601,
+    "lon": -117.84062,
+    "county": "Orange"
+  },
+  "779": {
+    "name": "Mission Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Hummingbird Lane, Mission Beach, San Diego, San Diego County, California, 92109, United States",
+    "lat": 32.77605,
+    "lon": -117.2382,
+    "county": "San Diego"
+  },
+  "781": {
+    "name": "Ortega",
+    "county_nominatim": "Santa Barbara County",
+    "display": "Finney Street, Ortega, Summerland, Santa Barbara County, California, 93067, United States",
+    "lat": 34.418315,
+    "lon": -119.594992,
+    "county": "Santa Barbara"
+  },
+  "782": {
+    "name": "Pacifica",
+    "county_nominatim": "San Mateo County",
+    "display": "Halling Way, Pedro Point, Pacifica, San Mateo County, California, 94044, United States",
+    "lat": 37.596579,
+    "lon": -122.505776,
+    "county": "San Mateo"
+  },
+  "784": {
+    "name": "San Mateo",
+    "county_nominatim": "San Mateo County",
+    "display": "Marina Court, San Mateo, San Mateo County, California, 94403, United States",
+    "lat": 37.54965,
+    "lon": -122.28582,
+    "county": "San Mateo"
+  },
+  "785": {
+    "name": "Foster City",
+    "county_nominatim": "San Mateo County",
+    "display": "Foster City Levee, Foster City, San Mateo County, California, 94405, United States",
+    "lat": 37.5717,
+    "lon": -122.279,
+    "county": "San Mateo"
+  },
+  "791": {
+    "name": "San Francisco",
+    "county_nominatim": null,
+    "display": "Golden Gate Promenade, San Francisco, California, 94129, United States",
+    "lat": 37.8069,
+    "lon": -122.4683,
+    "county": "San Francisco"
+  },
+  "793": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.03312,
+    "lon": -118.73374,
+    "county": "Los Angeles"
+  },
+  "794": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Latigo Shore Drive, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.02896,
+    "lon": -118.75322221,
+    "county": "Los Angeles"
+  },
+  "795": {
+    "name": "Malibu Riviera",
+    "county_nominatim": "Los Angeles County",
+    "display": "Westward Beach Road, Malibu Riviera, Malibu, Los Angeles County, California, United States",
+    "lat": 34.01317,
+    "lon": -118.82099,
+    "county": "Los Angeles"
+  },
+  "796": {
+    "name": "Trancas",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Trancas, Malibu, Los Angeles County, California, United States",
+    "lat": 34.02859,
+    "lon": -118.84194,
+    "county": "Los Angeles"
+  },
+  "797": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Nicholas Beach Road, Malibu, Los Angeles County, California, United States",
+    "lat": 34.04234,
+    "lon": -118.91619,
+    "county": "Los Angeles"
+  },
+  "798": {
+    "name": "Unincorporated Santa Monica Mountains",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Beach Access Trail, Unincorporated Santa Monica Mountains, Los Angeles County, California, United States",
+    "lat": 34.04477,
+    "lon": -118.93326,
+    "county": "Los Angeles"
+  },
+  "799": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Los Angeles, Los Angeles County, California, 90272, United States",
+    "lat": 34.03846,
+    "lon": -118.54452,
+    "county": "Los Angeles"
+  },
+  "800": {
+    "name": "Pacific Palisades",
+    "county_nominatim": "Los Angeles County",
+    "display": "Marvin's Beach Bike Path, Pacific Palisades, Los Angeles, Los Angeles County, California, 90402, United States",
+    "lat": 34.0343,
+    "lon": -118.53569,
+    "county": "Los Angeles"
+  },
+  "801": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Santa Monica Beach Path, Downtown Santa Monica, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.01931,
+    "lon": -118.51008,
+    "county": "Los Angeles"
+  },
+  "802": {
+    "name": "Santa Monica",
+    "county_nominatim": "Los Angeles County",
+    "display": "Santa Monica Beach Path, Downtown Santa Monica, Santa Monica, Los Angeles County, California, 90401, United States",
+    "lat": 34.0144,
+    "lon": -118.5039,
+    "county": "Los Angeles"
+  },
+  "803": {
+    "name": "Venice Canal Historic District",
+    "county_nominatim": "Los Angeles County",
+    "display": "Venice Beach Bike Path, Venice Canal Historic District, Venice, Los Angeles, Los Angeles County, California, 90292, United States",
+    "lat": 33.98857,
+    "lon": -118.47822,
+    "county": "Los Angeles"
+  },
+  "804": {
+    "name": "El Segundo",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, El Segundo, Los Angeles County, California, 90245, United States",
+    "lat": 33.91534,
+    "lon": -118.42954,
+    "county": "Los Angeles"
+  },
+  "805": {
+    "name": "Manhattan Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Manhattan Beach, Los Angeles County, California, 90266, United States",
+    "lat": 33.89401,
+    "lon": -118.41849,
+    "county": "Los Angeles"
+  },
+  "806": {
+    "name": "Redondo Beach",
+    "county_nominatim": "Los Angeles County",
+    "display": "Hopkins Way, Redondo Beach, Los Angeles County, California, 90277, United States",
+    "lat": 33.85232,
+    "lon": -118.39977,
+    "county": "Los Angeles"
+  },
+  "812": {
+    "name": "Princeton-by-the-Sea",
+    "county_nominatim": "San Mateo County",
+    "display": "Capistrano Road, Princeton-by-the-Sea, El Granada, San Mateo County, California, 94018, United States",
+    "lat": 37.5037,
+    "lon": -122.4857,
+    "county": "San Mateo"
+  },
+  "813": {
+    "name": "Half Moon Bay",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Half Moon Bay, San Mateo County, California, 94018, United States",
+    "lat": 37.5023,
+    "lon": -122.4764,
+    "county": "San Mateo"
+  },
+  "820": {
+    "name": "Solromar",
+    "county_nominatim": "Ventura County",
+    "display": "Pacific Coast Highway, Solromar, Old Malibu, Ventura County, California, United States",
+    "lat": 34.051551,
+    "lon": -118.959972,
+    "county": "Ventura"
+  },
+  "821": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51045,
+    "lon": -117.75281,
+    "county": "Orange"
+  },
+  "822": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51045,
+    "lon": -117.75281,
+    "county": "Orange"
+  },
+  "823": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51051,
+    "lon": -117.75286,
+    "county": "Orange"
+  },
+  "824": {
+    "name": "Huntington Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Huntington Beach, Orange County, California, 92648, United States",
+    "lat": 33.6832,
+    "lon": -118.035,
+    "county": "Orange"
+  },
+  "826": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Bluebird Canyon Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.52965,
+    "lon": -117.77347,
+    "county": "Orange"
+  },
+  "827": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Bluebird Canyon Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.52965,
+    "lon": -117.77347,
+    "county": "Orange"
+  },
+  "828": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Bluebird Canyon Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.52963,
+    "lon": -117.77359,
+    "county": "Orange"
+  },
+  "831": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Blue Lagoon, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51689,
+    "lon": -117.76118,
+    "county": "Orange"
+  },
+  "834": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Ocean Front, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.53697,
+    "lon": -117.78061,
+    "county": "Orange"
+  },
+  "837": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.45311,
+    "lon": -117.66536,
+    "county": "Orange"
+  },
+  "840": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.45403,
+    "lon": -117.66666,
+    "county": "Orange"
+  },
+  "843": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Capistrano Beach Path, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.45619,
+    "lon": -117.67056,
+    "county": "Orange"
+  },
+  "846": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.4603,
+    "lon": -117.67764,
+    "county": "Orange"
+  },
+  "847": {
+    "name": "South Cove",
+    "county_nominatim": "Orange County",
+    "display": "Puerto Place, South Cove, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.46139,
+    "lon": -117.68928,
+    "county": "Orange"
+  },
+  "850": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Dumond Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.51919,
+    "lon": -117.76302,
+    "county": "Orange"
+  },
+  "853": {
+    "name": "Pacific Coast Highway",
+    "county_nominatim": "Orange County",
+    "display": "Pacific Coast Highway, Orange County, California, 92667, United States",
+    "lat": 33.56023,
+    "lon": -117.82205,
+    "county": "Orange"
+  },
+  "854": {
+    "name": "Emerald Bay",
+    "county_nominatim": "Orange County",
+    "display": "Valley Inn Drive, Emerald Bay, Orange County, California, 92652, United States",
+    "lat": 33.55099,
+    "lon": -117.80801,
+    "county": "Orange"
+  },
+  "857": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Cliff Drive, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.54475,
+    "lon": -117.79458,
+    "county": "Orange"
+  },
+  "863": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Beach Trail, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.42261,
+    "lon": -117.62372,
+    "county": "Orange"
+  },
+  "864": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Boardwalk, Laguna Beach, Orange County, California, 92652, United States",
+    "lat": 33.54191,
+    "lon": -117.78547,
+    "county": "Orange"
+  },
+  "867": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "Mariposa, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.4241,
+    "lon": -117.62558,
+    "county": "Orange"
+  },
+  "871": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Ocean Way, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.52809,
+    "lon": -117.77275,
+    "county": "Orange"
+  },
+  "874": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Pier, San Clemente, Orange County, California, 92763, United States",
+    "lat": 33.4193,
+    "lon": -117.62059,
+    "county": "Orange"
+  },
+  "875": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.44103,
+    "lon": -117.6452,
+    "county": "Orange"
+  },
+  "876": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.44103,
+    "lon": -117.6452,
+    "county": "Orange"
+  },
+  "877": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "Beach Road, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.44059,
+    "lon": -117.64559,
+    "county": "Orange"
+  },
+  "881": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "Riviera, San Clemente, Orange County, California, 92763, United States",
+    "lat": 33.40814,
+    "lon": -117.60979,
+    "county": "Orange"
+  },
+  "888": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Monarch Bay Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.4818,
+    "lon": -117.725,
+    "county": "Orange"
+  },
+  "890": {
+    "name": "Dana Point",
+    "county_nominatim": "Orange County",
+    "display": "Monarch Bay Drive, Dana Point, Orange County, California, 92629, United States",
+    "lat": 33.48172,
+    "lon": -117.72595,
+    "county": "Orange"
+  },
+  "891": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "San Juan Creek Trail, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46155,
+    "lon": -117.683931,
+    "county": "Orange"
+  },
+  "892": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "San Juan Creek Trail, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46155,
+    "lon": -117.6842,
+    "county": "Orange"
+  },
+  "893": {
+    "name": "Capistrano Beach",
+    "county_nominatim": "Orange County",
+    "display": "San Juan Creek Trail, Toovunga, Capistrano Beach, Dana Point, Orange County, California, 92624, United States",
+    "lat": 33.46155,
+    "lon": -117.68411,
+    "county": "Orange"
+  },
+  "894": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Beach Trail, San Clemente, Orange County, California, 92763, United States",
+    "lat": 33.41735,
+    "lon": -117.61893,
+    "county": "Orange"
+  },
+  "897": {
+    "name": "Laguna Beach",
+    "county_nominatim": "Orange County",
+    "display": "Boardwalk, Laguna Beach, Orange County, California, 92652, United States",
+    "lat": 33.54087,
+    "lon": -117.78361,
+    "county": "Orange"
+  },
+  "900": {
+    "name": "South Laguna",
+    "county_nominatim": "Orange County",
+    "display": "Bluff Drive, South Laguna, Laguna Beach, Orange County, California, 92651, United States",
+    "lat": 33.50415,
+    "lon": -117.74812,
+    "county": "Orange"
+  },
+  "901": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "Senda de la Playa, Capistrano Shores Mobile Home Park, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.43147,
+    "lon": -117.63287,
+    "county": "Orange"
+  },
+  "903": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "Senda de la Playa, Capistrano Shores Mobile Home Park, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.43147,
+    "lon": -117.63287,
+    "county": "Orange"
+  },
+  "933": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Municipal Wharf, Beach & Boardwalk Commercial District, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.96195,
+    "lon": -122.02317,
+    "county": "Santa Cruz"
+  },
+  "934": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Municipal Wharf, Beach & Boardwalk Commercial District, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.9623,
+    "lon": -122.02355,
+    "county": "Santa Cruz"
+  },
+  "935": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Municipal Wharf, Beach & Boardwalk Commercial District, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.962081,
+    "lon": -122.022131,
+    "county": "Santa Cruz"
+  },
+  "936": {
+    "name": "Downtown",
+    "county_nominatim": "Santa Cruz County",
+    "display": "West Cliff Multipurpose Cycleway, Lighthouse/West Cliff, Downtown, Santa Cruz, Santa Cruz County, California, 95061, United States",
+    "lat": 36.959846,
+    "lon": -122.025329,
+    "county": "Santa Cruz"
+  },
+  "940": {
+    "name": "Bayview District",
+    "county_nominatim": null,
+    "display": "Arthur Avenue, Bayview District, San Francisco, California, 94124, United States",
+    "lat": 37.74703,
+    "lon": -122.38793,
+    "county": "San Francisco"
+  },
+  "941": {
+    "name": "Miramar",
+    "county_nominatim": "San Mateo County",
+    "display": "California Coastal Trail, Miramar, Half Moon Bay, San Mateo County, California, 94018, United States",
+    "lat": 37.489,
+    "lon": -122.4562,
+    "county": "San Mateo"
+  },
+  "944": {
+    "name": "Mission Bay",
+    "county_nominatim": null,
+    "display": "Channel Street, Mission Bay, San Francisco, California, 94158, United States",
+    "lat": 37.7719,
+    "lon": -122.3967,
+    "county": "San Francisco"
+  },
+  "959": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Marvin Braude Bike Trail, Los Angeles, Los Angeles County, California, 90296, United States",
+    "lat": 33.9611547,
+    "lon": -118.4562179,
+    "county": "Los Angeles"
+  },
+  "962": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu Pier, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.0368898,
+    "lon": -118.676899,
+    "county": "Los Angeles"
+  },
+  "963": {
+    "name": "Foster City",
+    "county_nominatim": "San Mateo County",
+    "display": "Niantic Drive, Foster City, San Mateo County, California, 94404, United States",
+    "lat": 37.56337,
+    "lon": -122.26047,
+    "county": "San Mateo"
+  },
+  "974": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Beach Trail, San Clemente, Orange County, California, 92674, United States",
+    "lat": 33.427066,
+    "lon": -117.628383,
+    "county": "Orange"
+  },
+  "975": {
+    "name": "San Clemente",
+    "county_nominatim": "Orange County",
+    "display": "San Clemente Beach Trail, San Clemente, Orange County, California, 92672, United States",
+    "lat": 33.422174,
+    "lon": -117.622351,
+    "county": "Orange"
+  },
+  "977": {
+    "name": "William Burke Marina Walk Promenade",
+    "county_nominatim": "Los Angeles County",
+    "display": "William Burke Marina Walk Promenade, Marina del Rey, Los Angeles County, California, 90292, United States",
+    "lat": 33.979889,
+    "lon": -118.4577173,
+    "county": "Los Angeles"
+  },
+  "978": {
+    "name": "Palawan Way",
+    "county_nominatim": "Los Angeles County",
+    "display": "Palawan Way, Marina del Rey, Los Angeles County, California, 90292, United States",
+    "lat": 33.9819795,
+    "lon": -118.4569488,
+    "county": "Los Angeles"
+  },
+  "979": {
+    "name": "Venice Canal Historic District",
+    "county_nominatim": "Los Angeles County",
+    "display": "Venice Beach Bike Path, Venice Canal Historic District, Venice, Los Angeles, Los Angeles County, California, 90292, United States",
+    "lat": 33.9935842,
+    "lon": -118.4824055,
+    "county": "Los Angeles"
+  },
+  "980": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu Road Beach Access #4, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.0306,
+    "lon": -118.7111,
+    "county": "Los Angeles"
+  },
+  "989": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.0329,
+    "lon": -118.741,
+    "county": "Los Angeles"
+  },
+  "992": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Penelope, Cole and Ava PCH Undercrossing, Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.0253,
+    "lon": -118.7656,
+    "county": "Los Angeles"
+  },
+  "993": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Malibu, Los Angeles County, California, 90263, United States",
+    "lat": 34.0383,
+    "lon": -118.6731,
+    "county": "Los Angeles"
+  },
+  "1003": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "El Matador Beach Access Trail, Malibu, Los Angeles County, California, United States",
+    "lat": 34.0378,
+    "lon": -118.8747,
+    "county": "Los Angeles"
+  },
+  "1004": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.0171,
+    "lon": -118.7897,
+    "county": "Los Angeles"
+  },
+  "1005": {
+    "name": "Las Flores",
+    "county_nominatim": "Los Angeles County",
+    "display": "Pacific Coast Highway, Las Flores, Malibu, Los Angeles County, California, United States",
+    "lat": 34.0362,
+    "lon": -118.6364,
+    "county": "Los Angeles"
+  },
+  "1006": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.0253392,
+    "lon": -118.5977,
+    "county": "Los Angeles"
+  },
+  "1007": {
+    "name": "Malibu",
+    "county_nominatim": "Los Angeles County",
+    "display": "Malibu, Los Angeles County, California, 90265, United States",
+    "lat": 34.02530393,
+    "lon": -118.5962,
+    "county": "Los Angeles"
+  },
+  "1012": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "South Bay Bike Path, Playa del Rey, Los Angeles, Los Angeles County, California, 90245, United States",
+    "lat": 33.9444,
+    "lon": -118.4442,
+    "county": "Los Angeles"
+  },
+  "1013": {
+    "name": "Los Angeles",
+    "county_nominatim": "Los Angeles County",
+    "display": "Inceville, Los Angeles, Los Angeles County, California, United States",
+    "lat": 34.02530412,
+    "lon": -118.566,
+    "county": "Los Angeles"
+  },
+  "1032": {
+    "name": "Foster City",
+    "county_nominatim": "San Mateo County",
+    "display": "Marlin Avenue, Foster City, San Mateo County, California, 94404, United States",
+    "lat": 37.558744,
+    "lon": -122.254003,
+    "county": "San Mateo"
+  },
+  "1033": {
+    "name": "Foster City",
+    "county_nominatim": "San Mateo County",
+    "display": "Widgeon Street, Foster City, San Mateo County, California, 94404, United States",
+    "lat": 37.56658,
+    "lon": -122.26061,
+    "county": "San Mateo"
+  },
+  "1034": {
+    "name": "Beach",
+    "county_nominatim": "Monterey County",
+    "display": "Pajaro Valley Consolidated Railroad, Beach, Monterey County, California, 95039, United States",
+    "lat": 36.842,
+    "lon": -121.807,
+    "county": "Monterey"
+  },
+  "1036": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Silver Strand Boulevard, Coronado, San Diego County, California, 92155, United States",
+    "lat": 32.631769,
+    "lon": -117.141885,
+    "county": "San Diego"
+  },
+  "1037": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Silver Strand Boulevard, Coronado, San Diego County, California, United States",
+    "lat": 32.626401,
+    "lon": -117.139424,
+    "county": "San Diego"
+  },
+  "1038": {
+    "name": "Coronado",
+    "county_nominatim": "San Diego County",
+    "display": "Coronado, San Diego County, California, 92118, United States",
+    "lat": 32.674066,
+    "lon": -117.1723,
+    "county": "San Diego"
+  },
+  "1097": {
+    "name": "Eden Gardens",
+    "county_nominatim": "San Diego County",
+    "display": "Del Mar Shores Terrace, Eden Gardens, Cedros Ave Design District, Solana Beach, San Diego County, California, 92075, United States",
+    "lat": 32.98210361,
+    "lon": -117.27319855,
+    "county": "San Diego"
+  },
+  "1101": {
+    "name": "Dogpatch",
+    "county_nominatim": null,
+    "display": "Illinois Street, Dogpatch, Pier 70, San Francisco, California, 94158, United States",
+    "lat": 37.763431,
+    "lon": -122.386861,
+    "county": "San Francisco"
+  },
+  "1103": {
+    "name": "Ocean Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Cable Street, Ocean Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.739448,
+    "lon": -117.254989,
+    "county": "San Diego"
+  },
+  "1108": {
+    "name": "Mission Beach",
+    "county_nominatim": "San Diego County",
+    "display": "Bayside Walk, Mission Beach, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.760746,
+    "lon": -117.247827,
+    "county": "San Diego"
+  },
+  "1120": {
+    "name": "Pedro Valley",
+    "county_nominatim": "San Mateo County",
+    "display": "San Pedro Avenue, Pedro Valley, Pacifica, San Mateo County, California, 94044, United States",
+    "lat": 37.597587,
+    "lon": -122.504712,
+    "county": "San Mateo"
+  },
+  "1121": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "North Jetty Road, San Diego, San Diego County, California, 92017, United States",
+    "lat": 32.75968,
+    "lon": -117.254057,
+    "county": "San Diego"
+  },
+  "1149": {
+    "name": "Rio del Mar",
+    "county_nominatim": "Santa Cruz County",
+    "display": "Beach Drive, Rio del Mar, Santa Cruz County, California, 95003, United States",
+    "lat": 36.961725,
+    "lon": -121.895663,
+    "county": "Santa Cruz"
+  },
+  "1150": {
+    "name": "San Diego",
+    "county_nominatim": "San Diego County",
+    "display": "Ocean Front Walk, San Diego, San Diego County, California, 92109, United States",
+    "lat": 32.801389,
+    "lon": -117.259444,
+    "county": "San Diego"
+  }
+}
