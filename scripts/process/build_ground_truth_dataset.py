@@ -156,6 +156,19 @@ def main() -> None:
         chunksize=chunk_rows,
         low_memory=False,
     ):
+        chunk = chunk[chunk["Parameter"] == "Enterococcus"].copy()
+        
+        chunk["Result_num"] = pd.to_numeric(chunk["Result"], errors="coerce")
+        chunk = chunk.dropna(subset=["Result_num"])
+        
+        qual = chunk["Qualifier"].astype(str).str.strip()
+        chunk["is_left_cens"] = qual.isin(["<", "<="]) | (qual == "ND")
+        chunk["is_right_cens"] = qual.isin([">", ">="])
+        
+        chunk["log_result"] = np.log10(np.clip(chunk["Result_num"], 0.1, None))
+        chunk["detection_low"] = np.where(chunk["is_left_cens"], chunk["Result_num"], np.nan)
+        chunk["detection_high"] = np.where(chunk["is_right_cens"], chunk["Result_num"], np.nan)
+
         chunk["sample_date"] = pd.to_datetime(chunk["SampleDate"], errors="coerce").dt.strftime("%Y-%m-%d")
         chunk["CountyName"] = chunk["CountyName"].astype(str).str.strip()
         chunk["precip_bucket"] = chunk["CountyName"].map(precip_bucket_by_county)
