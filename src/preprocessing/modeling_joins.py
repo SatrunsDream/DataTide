@@ -52,7 +52,35 @@ def load_precip_daily(noaa_precip_dir: Path) -> pd.DataFrame:
     if not rows:
         return pd.DataFrame(columns=["sample_date", "precip_bucket", "regional_ghcn_prcp_mm"])
     df = pd.DataFrame(rows)
-    return df.drop_duplicates(subset=["sample_date", "precip_bucket"], keep="last")
+    df = df.drop_duplicates(subset=["sample_date", "precip_bucket"], keep="last")
+
+    df["sample_date"] = pd.to_datetime(df["sample_date"])
+    df = df.sort_values(["precip_bucket", "sample_date"])
+
+    def compute_lags(group):
+        bucket = group.name
+        group = group.set_index("sample_date").asfreq("D", fill_value=0.0)
+        group["precip_bucket"] = bucket
+        # We assume 24h lag means the rainfall of the previous day, 48h means previous 2 days, etc.
+        # This prevents target leakage.
+        group["regional_ghcn_prcp_mm_24h"] = group["regional_ghcn_prcp_mm"].shift(1).fillna(0)
+        group["regional_ghcn_prcp_mm_48h"] = group["regional_ghcn_prcp_mm"].rolling(window=2, min_periods=1).sum().shift(1).fillna(0)
+        group["regional_ghcn_prcp_mm_72h"] = group["regional_ghcn_prcp_mm"].rolling(window=3, min_periods=1).sum().shift(1).fillna(0)
+        group["regional_ghcn_prcp_mm_7d"] = group["regional_ghcn_prcp_mm"].rolling(window=7, min_periods=1).sum().shift(1).fillna(0)
+
+        # dry_days_since_rain: consecutive days where rain <= 0.1mm BEFORE current day
+        is_rain = group["regional_ghcn_prcp_mm"] > 0.1
+        rain_events = is_rain.cumsum()
+        dry_days = group.groupby(rain_events).cumcount()
+        group["dry_days_since_rain"] = dry_days.shift(1).fillna(0).astype(int)
+
+        return group.reset_index()
+
+    if not df.empty:
+        df = df.groupby("precip_bucket").apply(compute_lags).reset_index(drop=True)
+    
+    df["sample_date"] = df["sample_date"].dt.strftime("%Y-%m-%d")
+    return df
 
 
 def load_tide_daily(noaa_tides_dir: Path) -> pd.DataFrame:
