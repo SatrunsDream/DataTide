@@ -54,6 +54,7 @@ class PanelBundle:
     # observed-only slices (pre-filtered for convenience)
     y_log: np.ndarray
     month: np.ndarray
+    doy: np.ndarray
     station_idx: np.ndarray
     county_idx: np.ndarray
     t_idx: np.ndarray
@@ -87,6 +88,13 @@ def _month_from_t_idx(t_idx: np.ndarray, date_min: np.datetime64) -> np.ndarray:
     return np.array([d.month for d in pd_dates], dtype=np.int8)
 
 
+def _doy_from_t_idx(t_idx: np.ndarray, date_min: np.datetime64) -> np.ndarray:
+    """Vectorised day-of-year from day offsets. Returns int16 in 1..366."""
+    dates = np.asarray(date_min) + t_idx.astype("timedelta64[D]")
+    pd_dates = dates.astype("datetime64[D]").astype(object)
+    return np.array([d.timetuple().tm_yday for d in pd_dates], dtype=np.int16)
+
+
 def load_panel(
     npz_path: Path = NPZ_PATH,
     meta_path: Path = META_PATH,
@@ -105,10 +113,12 @@ def load_panel(
     t_idx = npz["t_idx"][obs].astype(np.int64)
     date_min = np.datetime64(str(npz["date_min"]))
     month = _month_from_t_idx(t_idx, date_min)
+    doy = _doy_from_t_idx(t_idx, date_min)
 
     return PanelBundle(
         y_log=npz["y_log"][obs].astype(np.float32),
         month=month,
+        doy=doy,
         station_idx=npz["station_idx"][obs].astype(np.int32),
         county_idx=npz["county_idx"][obs].astype(np.int32),
         t_idx=t_idx.astype(np.int32),
@@ -168,6 +178,7 @@ def _slice_fold(
         fold_val_year=fold_val_year,
         y_log_train=bundle.y_log[is_train],
         month_train=bundle.month[is_train],
+        doy_train=bundle.doy[is_train],
         station_idx_train=bundle.station_idx[is_train],
         county_idx_train=bundle.county_idx[is_train],
         X_smooth_train=bundle.X_smooth[is_train],
@@ -180,6 +191,7 @@ def _slice_fold(
         det_high_log_train=bundle.det_high_log[is_train],
         y_log_val=bundle.y_log[is_val],
         month_val=bundle.month[is_val],
+        doy_val=bundle.doy[is_val],
         station_idx_val=bundle.station_idx[is_val],
         county_idx_val=bundle.county_idx[is_val],
         X_smooth_val=bundle.X_smooth[is_val],

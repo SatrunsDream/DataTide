@@ -66,6 +66,8 @@ class FoldData:
     X_linear_val: np.ndarray
     miss_smooth_val: np.ndarray
     miss_linear_val: np.ndarray
+    doy_train: np.ndarray | None = None
+    doy_val: np.ndarray | None = None
 
     # shared feature metadata (names + index lookups)
     smooth_features: list[str] = field(default_factory=list)

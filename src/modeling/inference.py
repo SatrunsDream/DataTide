@@ -21,12 +21,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from src.modeling import _jax_compat  # noqa: F401  (must precede jax / numpyro import)
+
 import arviz as az
 import jax
 import jax.numpy as jnp
 import numpy as np
-
-from src.modeling import _jax_compat  # noqa: F401  (must precede numpyro import)
 
 import numpyro
 from numpyro.infer import MCMC, NUTS, Predictive

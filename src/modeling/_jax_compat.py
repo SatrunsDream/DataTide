@@ -11,16 +11,50 @@ and uses `xla_pmap_p` only as a dispatch-dict key inside
 `numpyro.ops.provenance.track_deps_rules`. The key is never actually matched
 unless a user model contains a `pmap`, which ours do not.
 
-Importing this module BEFORE `numpyro` ensures an inert stub primitive exists
-at every legacy location so the chained `from ... import` succeeds without
-modifying any site-packages file.
+Importing this module BEFORE `jax` / `numpyro` ensures an inert stub
+primitive exists at every legacy location so the chained `from ... import`
+succeeds without modifying any site-packages file. It also defaults macOS to
+CPU when the user has not explicitly selected a JAX platform, which avoids a
+hard crash in environments where the experimental `METAL` backend is present
+but no usable GPU is visible.
 
 Usage: `from src.modeling import _jax_compat  # noqa: F401`
-at the very top of any module that imports `numpyro`.
+at the very top of any module that imports `jax` or `numpyro`.
 """
 from __future__ import annotations
 
 import importlib
+import os
+import platform
+
+
+def _canonicalize_platform_value(raw: str) -> str:
+    """Normalize known platform names to the spelling JAX expects on this env."""
+    value = raw.strip()
+    if not value:
+        return value
+    if value.lower() == "metal":
+        return "METAL"
+    return value
+
+
+def _canonicalize_platform_env() -> None:
+    """Normalize explicit user platform env vars before JAX reads them."""
+    if os.environ.get("JAX_PLATFORMS"):
+        parts = os.environ["JAX_PLATFORMS"].split(",")
+        os.environ["JAX_PLATFORMS"] = ",".join(_canonicalize_platform_value(p) for p in parts)
+    if os.environ.get("JAX_PLATFORM_NAME"):
+        os.environ["JAX_PLATFORM_NAME"] = _canonicalize_platform_value(os.environ["JAX_PLATFORM_NAME"])
+
+
+def _configure_platform_env() -> None:
+    """Default macOS to CPU unless the user explicitly chose a platform."""
+    _canonicalize_platform_env()
+    if platform.system() != "Darwin":
+        return
+    if os.environ.get("JAX_PLATFORMS") or os.environ.get("JAX_PLATFORM_NAME"):
+        return
+    os.environ["JAX_PLATFORMS"] = "cpu"
 
 
 def _resolve_primitive_class():
@@ -81,5 +115,5 @@ def _install_stub() -> None:
             except Exception:
                 pass
 
-
+_configure_platform_env()
 _install_stub()

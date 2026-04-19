@@ -30,12 +30,12 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any
 
+from src.modeling import _jax_compat  # noqa: F401  (must precede jax / numpyro import)
+
 import jax
 import jax.numpy as jnp
 import jax.scipy.stats as jss
 import numpy as np
-
-from src.modeling import _jax_compat  # noqa: F401  (must precede numpyro import)
 
 import numpyro
 import numpyro.distributions as dist
@@ -182,7 +182,12 @@ class Design:
 
 
 def _doy_from_fold(fold: FoldData, which: str) -> np.ndarray:
-    """Recover integer doy from the encoded doy_sin/doy_cos columns."""
+    """Approximate day-of-year from encoded doy_sin/doy_cos columns.
+
+    Prefer the exact `FoldData.doy_*` values when available; this helper is a
+    backward-compatible fallback for callers that still construct folds
+    manually without the explicit day-of-year arrays.
+    """
     if which == "train":
         X_lin = fold.X_linear_train
     else:
@@ -207,6 +212,14 @@ def _doy_from_fold(fold: FoldData, which: str) -> np.ndarray:
     theta = np.where(theta < 0, theta + 2 * np.pi, theta)
     doy = (theta / (2 * np.pi)) * DAYS_PER_YEAR
     return np.clip(doy, 1.0, DAYS_PER_YEAR).astype(np.float32)
+
+
+def _resolve_doy(fold: FoldData, which: str) -> np.ndarray:
+    """Use exact doy values when the fold provides them, else fall back."""
+    doy = fold.doy_train if which == "train" else fold.doy_val
+    if doy is not None:
+        return np.asarray(doy, dtype=np.float32)
+    return _doy_from_fold(fold, which)
 
 
 def build_design(spec: RungSpec, fold: FoldData, which: str) -> Design:
@@ -241,7 +254,7 @@ def build_design(spec: RungSpec, fold: FoldData, which: str) -> Design:
 
     X_poly = X_spline = Phi_cos = Phi_sin = X_rain = None
     if spec.use_poly or spec.use_spline or spec.use_hsgp:
-        doy = _doy_from_fold(fold, which)
+        doy = _resolve_doy(fold, which)
         if spec.use_poly:
             X_poly = jnp.asarray(_polynomial_basis(doy, degree=spec.poly_degree))
         if spec.use_spline:
