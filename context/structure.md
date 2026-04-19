@@ -27,7 +27,7 @@ Single source of truth for repository layout, artifact index, and results log.
 | `context/DECISIONS.md` | Architectural and modeling decisions |
 | `context/ASSUMPTIONS.md` | Data and modeling assumptions |
 | `context/CHANGELOG.md` | Milestones and notable changes |
-| `context/PROJECT_BRIEF.md`, `GLOSSARY.md`, `DATASETS.md`, `GROUND_TRUTH_SCHEMA.md`, `plan.md`, `INTERFACES.md`, `STATUS.md`, `RISKS.md`, `DECISIONS.md`, `ASSUMPTIONS.md` | Team context |
+| `context/PROJECT_BRIEF.md`, `GLOSSARY.md`, `DATASETS.md`, `GROUND_TRUTH_SCHEMA.md`, `plan.md`, `APP_PRODUCT.md`, `MODEL_OUTPUTS_FOR_DEMO.md`, `INTERFACES.md`, `STATUS.md`, `RISKS.md`, `DECISIONS.md`, `ASSUMPTIONS.md` | Team context |
 
 ### Folders
 

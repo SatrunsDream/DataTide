@@ -1,0 +1,198 @@
+{
+  "target_parameter": "Enterococcus",
+  "exceedance_mpn": 104.0,
+  "train_end": "2022-12-31",
+  "val_end": "2023-12-31",
+  "n_rows": 295396,
+  "n_observed": 11642,
+  "n_left_cens": 5197,
+  "n_right_cens": 389,
+  "n_stations": 446,
+  "n_counties": 13,
+  "smooth_features": [
+    "rain_24h_mm",
+    "rain_48h_mm",
+    "rain_72h_mm",
+    "rain_7d_mm",
+    "dry_days_since_rain",
+    "tide_range_m",
+    "wave_hs_m",
+    "sst_c",
+    "salinity_psu"
+  ],
+  "linear_features": [
+    "wave_tp_s",
+    "doy_sin",
+    "doy_cos",
+    "yesterday_log10_result"
+  ],
+  "scalers": {
+    "rain_24h_mm": {
+      "mu": 0.0071481386956838144,
+      "sd": 0.1260023106609351,
+      "log1p": true
+    },
+    "rain_48h_mm": {
+      "mu": 0.013528639367457636,
+      "sd": 0.17484208513541713,
+      "log1p": true
+    },
+    "rain_72h_mm": {
+      "mu": 0.01960754446764476,
+      "sd": 0.21145607978948222,
+      "log1p": true
+    },
+    "rain_7d_mm": {
+      "mu": 0.04285633205296759,
+      "sd": 0.31389324171863003,
+      "log1p": true
+    },
+    "dry_days_since_rain": {
+      "mu": 28.822945919205104,
+      "sd": 4.901409039682704,
+      "log1p": false
+    },
+    "tide_range_m": {
+      "mu": 1.6423780366056573,
+      "sd": 0.4164058002830248,
+      "log1p": false
+    },
+    "wave_hs_m": {
+      "mu": 1.1434149877063953,
+      "sd": 0.35778853953239026,
+      "log1p": false
+    },
+    "sst_c": {
+      "mu": 18.289560485136775,
+      "sd": 2.768325706751082,
+      "log1p": false
+    },
+    "salinity_psu": {
+      "mu": 33.46479692362693,
+      "sd": 0.22215784532521549,
+      "log1p": false
+    },
+    "wave_tp_s": {
+      "mu": 12.712715176783844,
+      "sd": 2.125394597143475,
+      "log1p": false
+    },
+    "doy_sin": {
+      "mu": -0.007057833625887776,
+      "sd": 0.7077165512242474,
+      "log1p": false
+    },
+    "doy_cos": {
+      "mu": -0.009315009693409317,
+      "sd": 0.706402796147679,
+      "log1p": false
+    },
+    "yesterday_log10_result": {
+      "mu": 1.179633667757508,
+      "sd": 0.37622866492546647,
+      "log1p": false
+    }
+  },
+  "date_min": "2010-01-04",
+  "date_max": "2025-03-03",
+  "cv_scheme": "expanding_window_rolling_origin",
+  "cv_val_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "cv_folds": [
+    {
+      "val_year": 2020,
+      "train_start": "2010-01-04",
+      "train_end": "2019-12-31",
+      "val_start": "2020-01-01",
+      "val_end": "2020-12-31",
+      "n_train": 6216,
+      "n_val": 830
+    },
+    {
+      "val_year": 2021,
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "val_start": "2021-01-01",
+      "val_end": "2021-12-31",
+      "n_train": 7046,
+      "n_val": 1008
+    },
+    {
+      "val_year": 2022,
+      "train_start": "2010-01-04",
+      "train_end": "2021-12-31",
+      "val_start": "2022-01-01",
+      "val_end": "2022-12-31",
+      "n_train": 8054,
+      "n_val": 961
+    },
+    {
+      "val_year": 2023,
+      "train_start": "2010-01-04",
+      "train_end": "2022-12-31",
+      "val_start": "2023-01-01",
+      "val_end": "2023-12-31",
+      "n_train": 9015,
+      "n_val": 775
+    }
+  ],
+  "station_labels_cache": "artifacts/data/panel/station_labels.json",
+  "n_stations_with_name": 446,
+  "priors": {
+    "_computed_from": "interior observations (not left/right censored)",
+    "_n_interior": 6056,
+    "intercept": {
+      "dist": "Normal",
+      "loc": 1.84,
+      "scale": 1.0
+    },
+    "alpha_month": {
+      "dist": "Normal",
+      "loc": 0.0,
+      "scale": 0.225,
+      "_note": "deviation of monthly mean from grand intercept; 12 non-centred levels"
+    },
+    "sigma_month": {
+      "dist": "HalfNormal",
+      "scale": 0.225,
+      "_note": "hyperscale for the 12 month-level deviations (used when month enters as a random intercept)"
+    },
+    "sigma_station": {
+      "dist": "HalfNormal",
+      "scale": 0.747
+    },
+    "sigma_county": {
+      "dist": "HalfNormal",
+      "scale": 0.344
+    },
+    "sigma_obs": {
+      "dist": "HalfNormal",
+      "scale": 0.7
+    },
+    "beta_linear": {
+      "dist": "Normal",
+      "loc": 0.0,
+      "scale": 0.5
+    },
+    "hsgp_amplitude_seasonal": {
+      "dist": "HalfNormal",
+      "scale": 0.225
+    },
+    "hsgp_amplitude_rain": {
+      "dist": "HalfNormal",
+      "scale": 0.243
+    },
+    "_diagnostics": {
+      "grand_sd": 0.957,
+      "sigma_obs_after_station_only": 0.742,
+      "seasonal_range_log10": 0.685,
+      "rain_slope_log10_per_log1p_mm": 0.243,
+      "ar1_within_station": 0.584,
+      "max_abs_marginal_slope_per_sd": 0.263
+    }
+  }
+}
