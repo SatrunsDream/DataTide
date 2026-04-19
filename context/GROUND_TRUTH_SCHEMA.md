@@ -1,6 +1,6 @@
 # Ground-truth dataset schema (`datatide_ground_truth.parquet`)
 
-This document describes the **canonical processed table** used for EDA and modeling: how it is built, what each column means, where the value originates, and how joins/aggregations work.
+This document describes the **canonical processed table** used for EDA and downstream ML: how it is **aggregated and joined** (no ocean or statistical model is fit inside the build script), what each column means, and where values originate.
 
 **Build script:** `scripts/process/build_ground_truth_dataset.py`  
 **Configuration:** `configs/process.yaml` (column selection, county→environment mapping, SCCOOS county allowlist)  
@@ -15,6 +15,8 @@ This document describes the **canonical processed table** used for EDA and model
 - **One row per laboratory result record** from the Tier-1 California beach bacteria monitoring export (multiple rows per station per day are possible if several parameters or replicate samples exist).
 - **Primary time key for joins:** `sample_date` — calendar date (`YYYY-MM-DD`) derived from Tier-1 `SampleDate` (parsed in the ETL).
 - **Spatial logic for CDIP:** each row’s monitoring coordinates (`Station_UpperLat`, `Station_UpperLon`) are used to pick the **nearest** CDIP buoy (great-circle distance) among bundles listed in `configs/fetch.yaml` → `cdip.bundles`.
+- **Spatial logic for CCE1 moorings:** same station coordinates pick the **nearest** of the configured mooring IDs (typically **13** and **15** from `data/raw/cce_moorings/OS_CCE1_*_D_*.nc`); daily means at **shallowest depth** (CTD: `TEMP`, `PSAL`; ADCP: `UCUR`, `VCUR`) merge on (`sample_date`, `cce_mooring_id`).
+- **HF radar:** latest `hf_*_water_u_*.csv` / `hf_*_water_v_*.csv` pair under `hf_radar/` is reduced to **daily** mean u/v per grid cell, then the **nearest** cell to the station (within the fetch bbox) fills `hf_*` columns (rolling NRT window only—see `fetch_hf_radar.py`).
 - **Regional joins** (precipitation, tide gauge, SCCOOS) use **`CountyName`** on the bacteria row mapped through `configs/process.yaml` → `county_to_env` and `sccoos_join_counties` where applicable.
 
 ---
@@ -25,12 +27,17 @@ This document describes the **canonical processed table** used for EDA and model
 2. **Derive** `sample_date` from `SampleDate`; normalize `CountyName` (strip whitespace).
 3. **Map** county → `precip_bucket` and `tide_station_id` via `county_to_env`.
 4. **Merge** `data/raw/ca_swrcb_stations/download_*.csv` (latest file) on `Station_id` → station supplement columns.
-5. **Merge** daily GHCN precipitation table built from `data/raw/noaa_precip/cdo_PRCP_*.json` on (`sample_date`, `precip_bucket`).
-6. **Merge** daily tidal range from `data/raw/noaa_tides/tides_hilo_*.json` on (`sample_date`, `tide_station_id`).
-7. **Merge** SCCOOS Del Mar daily means (from `sccoos_delmar_temperature_*.csv` and `sccoos_delmar_salinity_*.csv`) on `sample_date`, then **null out** SCCOOS columns for counties **not** listed in `sccoos_join_counties`.
-8. **Assign** `cdip_bundle` by nearest buoy; **merge** precomputed daily CDIP means on (`sample_date`, `cdip_bundle`) from latest `data/raw/cdip/*p1_rt*.nc` per bundle.
-9. **Merge** San Diego County monthly coastal JSON on (`CountyName`, `calendar_month`) where `calendar_month` is `YYYY-MM` from `sample_date`.
-10. **Write** a single Parquet (Zstd compression) and `datatide_ground_truth_meta.json`.
+5. **Merge** latest `data/raw/ca_swrcb_beach_detail/download_*.csv` on `BeachName_id` → columns prefixed `beach_detail_*`.
+6. **Merge** daily GHCN precipitation from `data/raw/noaa_precip/cdo_PRCP_*.json` on (`sample_date`, `precip_bucket`).
+7. **Merge** daily tidal range from `data/raw/noaa_tides/tides_hilo_*.json` on (`sample_date`, `tide_station_id`).
+8. **Merge** SCCOOS Del Mar daily means on `sample_date`, then **null out** SCCOOS columns for counties **not** in `sccoos_join_counties`.
+9. **Assign** `cdip_bundle` by nearest buoy; **merge** daily CDIP means on (`sample_date`, `cdip_bundle`).
+10. **Merge** San Diego County monthly coastal JSON on (`CountyName`, `calendar_month`).
+11. **Assign** HF radar u/v/speed/distance from latest griddap CSV pair (per-row nearest grid cell, bbox-limited).
+12. **Merge** IBWC Tijuana daily means on `sample_date` (`ibwc_tijuana_*`).
+13. **Merge** optional BWTF **statewide daily summary** on `sample_date` (only if `bwtf_water_quality_*.json` shards exist after an authenticated fetch).
+14. **Assign** nearest CCE mooring id; **merge** CCE daily CTD/ADCP means on (`sample_date`, `cce_mooring_id`).
+15. **Write** Parquet (Zstd) and `datatide_ground_truth_meta.json`.
 
 ---
 
@@ -147,17 +154,17 @@ Source: latest `data/raw/sd_county_beach/beach_advisories_*.json`. Each JSON row
 
 ---
 
-## Sources intentionally **not** flattened into this table
+## Additional merged columns (summary)
 
-| Source | Reason |
-|--------|--------|
-| HF radar (`hf_radar/`) | Gridded fields; needs interpolation or tile lookup per beach. |
-| CCE moorings (`cce_moorings/`) | Offshore OceanSITES context; different domain than swim sites. |
-| Surfrider BWTF (`surfrider_bwtf/`) | Separate program; bulk API requires Cognito token; keep as side tables or future join. |
-| IBWC (`ibwc/`) | Endpoint/parse stability to verify. |
-| Beach detail CSV | Largely denormalized into bacteria export; station supplement covers extra station fields. |
+| Block | Key columns | Notes |
+|--------|-------------|--------|
+| Beach detail | `beach_detail_*` | Extra metadata vs bacteria row alone. |
+| HF radar | `hf_water_u_mps`, `hf_water_v_mps`, `hf_current_speed_mps`, `hf_grid_dist_km` | **Short NRT window**; most historical bacteria dates will be null unless you point fetch at an archive product. |
+| CCE moorings | `cce_mooring_id`, `cce_temp_shallow_c`, `cce_psal_shallow_psu`, `cce_ucur_shallow_mps`, `cce_vcur_shallow_mps` | **Offshore** background; nearest mooring is a pragmatic aggregate, not a surf-zone measurement. |
+| IBWC | `ibwc_tijuana_stage_m_daily_mean`, `ibwc_tijuana_discharge_cms_daily_mean` | Parsed from legacy text feed when fetch succeeds. |
+| BWTF | `bwtf_ca_median_result`, `bwtf_ca_n_samples`, `bwtf_ca_median_entero` | **Statewide same-day context** from community samples in a CA bbox; null if no JSON shards. |
 
-These remain available under `data/raw/<source>/` for notebooks or future ETL.
+Raw files remain under `data/raw/<source>/` for deeper joins (e.g. site-level BWTF) beyond this table.
 
 ---
 

@@ -277,3 +277,373 @@ def load_sd_county_coastal_monthly(sd_dir: Path) -> pd.DataFrame:
     for c in df.columns:
         out[f"sd_coastal_{c}"] = df[c]
     return out.drop_duplicates(subset=["calendar_month", "CountyName"], keep="last")
+
+
+def load_beach_detail_supplement(beach_csv: Path) -> pd.DataFrame:
+    """Tier-1 beach metadata export; join on BeachName_id. Columns prefixed to avoid clashing with bacteria fields."""
+    df = pd.read_csv(beach_csv, low_memory=False)
+    df.columns = [str(c).strip() for c in df.columns]
+    if "Beach_ UpperLon" in df.columns:
+        df = df.rename(columns={"Beach_ UpperLon": "Beach_UpperLon"})
+    if "BeachName_id" not in df.columns:
+        return pd.DataFrame()
+    df["BeachName_id"] = pd.to_numeric(df["BeachName_id"], errors="coerce").astype("Int64")
+    df = df.drop_duplicates(subset=["BeachName_id"], keep="last")
+    out = df[["BeachName_id"]].copy()
+    for c in df.columns:
+        if c == "BeachName_id":
+            continue
+        safe = str(c).strip().replace(" ", "_")
+        out[f"beach_detail_{safe}"] = df[c].values
+    return out
+
+
+def load_ibwc_tijuana_daily(ibwc_dir: Path) -> pd.DataFrame:
+    """Parse IBWC legacy text table → daily mean stage (m) and discharge (m³/s)."""
+    files = sorted(ibwc_dir.glob("tijuana_gauge_*.txt"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not files:
+        return pd.DataFrame(
+            columns=["sample_date", "ibwc_tijuana_stage_m_daily_mean", "ibwc_tijuana_discharge_cms_daily_mean"]
+        )
+    text = files[0].read_text(encoding="utf-8", errors="replace")
+    row_re = re.compile(
+        r"^(\d{2}/\d{2}/\d{4})\s+(\d{2}:\d{2})\s+([\d.]+)\s+([\d.]+)\s*$",
+        re.MULTILINE,
+    )
+    rows: list[tuple[str, float, float]] = []
+    for m in row_re.finditer(text):
+        day, _t, stage_s, q_s = m.groups()
+        try:
+            stage = float(stage_s)
+            q = float(q_s)
+        except ValueError:
+            continue
+        iso = pd.to_datetime(day, format="%m/%d/%Y", errors="coerce")
+        if pd.isna(iso):
+            continue
+        rows.append((iso.strftime("%Y-%m-%d"), stage, q))
+    if not rows:
+        return pd.DataFrame(
+            columns=["sample_date", "ibwc_tijuana_stage_m_daily_mean", "ibwc_tijuana_discharge_cms_daily_mean"]
+        )
+    raw = pd.DataFrame(rows, columns=["sample_date", "_st", "_q"])
+    g = raw.groupby("sample_date", sort=False).agg(
+        ibwc_tijuana_stage_m_daily_mean=("_st", "mean"),
+        ibwc_tijuana_discharge_cms_daily_mean=("_q", "mean"),
+    ).reset_index()
+    return g
+
+
+def load_bwtf_state_daily(bwtf_dir: Path) -> pd.DataFrame:
+    """Surfrider BWTF JSON shards → daily median numeric result (Enterococcus / E.coli) in CA bbox.
+
+    Site-level alignment is future work; this is a weak statewide same-day context signal.
+    """
+    paths = sorted(bwtf_dir.glob("bwtf_water_quality_*.json"))
+    if not paths:
+        return pd.DataFrame(
+            columns=["sample_date", "bwtf_ca_median_result", "bwtf_ca_n_samples", "bwtf_ca_median_entero"]
+        )
+    ca_lat = (32.4, 42.1)
+    ca_lon = (-124.5, -114.1)
+    day_vals: dict[str, list[float]] = {}
+    day_entero: dict[str, list[float]] = {}
+    for path in paths:
+        try:
+            items = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            loc = item.get("location") or {}
+            coord = loc.get("coordinate") or {}
+            try:
+                lat = float(coord.get("latitude"))
+                lon = float(coord.get("longitude"))
+            except (TypeError, ValueError):
+                continue
+            if not (ca_lat[0] <= lat <= ca_lat[1] and ca_lon[0] <= lon <= ca_lon[1]):
+                continue
+            t = item.get("collectionTime")
+            if not t:
+                continue
+            day = str(t)[:10]
+            if len(day) < 10:
+                continue
+            for s in item.get("samples") or []:
+                sub = str(s.get("substance") or "").lower()
+                raw_r = s.get("result")
+                try:
+                    val = float(raw_r)
+                except (TypeError, ValueError):
+                    continue
+                day_vals.setdefault(day, []).append(val)
+                if "entero" in sub:
+                    day_entero.setdefault(day, []).append(val)
+    if not day_vals:
+        return pd.DataFrame(
+            columns=["sample_date", "bwtf_ca_median_result", "bwtf_ca_n_samples", "bwtf_ca_median_entero"]
+        )
+    rows = []
+    for day, vals in sorted(day_vals.items()):
+        ent = day_entero.get(day) or []
+        rows.append(
+            {
+                "sample_date": day,
+                "bwtf_ca_median_result": float(np.median(vals)),
+                "bwtf_ca_n_samples": len(vals),
+                "bwtf_ca_median_entero": float(np.median(ent)) if ent else np.nan,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def _haversine_km(lat1: np.ndarray, lon1: np.ndarray, lat2: np.ndarray, lon2: np.ndarray) -> np.ndarray:
+    """lat1/lon1 shape (n,1), lat2/lon2 shape (1,m) or broadcastable → (n,m) km."""
+    r = 6371.0
+    ph1 = np.radians(lat1)
+    ph2 = np.radians(lat2)
+    dph = np.radians(lat2 - lat1)
+    dl = np.radians(lon2 - lon1)
+    a = np.sin(dph / 2) ** 2 + np.cos(ph1) * np.cos(ph2) * np.sin(dl / 2) ** 2
+    c = 2 * np.arcsin(np.minimum(1.0, np.sqrt(a)))
+    return r * c
+
+
+def load_hf_radar_daily_lookup(hf_dir: Path) -> tuple[dict[str, dict[str, np.ndarray]], tuple[float, float, float, float] | None]:
+    """Latest HF radar u/v CSV pair → per-UTC-date grid (lat, lon, u, v) and bounding box."""
+    u_files = sorted(hf_dir.glob("hf_*_water_u_*.csv"), key=lambda p: p.stat().st_mtime, reverse=True)
+    v_files = sorted(hf_dir.glob("hf_*_water_v_*.csv"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not u_files or not v_files:
+        return {}, None
+    u_path, v_path = u_files[0], v_files[0]
+    u = pd.read_csv(u_path, skiprows=[1], low_memory=False)
+    v = pd.read_csv(v_path, skiprows=[1], low_memory=False)
+    for col in ("time", "latitude", "longitude"):
+        if col not in u.columns or col not in v.columns:
+            return {}, None
+    u["time"] = pd.to_datetime(u["time"], utc=True, errors="coerce")
+    v["time"] = pd.to_datetime(v["time"], utc=True, errors="coerce")
+    u = u.dropna(subset=["time", "latitude", "longitude"])
+    v = v.dropna(subset=["time", "latitude", "longitude"])
+    var_u = [c for c in u.columns if c not in ("time", "latitude", "longitude")][0]
+    var_v = [c for c in v.columns if c not in ("time", "latitude", "longitude")][0]
+    u = u.rename(columns={var_u: "_u"})
+    v = v.rename(columns={var_v: "_v"})
+    merged = u.merge(v, on=["time", "latitude", "longitude"], how="inner")
+    merged["sample_date"] = merged["time"].dt.strftime("%Y-%m-%d")
+    agg = (
+        merged.groupby(["sample_date", "latitude", "longitude"], sort=False)[["_u", "_v"]]
+        .mean()
+        .reset_index()
+    )
+    lat_min = float(agg["latitude"].min())
+    lat_max = float(agg["latitude"].max())
+    lon_min = float(agg["longitude"].min())
+    lon_max = float(agg["longitude"].max())
+    bbox = (lat_min, lat_max, lon_min, lon_max)
+    by_day: dict[str, dict[str, np.ndarray]] = {}
+    for day, g in agg.groupby("sample_date", sort=False):
+        by_day[str(day)] = {
+            "lat": g["latitude"].to_numpy(dtype=float),
+            "lon": g["longitude"].to_numpy(dtype=float),
+            "u": g["_u"].to_numpy(dtype=float),
+            "v": g["_v"].to_numpy(dtype=float),
+        }
+    return by_day, bbox
+
+
+def assign_hf_radar_to_chunk(
+    chunk: pd.DataFrame,
+    by_day: dict[str, dict[str, np.ndarray]],
+    bbox: tuple[float, float, float, float] | None,
+) -> pd.DataFrame:
+    """Add hf_water_u_mps, hf_water_v_mps, hf_current_speed_mps, hf_grid_dist_km (nearest grid cell)."""
+    chunk["hf_water_u_mps"] = np.nan
+    chunk["hf_water_v_mps"] = np.nan
+    chunk["hf_current_speed_mps"] = np.nan
+    chunk["hf_grid_dist_km"] = np.nan
+    if not by_day or bbox is None:
+        return chunk
+    lat_min, lat_max, lon_min, lon_max = bbox
+    lat = pd.to_numeric(chunk["Station_UpperLat"], errors="coerce").to_numpy()
+    lon = pd.to_numeric(chunk["Station_UpperLon"], errors="coerce").to_numpy()
+    dates = chunk["sample_date"].astype(str).to_numpy()
+    in_box = (
+        np.isfinite(lat)
+        & np.isfinite(lon)
+        & (lat >= lat_min)
+        & (lat <= lat_max)
+        & (lon >= lon_min)
+        & (lon <= lon_max)
+    )
+    idxs = np.flatnonzero(in_box)
+    if idxs.size == 0:
+        return chunk
+    for day in np.unique(dates[idxs]):
+        g = by_day.get(str(day))
+        if g is None or len(g["lat"]) == 0:
+            continue
+        sel = idxs[dates[idxs] == day]
+        sla = lat[sel]
+        slo = lon[sel]
+        glat = g["lat"]
+        glon = g["lon"]
+        d = _haversine_km(sla[:, None], slo[:, None], glat[None, :], glon[None, :])
+        nn = np.argmin(d, axis=1)
+        dkm = d[np.arange(sla.shape[0], dtype=int), nn]
+        u = g["u"][nn]
+        v = g["v"][nn]
+        sp = np.hypot(u, v)
+        ii = chunk.index[sel]
+        chunk.loc[ii, "hf_water_u_mps"] = u
+        chunk.loc[ii, "hf_water_v_mps"] = v
+        chunk.loc[ii, "hf_current_speed_mps"] = sp
+        chunk.loc[ii, "hf_grid_dist_km"] = dkm
+    return chunk
+
+
+def assign_nearest_cce_mooring(lat: np.ndarray, lon: np.ndarray, meta: pd.DataFrame) -> np.ndarray:
+    """Vectorized nearest CCE mooring id (int); invalid coords → -1."""
+    n = len(lat)
+    out = np.full(n, -1, dtype=np.int64)
+    if meta is None or len(meta) == 0:
+        return out
+    mids = meta["cce_mooring_id"].to_numpy(dtype=np.int64)
+    mlat = meta["cce_mooring_lat"].to_numpy(dtype=float)
+    mlon = meta["cce_mooring_lon"].to_numpy(dtype=float)
+    ok = np.isfinite(lat) & np.isfinite(lon)
+    if not ok.any():
+        return out
+    lat_e = np.radians(lat[ok, None])
+    lon_e = np.radians(lon[ok, None])
+    bla = np.radians(mlat[None, :])
+    blo = np.radians(mlon[None, :])
+    dlat = bla - lat_e
+    dlon = blo - lon_e
+    a = np.sin(dlat / 2) ** 2 + np.cos(lat_e) * np.cos(bla) * np.sin(dlon / 2) ** 2
+    c = 2 * np.arcsin(np.minimum(1.0, np.sqrt(a)))
+    r_km = 6371.0 * c
+    idx = np.argmin(r_km, axis=1)
+    out[ok] = mids[idx]
+    return out
+
+
+def load_cce_mooring_daily(cce_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """OceanSITES CCE1 CTD + ADCP: daily means at shallowest depth; meta for two mooring IDs (13, 15)."""
+    try:
+        import xarray as xr
+    except ImportError:
+        return (
+            pd.DataFrame(columns=["cce_mooring_id", "cce_mooring_lat", "cce_mooring_lon"]),
+            pd.DataFrame(
+                columns=[
+                    "sample_date",
+                    "cce_mooring_id",
+                    "cce_temp_shallow_c",
+                    "cce_psal_shallow_psu",
+                    "cce_ucur_shallow_mps",
+                    "cce_vcur_shallow_mps",
+                ]
+            ),
+        )
+
+    moorings: dict[int, dict[str, float | None]] = {}
+
+    def _mooring_lat_lon(path: Path) -> tuple[int, float, float]:
+        m = re.search(r"OS_CCE1_(\d+)_D_", path.name)
+        mid = int(m.group(1)) if m else -1
+        ds = xr.open_dataset(path)
+        la = float(ds["LATITUDE"].values.flat[0])
+        lo = float(ds["LONGITUDE"].values.flat[0])
+        ds.close()
+        return mid, la, lo
+
+    def _daily_ctd(path: Path) -> pd.DataFrame:
+        with xr.open_dataset(path) as ds:
+            t = ds["TEMP"].isel(DEPTH=0).load()
+            ser_t = t.to_series()
+            ser_t.index = pd.to_datetime(ser_t.index, utc=True, errors="coerce")
+            psal = ds["PSAL"].isel(DEPTH=0).load().to_series()
+            psal.index = pd.to_datetime(psal.index, utc=True, errors="coerce")
+        df = pd.DataFrame({"temp": ser_t, "psal": psal}).dropna(how="all")
+        df = df[~df.index.isna()]
+        df["sample_date"] = df.index.strftime("%Y-%m-%d")
+        return df.groupby("sample_date", sort=False).mean(numeric_only=True).reset_index()
+
+    def _daily_adcp(path: Path) -> pd.DataFrame:
+        with xr.open_dataset(path) as ds:
+            u = ds["UCUR"].isel(DEPTH=0).load().to_series()
+            u.index = pd.to_datetime(u.index, utc=True, errors="coerce")
+            v = ds["VCUR"].isel(DEPTH=0).load().to_series()
+            v.index = pd.to_datetime(v.index, utc=True, errors="coerce")
+        df = pd.DataFrame({"ucur": u, "vcur": v}).dropna(how="all")
+        df = df[~df.index.isna()]
+        df["sample_date"] = df.index.strftime("%Y-%m-%d")
+        return df.groupby("sample_date", sort=False).mean(numeric_only=True).reset_index()
+
+    daily_parts: list[pd.DataFrame] = []
+    for mid in (13, 15):
+        ctd_cands = list(cce_dir.glob(f"OS_CCE1_{mid}_D_CTD*.nc"))
+        adcp_cands = list(cce_dir.glob(f"OS_CCE1_{mid}_D_ADCP*.nc"))
+        ctd_p = max(ctd_cands, key=lambda p: p.stat().st_mtime) if ctd_cands else None
+        adcp_p = max(adcp_cands, key=lambda p: p.stat().st_mtime) if adcp_cands else None
+        if ctd_p:
+            m_id, la, lo = _mooring_lat_lon(ctd_p)
+            moorings[m_id] = {"lat": la, "lon": lo}
+        elif adcp_p:
+            m_id, la, lo = _mooring_lat_lon(adcp_p)
+            moorings[m_id] = {"lat": la, "lon": lo}
+        else:
+            continue
+        dfc = _daily_ctd(ctd_p) if ctd_p else pd.DataFrame(columns=["sample_date"])
+        dfa = _daily_adcp(adcp_p) if adcp_p else pd.DataFrame(columns=["sample_date"])
+        if len(dfc) and len(dfa):
+            m = dfc.merge(dfa, on="sample_date", how="outer")
+        elif len(dfc):
+            m = dfc.copy()
+            m["ucur"] = np.nan
+            m["vcur"] = np.nan
+        elif len(dfa):
+            m = dfa.copy()
+            m["temp"] = np.nan
+            m["psal"] = np.nan
+        else:
+            continue
+        m["cce_mooring_id"] = mid
+        m = m.rename(
+            columns={
+                "temp": "cce_temp_shallow_c",
+                "psal": "cce_psal_shallow_psu",
+                "ucur": "cce_ucur_shallow_mps",
+                "vcur": "cce_vcur_shallow_mps",
+            }
+        )
+        daily_parts.append(m)
+
+    if not moorings:
+        return (
+            pd.DataFrame(columns=["cce_mooring_id", "cce_mooring_lat", "cce_mooring_lon"]),
+            pd.DataFrame(
+                columns=[
+                    "sample_date",
+                    "cce_mooring_id",
+                    "cce_temp_shallow_c",
+                    "cce_psal_shallow_psu",
+                    "cce_ucur_shallow_mps",
+                    "cce_vcur_shallow_mps",
+                ]
+            ),
+        )
+
+    meta = pd.DataFrame(
+        [
+            {"cce_mooring_id": k, "cce_mooring_lat": v["lat"], "cce_mooring_lon": v["lon"]}
+            for k, v in sorted(moorings.items())
+        ]
+    )
+    daily = pd.concat(daily_parts, ignore_index=True) if daily_parts else pd.DataFrame()
+    if len(daily):
+        daily = daily.drop_duplicates(subset=["sample_date", "cce_mooring_id"], keep="last")
+    return meta, daily
