@@ -5,7 +5,7 @@
 #   aggregate step if needed (e.g. keep 2015+ or 2018+ for modeling). Adjust end to null to pull through today.
 fetch:
   date_range:
-    start: "2010-01-01"
+    start: "2015-01-01"
     end: "2025-12-31"
   output_root: data/raw
   http_timeout_sec: 120
@@ -38,15 +38,15 @@ cdip:
   output_dir: cdip
   bundles:
     - name: cdip_045
-      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/045p1_rt.nc"
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive/045p1/045p1_historic.nc"
     - name: cdip_100
-      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/100p1_rt.nc"
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive/100p1/100p1_historic.nc"
     - name: cdip_191
-      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/191p1_rt.nc"
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive/191p1/191p1_historic.nc"
     - name: cdip_201
-      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/201p1_rt.nc"
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive/201p1/201p1_historic.nc"
     - name: cdip_220
-      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime/220p1_rt.nc"
+      opendap_nc_url: "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive/220p1/220p1_historic.nc"
 
 # --- Tier 2: NOAA Tides & Currents -----------------------------------------
 # Use high/low predictions only (`hilo`), not hourly — matches **daily (site, date)** modeling
