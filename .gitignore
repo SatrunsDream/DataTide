@@ -21,6 +21,7 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
+notebooks/modeling/eda.ipynb
 
 # Data — local only (not pushed to GitHub). Recreate with fetch + process scripts.
 # Track only `.gitkeep` placeholders so empty `data/*` dirs exist in clone.

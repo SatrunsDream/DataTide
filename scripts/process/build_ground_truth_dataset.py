@@ -13,8 +13,8 @@ Tier-4 (optional): Surfrider BWTF statewide daily summary (only if `bwtf_water_q
 Tier-5: San Diego County monthly coastal context; IBWC Tijuana daily mean stage/discharge (merge on date).
 
 Usage (repo root):
-  python scripts/process/build_ground_truth_dataset.py
-  python scripts/process/build_ground_truth_dataset.py --max-chunks 2
+  python3 scripts/process/build_ground_truth_dataset.py
+  python3 scripts/process/build_ground_truth_dataset.py --max-chunks 2
 """
 
 from __future__ import annotations
@@ -156,19 +156,6 @@ def main() -> None:
         chunksize=chunk_rows,
         low_memory=False,
     ):
-        chunk = chunk[chunk["Parameter"] == "Enterococcus"].copy()
-        
-        chunk["Result_num"] = pd.to_numeric(chunk["Result"], errors="coerce")
-        chunk = chunk.dropna(subset=["Result_num"])
-        
-        qual = chunk["Qualifier"].astype(str).str.strip()
-        chunk["is_left_cens"] = qual.isin(["<", "<="]) | (qual == "ND")
-        chunk["is_right_cens"] = qual.isin([">", ">="])
-        
-        chunk["log_result"] = np.log10(np.clip(chunk["Result_num"], 0.1, None))
-        chunk["detection_low"] = np.where(chunk["is_left_cens"], chunk["Result_num"], np.nan)
-        chunk["detection_high"] = np.where(chunk["is_right_cens"], chunk["Result_num"], np.nan)
-
         chunk["sample_date"] = pd.to_datetime(chunk["SampleDate"], errors="coerce").dt.strftime("%Y-%m-%d")
         chunk["CountyName"] = chunk["CountyName"].astype(str).str.strip()
         chunk["precip_bucket"] = chunk["CountyName"].map(precip_bucket_by_county)
