@@ -25,6 +25,9 @@ import arviz as az
 import jax
 import jax.numpy as jnp
 import numpy as np
+
+from src.modeling import _jax_compat  # noqa: F401  (must precede numpyro import)
+
 import numpyro
 from numpyro.infer import MCMC, NUTS, Predictive
 
