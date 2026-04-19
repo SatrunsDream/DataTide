@@ -27,7 +27,22 @@ import numpy as np
 from src.evaluation.compare import FoldData
 
 
-PANEL_DIR = Path("artifacts/data/panel")
+def _project_root() -> Path:
+    """Walk up from this file to the repo root (directory containing `src/`).
+
+    Using an absolute, module-anchored path means `load_panel()` works from
+    any cwd (notebooks, scripts, tests) without the caller having to chdir.
+    """
+    here = Path(__file__).resolve()
+    for parent in here.parents:
+        if (parent / "src").is_dir() and (parent / "artifacts").is_dir():
+            return parent
+    # fallback: 3 levels up from src/modeling/cv.py  ->  repo root
+    return here.parents[2]
+
+
+PROJECT_ROOT = _project_root()
+PANEL_DIR = PROJECT_ROOT / "artifacts" / "data" / "panel"
 NPZ_PATH = PANEL_DIR / "enterococcus_panel.npz"
 META_PATH = PANEL_DIR / "enterococcus_panel_meta.json"
 
