@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+/* Map `dark:` utilities to manual theme (`data-theme` on html), not only OS preference */
+@custom-variant dark (&:where(html[data-theme="dark"] *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-ocean-deep: #0D3B4C;
+  --color-ocean-main: #004D80; /* Higher contrast for AAA accessibility on cream */
+  --color-ocean-bright: #0099CC;
+  --color-sun: #C28A00; /* Darkened sun for better contrast */
+  --color-ink: #101828;
+  --color-border-light: rgba(13, 59, 76, 0.1);
+
+  --color-risk-safe: #065F46; /* Deep Emerald */
+  --color-risk-caution: #92400E; /* Deep Amber */
+  --color-risk-avoid: #991B1B; /* Deep Crimson */
+  --color-sand: #F9F7F2; /* Warm Cream - the correct choice */
+  --color-seafoam: #EEF4F6;
+}
+
+@layer base {
+  body {
+    @apply bg-sand text-ink font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-semibold tracking-tight;
+  }
+}
+
+/* Glass UI Recipe */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+}
+
+.frosted-pill {
+  @apply bg-white/90 backdrop-blur-md border border-white px-4 py-2 rounded-full shadow-sm;
+}
+
+.technical-label {
+  @apply text-[11px] font-sans font-semibold tracking-tight text-ocean-deep/60;
+}
+
+.ghost-button {
+  @apply w-10 h-10 rounded-full border border-ocean-deep/10 bg-white/10 backdrop-blur-sm flex items-center justify-center text-ocean-deep hover:bg-white hover:border-ocean-deep/30 transition-all;
+}
+
+/* Animations */
+@keyframes swell {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-swell {
+  animation: swell 4s infinite ease-in-out;
+}
+
+@keyframes wave-float {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-15px) scaleY(1.05); }
+}
+
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-wave-float {
+  animation: wave-float 6s infinite ease-in-out;
+}
+
+.animate-wave-drift-slow {
+  animation: wave-drift 30s infinite linear;
+}
+
+.animate-wave-drift-fast {
+  animation: wave-drift 20s infinite linear;
+}
+
+.water-gradient {
+  background: linear-gradient(135deg, var(--color-ocean-bright) 0%, var(--color-ocean-main) 100%);
+}
+
+.wave-mask {
+  mask-image: url("data:image/svg+xml,%3Csvg width='1440' height='200' viewBox='0 0 1440 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100C300 150 600 50 900 100C1200 150 1500 50 1800 100V200H0V100Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 200% 100%;
+}
+
+.wave-bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230077CC' fill-opacity='0.1' d='M0,160L48,176C96,192,192,224,288,218.7C384,213,480,171,576,149.3C672,128,768,128,864,160C960,192,1056,256,1152,250.7C1248,245,1344,171,1392,133.3L1440,96V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 200% auto;
+  background-repeat: repeat-x;
+}
+
+.flip-v {
+  transform: scaleY(-1);
+}
+
+/* Dark theme (system + manual via html[data-theme="dark"]) — APP_PRODUCT.md palette */
+html[data-theme="dark"] {
+  --color-ocean-deep: #e2e8f0;
+  --color-ocean-main: #22d3ee;
+  --color-ocean-bright: #67e8f9;
+  --color-sun: #fb923c;
+  --color-ink: #e2e8f0;
+  --color-border-light: rgba(226, 232, 240, 0.12);
+  --color-risk-safe: #34d399;
+  --color-risk-caution: #fbbf24;
+  --color-risk-avoid: #f87171;
+  --color-sand: #0a1929;
+  --color-seafoam: #0f2438;
+}
+
+html[data-theme="dark"] .glass-panel {
+  @apply bg-[#0f2438]/90 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.35)];
+}
+
+html[data-theme="dark"] .frosted-pill {
+  @apply bg-[#0f2438]/95 border-white/10;
+}
+
+html[data-theme="dark"] .ghost-button {
+  @apply border-white/15 text-[#e2e8f0] hover:bg-[#0f2438] hover:border-white/25;
+}
+
+html[data-theme="dark"] .technical-label {
+  @apply text-[#e2e8f0]/60;
+}

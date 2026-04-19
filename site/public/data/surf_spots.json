@@ -1,0 +1,3574 @@
+{
+  "source": "artifacts/data/panel/station_labels.json",
+  "n": 446,
+  "spots": [
+    {
+      "id": "1",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.62929,
+      "lng": -117.95968,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "2",
+      "name": "Puesta del Sol",
+      "county": "Ventura",
+      "lat": 34.373398,
+      "lng": -119.476088,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "7",
+      "name": "State Beach Access Road",
+      "county": "Ventura",
+      "lat": 34.290996,
+      "lng": -119.338068,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "9",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.64866,
+      "lng": -117.99236,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "11",
+      "name": "Ventura",
+      "county": "Ventura",
+      "lat": 34.27301,
+      "lng": -119.3050308,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "13",
+      "name": "Ventura",
+      "county": "Ventura",
+      "lat": 34.274409,
+      "lng": -119.297644,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "15",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.65201,
+      "lng": -117.99736,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "16",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60563,
+      "lng": -117.92425,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "20",
+      "name": "Ventura",
+      "county": "Ventura",
+      "lat": 34.272228,
+      "lng": -119.285178,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "25",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.66385,
+      "lng": -118.01322,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "26",
+      "name": "Balboa Village",
+      "county": "Orange",
+      "lat": 33.6009,
+      "lng": -117.90283,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "30",
+      "name": "Ventura",
+      "county": "Ventura",
+      "lat": 34.23971,
+      "lng": -119.2668381,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "33",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.67565,
+      "lng": -118.02853,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "34",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.59426,
+      "lng": -117.88161,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "38",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.59315,
+      "lng": -117.87556,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "44",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.68818,
+      "lng": -118.042,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "46",
+      "name": "Oxnard",
+      "county": "Ventura",
+      "lat": 34.16328,
+      "lng": -119.2302933,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "48",
+      "name": "Oxnard",
+      "county": "Ventura",
+      "lat": 34.16167,
+      "lng": -119.22215,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "50",
+      "name": "Channel Islands Beach",
+      "county": "Ventura",
+      "lat": 34.15727,
+      "lng": -119.2254257,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "51",
+      "name": "Silver Strand",
+      "county": "Ventura",
+      "lat": 34.15244,
+      "lng": -119.2201004,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "52",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.70208,
+      "lng": -118.05494,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "53",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.57833,
+      "lng": -117.84916,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "54",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.63311,
+      "lng": -117.96602,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "55",
+      "name": "Newport Shores",
+      "county": "Orange",
+      "lat": 33.6265,
+      "lng": -117.95384,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "57",
+      "name": "Port Hueneme",
+      "county": "Ventura",
+      "lat": 34.14739,
+      "lng": -119.2168274,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "58",
+      "name": "Port Hueneme",
+      "county": "Ventura",
+      "lat": 34.14134,
+      "lng": -119.1951523,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "59",
+      "name": "Port Hueneme",
+      "county": "Ventura",
+      "lat": 34.13899,
+      "lng": -119.1892395,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "60",
+      "name": "Oxnard",
+      "county": "Ventura",
+      "lat": 34.13577,
+      "lng": -119.1836472,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "61",
+      "name": "Oxnard",
+      "county": "Ventura",
+      "lat": 34.11953,
+      "lng": -119.160408,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "70",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.63838,
+      "lng": -117.97541,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "71",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.62222,
+      "lng": -117.94431,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "72",
+      "name": "Faria Beach",
+      "county": "Ventura",
+      "lat": 34.31897,
+      "lng": -119.3917542,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "75",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.6417,
+      "lng": -117.98126,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "76",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.61665,
+      "lng": -117.93684,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "94",
+      "name": "San Mateo",
+      "county": "San Mateo",
+      "lat": 37.56022,
+      "lng": -122.2911306,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "97",
+      "name": "Naples",
+      "county": "Long Beach City",
+      "lat": 33.74454,
+      "lng": -118.1191635,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "100",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.75447,
+      "lng": -118.1320419,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "110",
+      "name": "Long Beach",
+      "county": "Long Beach City",
+      "lat": 33.77062,
+      "lng": -118.13475,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "111",
+      "name": "Long Beach",
+      "county": "Long Beach City",
+      "lat": 33.7712,
+      "lng": -118.13435,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "125",
+      "name": "Long Beach",
+      "county": "Long Beach City",
+      "lat": 33.76393,
+      "lng": -118.1784286,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "132",
+      "name": "Long Beach",
+      "county": "Long Beach City",
+      "lat": 33.76345,
+      "lng": -118.1736221,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "137",
+      "name": "Long Beach",
+      "county": "Long Beach City",
+      "lat": 33.76135,
+      "lng": -118.1624527,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "141",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.755,
+      "lng": -118.1403809,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "144",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.75806,
+      "lng": -118.1302185,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "147",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.75956,
+      "lng": -118.1549377,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "149",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.75786,
+      "lng": -118.1485214,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "150",
+      "name": "Belmont Shore",
+      "county": "Long Beach City",
+      "lat": 33.75641,
+      "lng": -118.1441803,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "151",
+      "name": "Sommerville Road",
+      "county": "Marin",
+      "lat": 37.83352,
+      "lng": -122.4747,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "152",
+      "name": "Moore Road",
+      "county": "Marin",
+      "lat": 37.83317,
+      "lng": -122.4778,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "153",
+      "name": "Moore Road",
+      "county": "Marin",
+      "lat": 37.83212,
+      "lng": -122.4774167,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "173",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.8066,
+      "lng": -122.4519,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "174",
+      "name": "Fisherman's Wharf",
+      "county": "San Francisco",
+      "lat": 37.80899,
+      "lng": -122.4212947,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "175",
+      "name": "Fisherman's Wharf",
+      "county": "San Francisco",
+      "lat": 37.8078,
+      "lng": -122.4221,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "176",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.7096,
+      "lng": -122.3899,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "177",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.70917,
+      "lng": -122.3823,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "178",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.711025,
+      "lng": -122.380136,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "179",
+      "name": "Baja Malibu",
+      "county": "San Diego",
+      "lat": 32.4191,
+      "lng": -117.0973,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "180",
+      "name": "Playas de Tijuana Secc Costa Azul",
+      "county": "San Diego",
+      "lat": 32.4987,
+      "lng": -117.123,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "181",
+      "name": "Playas de Tijuana Secc Costa",
+      "county": "San Diego",
+      "lat": 32.5257,
+      "lng": -117.124,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "182",
+      "name": "South Cove",
+      "county": "Orange",
+      "lat": 33.4595,
+      "lng": -117.6905,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "183",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46133,
+      "lng": -117.7055,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "184",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46216,
+      "lng": -117.705,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "185",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46233,
+      "lng": -117.7043333,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "186",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.4625,
+      "lng": -117.7043333,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "187",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46233,
+      "lng": -117.7045,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "188",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46166,
+      "lng": -117.70622,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "189",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46202,
+      "lng": -117.70349,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "191",
+      "name": "Bean Hollow State Beach",
+      "county": "San Mateo",
+      "lat": 37.22551,
+      "lng": -122.4091799,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "192",
+      "name": "Sunset Beach",
+      "county": "Orange",
+      "lat": 33.71718,
+      "lng": -118.06924,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "194",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.72527,
+      "lng": -118.05648,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "196",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.72895,
+      "lng": -118.0647,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "197",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.72094,
+      "lng": -118.07125,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "198",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.72658,
+      "lng": -118.06579,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "199",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.72045,
+      "lng": -118.06514,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "200",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.72644,
+      "lng": -118.07126,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "201",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.71617,
+      "lng": -118.06443,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "204",
+      "name": "Public Access Trail",
+      "county": "Sonoma",
+      "lat": 38.68346,
+      "lng": -123.4324089,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "207",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.60871,
+      "lng": -117.89053,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "208",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60833,
+      "lng": -117.89493,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "209",
+      "name": "Bayshores",
+      "county": "Orange",
+      "lat": 33.61259,
+      "lng": -117.90758,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "210",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.61495,
+      "lng": -117.91957,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "211",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.62082,
+      "lng": -117.93664,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "212",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.61834,
+      "lng": -117.93426,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "213",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.61614,
+      "lng": -117.93092,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "215",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60898,
+      "lng": -117.92571,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "216",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60838,
+      "lng": -117.92035,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "217",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60637,
+      "lng": -117.91278,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "218",
+      "name": "Balboa Village",
+      "county": "Orange",
+      "lat": 33.60556,
+      "lng": -117.9037,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "220",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60415,
+      "lng": -117.88799,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "221",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.59875,
+      "lng": -117.88257,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "223",
+      "name": "Island Lagoon",
+      "county": "Orange",
+      "lat": 33.61595,
+      "lng": -117.89215,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "224",
+      "name": "Island Lagoon",
+      "county": "Orange",
+      "lat": 33.61515,
+      "lng": -117.89376,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "225",
+      "name": "Villa Point",
+      "county": "Orange",
+      "lat": 33.61786,
+      "lng": -117.89194,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "226",
+      "name": "Island Lagoon",
+      "county": "Orange",
+      "lat": 33.6153,
+      "lng": -117.89459,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "229",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.62455,
+      "lng": -117.8933333,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "230",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.61327,
+      "lng": -117.89902,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "231",
+      "name": "Bayshores",
+      "county": "Orange",
+      "lat": 33.61711,
+      "lng": -117.90402,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "232",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.60639,
+      "lng": -117.89939,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "233",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60976,
+      "lng": -117.91425,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "234",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.60226,
+      "lng": -117.8828,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "235",
+      "name": "Balboa Peninsula",
+      "county": "Orange",
+      "lat": 33.60576,
+      "lng": -117.88877,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "236",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.6203,
+      "lng": -117.9286667,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "237",
+      "name": "Newport Shores",
+      "county": "Orange",
+      "lat": 33.62741,
+      "lng": -117.94732,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "238",
+      "name": "Newport Shores",
+      "county": "Orange",
+      "lat": 33.62977,
+      "lng": -117.95287,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "241",
+      "name": "Bolinas",
+      "county": "Marin",
+      "lat": 37.90515,
+      "lng": -122.6829833,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "251",
+      "name": "Carmel-by-the-Sea",
+      "county": "Monterey",
+      "lat": 36.5545,
+      "lng": -121.93053,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "255",
+      "name": "Seahaven",
+      "county": "Marin",
+      "lat": 38.109741,
+      "lng": -122.8646,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "276",
+      "name": "San Mateo",
+      "county": "San Mateo",
+      "lat": 37.5893,
+      "lng": -122.328,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "282",
+      "name": "Las Flores",
+      "county": "Los Angeles",
+      "lat": 34.0367,
+      "lng": -118.61012,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "283",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.03757,
+      "lng": -118.67631,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "284",
+      "name": "Malibu Beach",
+      "county": "Los Angeles",
+      "lat": 34.03143,
+      "lng": -118.68204,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "285",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.03329,
+      "lng": -118.73389,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "286",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.02908,
+      "lng": -118.75366,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "287",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.02071,
+      "lng": -118.78616,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "288",
+      "name": "Malibu Riviera",
+      "county": "Los Angeles",
+      "lat": 34.01393,
+      "lng": -118.81942,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "289",
+      "name": "Trancas",
+      "county": "Los Angeles",
+      "lat": 34.0296,
+      "lng": -118.84182,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "290",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.04241,
+      "lng": -118.91559,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "291",
+      "name": "Unincorporated Santa Monica Mountains",
+      "county": "Los Angeles",
+      "lat": 34.04558,
+      "lng": -118.93336,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "292",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 34.03934,
+      "lng": -118.55052,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "293",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 34.03833,
+      "lng": -118.54393,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "294",
+      "name": "Pacific Palisades",
+      "county": "Los Angeles",
+      "lat": 34.03477,
+      "lng": -118.53611,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "295",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.02,
+      "lng": -118.51038,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "296",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.01475,
+      "lng": -118.50405,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "297",
+      "name": "Ocean Park",
+      "county": "Los Angeles",
+      "lat": 34.00199,
+      "lng": -118.48979,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "298",
+      "name": "Venice Canal Historic District",
+      "county": "Los Angeles",
+      "lat": 33.98933,
+      "lng": -118.47857,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "299",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.97826,
+      "lng": -118.46714,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "300",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.96768,
+      "lng": -118.45994,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "301",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.94064,
+      "lng": -118.44226,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "302",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.92331,
+      "lng": -118.43326,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "303",
+      "name": "El Segundo",
+      "county": "Los Angeles",
+      "lat": 33.91592,
+      "lng": -118.42926,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "304",
+      "name": "Manhattan Beach",
+      "county": "Los Angeles",
+      "lat": 33.89441,
+      "lng": -118.41868,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "305",
+      "name": "Hermosa Beach",
+      "county": "Los Angeles",
+      "lat": 33.87146,
+      "lng": -118.40663,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "306",
+      "name": "Redondo Beach",
+      "county": "Los Angeles",
+      "lat": 33.85203,
+      "lng": -118.39971,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "307",
+      "name": "Clifton",
+      "county": "Los Angeles",
+      "lat": 33.83207,
+      "lng": -118.39071,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "314",
+      "name": "Del Monte",
+      "county": "Monterey",
+      "lat": 36.60104,
+      "lng": -121.88727,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "315",
+      "name": "Doran Beach Road",
+      "county": "Sonoma",
+      "lat": 38.3134,
+      "lng": -123.043222,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "317",
+      "name": "Marin County",
+      "county": "Marin",
+      "lat": 38.08278,
+      "lng": -122.9327833,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "318",
+      "name": "Half Moon Bay",
+      "county": "San Mateo",
+      "lat": 37.4823,
+      "lng": -122.453,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "319",
+      "name": "South Seacoast",
+      "county": "San Diego",
+      "lat": 32.572665227,
+      "lng": -117.133201012,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "322",
+      "name": "Seacoast",
+      "county": "San Diego",
+      "lat": 32.57875,
+      "lng": -117.133186,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "325",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.68184,
+      "lng": -117.18526,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "328",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.685586,
+      "lng": -117.194319,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "330",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.69012298,
+      "lng": -117.164403749,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "332",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.63631,
+      "lng": -117.1411,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "343",
+      "name": "Little Portugal",
+      "county": "San Diego",
+      "lat": 32.714767645,
+      "lng": -117.224159725,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "351",
+      "name": "Mission Beach",
+      "county": "San Diego",
+      "lat": 32.7945,
+      "lng": -117.2562,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "355",
+      "name": "Beach Barber Tract",
+      "county": "San Diego",
+      "lat": 32.8263,
+      "lng": -117.2795,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "357",
+      "name": "Beach Barber Tract",
+      "county": "San Diego",
+      "lat": 32.8294,
+      "lng": -117.2805,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "358",
+      "name": "Beach Barber Tract",
+      "county": "San Diego",
+      "lat": 32.8341,
+      "lng": -117.2815,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "360",
+      "name": "La Jolla",
+      "county": "San Diego",
+      "lat": 32.839387,
+      "lng": -117.281998,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "362",
+      "name": "Village of La Jolla",
+      "county": "San Diego",
+      "lat": 32.8467,
+      "lng": -117.278863,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "365",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.8556,
+      "lng": -117.2581,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "366",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.859,
+      "lng": -117.256,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "367",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.863,
+      "lng": -117.2547,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "373",
+      "name": "Del Mar",
+      "county": "San Diego",
+      "lat": 32.96,
+      "lng": -117.268555777,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "375",
+      "name": "Del Mar",
+      "county": "San Diego",
+      "lat": 32.9753,
+      "lng": -117.270605452,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "377",
+      "name": "Cardiff-by-the-Sea",
+      "county": "San Diego",
+      "lat": 33.0283,
+      "lng": -117.2889,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "380",
+      "name": "Encinitas",
+      "county": "San Diego",
+      "lat": 33.0344,
+      "lng": -117.2931,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "381",
+      "name": "Encinitas",
+      "county": "San Diego",
+      "lat": 33.0481,
+      "lng": -117.2989,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "384",
+      "name": "Ponto",
+      "county": "San Diego",
+      "lat": 33.0866,
+      "lng": -117.313433196,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "388",
+      "name": "Carlsbad",
+      "county": "San Diego",
+      "lat": 33.1454,
+      "lng": -117.3451,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "394",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.1644,
+      "lng": -117.3591,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "398",
+      "name": "San Onofre",
+      "county": "San Diego",
+      "lat": 33.3805,
+      "lng": -117.5785,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "399",
+      "name": "Pange",
+      "county": "San Diego",
+      "lat": 33.3855,
+      "lng": -117.5952,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "400",
+      "name": "Ponto",
+      "county": "San Diego",
+      "lat": 33.10061,
+      "lng": -117.3194,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "401",
+      "name": "Ponto",
+      "county": "San Diego",
+      "lat": 33.106306,
+      "lng": -117.321583,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "402",
+      "name": "Carlsbad",
+      "county": "San Diego",
+      "lat": 33.11572,
+      "lng": -117.3255,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "403",
+      "name": "Carlsbad",
+      "county": "San Diego",
+      "lat": 33.119222,
+      "lng": -117.327111,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "404",
+      "name": "Farr",
+      "county": "San Diego",
+      "lat": 33.1285,
+      "lng": -117.333806,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "408",
+      "name": "Seal Cove",
+      "county": "San Mateo",
+      "lat": 37.5242,
+      "lng": -122.5177731,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "409",
+      "name": "Ocean Beach",
+      "county": "San Diego",
+      "lat": 32.7561,
+      "lng": -117.253576204,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "411",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.805,
+      "lng": -117.2628,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "413",
+      "name": "Beach Barber Tract",
+      "county": "San Diego",
+      "lat": 32.8299,
+      "lng": -117.2807,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "415",
+      "name": "Village of La Jolla",
+      "county": "San Diego",
+      "lat": 32.85045,
+      "lng": -117.2727,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "416",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.8548,
+      "lng": -117.2598,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "418",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.9345,
+      "lng": -117.261955166,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "419",
+      "name": "Half Moon Bay",
+      "county": "San Mateo",
+      "lat": 37.46721,
+      "lng": -122.446792,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "422",
+      "name": "Cabrillo Highway",
+      "county": "San Mateo",
+      "lat": 37.16531,
+      "lng": -122.3630524,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "424",
+      "name": "Jenner",
+      "county": "Sonoma",
+      "lat": 38.44084,
+      "lng": -123.125277,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "427",
+      "name": "Gualala",
+      "county": "Sonoma",
+      "lat": 38.76225,
+      "lng": -123.5312859,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "435",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.71333,
+      "lng": -118.283,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "436",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.71138,
+      "lng": -118.2831,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "437",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0351,
+      "lng": -118.67853,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "439",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.95702,
+      "lng": -118.45196,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "440",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.93071,
+      "lng": -118.43711,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "447",
+      "name": "Topanga Beach Drive",
+      "county": "Los Angeles",
+      "lat": 34.0385,
+      "lng": -118.58196,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "448",
+      "name": "Pacific Palisades",
+      "county": "Los Angeles",
+      "lat": 34.03744,
+      "lng": -118.54191,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "449",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 34.02645,
+      "lng": -118.51955,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "450",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.00806,
+      "lng": -118.49657,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "451",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.00497,
+      "lng": -118.49296,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "452",
+      "name": "Ocean Park",
+      "county": "Los Angeles",
+      "lat": 33.99662,
+      "lng": -118.48488,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "453",
+      "name": "Venice Canal Historic District",
+      "county": "Los Angeles",
+      "lat": 33.98625,
+      "lng": -118.47635,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "454",
+      "name": "William Burke Marina Walk Promenade",
+      "county": "Los Angeles",
+      "lat": 33.98084,
+      "lng": -118.45802,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "455",
+      "name": "Imperial Beach",
+      "county": "San Diego",
+      "lat": 32.53595,
+      "lng": -117.1243,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "456",
+      "name": "Imperial Beach",
+      "county": "San Diego",
+      "lat": 32.543409572,
+      "lng": -117.125227806,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "457",
+      "name": "Imperial Beach",
+      "county": "San Diego",
+      "lat": 32.555139,
+      "lng": -117.129323,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "458",
+      "name": "Imperial Beach",
+      "county": "San Diego",
+      "lat": 32.562869026,
+      "lng": -117.132590456,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "459",
+      "name": "South Seacoast",
+      "county": "San Diego",
+      "lat": 32.566577296,
+      "lng": -117.133205028,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "460",
+      "name": "Seacoast",
+      "county": "San Diego",
+      "lat": 32.585678574,
+      "lng": -117.133049366,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "461",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.6358,
+      "lng": -117.14317,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "462",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.6775,
+      "lng": -117.17727,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "469",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.71773,
+      "lng": -118.32182,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "471",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.70936,
+      "lng": -118.28302,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "475",
+      "name": "Pacific Grove Acres",
+      "county": "Monterey",
+      "lat": 36.624,
+      "lng": -121.916,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "494",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.7969,
+      "lng": -117.2119,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "496",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.7949,
+      "lng": -117.2213,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "530",
+      "name": "Seaside",
+      "county": "Monterey",
+      "lat": 36.61187,
+      "lng": -121.85772,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "532",
+      "name": "South Cove",
+      "county": "Orange",
+      "lat": 33.45841,
+      "lng": -117.69322,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "533",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46218,
+      "lng": -117.70406,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "534",
+      "name": "South Cove",
+      "county": "Orange",
+      "lat": 33.45695,
+      "lng": -117.6948,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "535",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.7121,
+      "lng": -118.05581,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "536",
+      "name": "Surfside",
+      "county": "Orange",
+      "lat": 33.72734,
+      "lng": -118.07557,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "537",
+      "name": "Huntington Harbour",
+      "county": "Orange",
+      "lat": 33.71686,
+      "lng": -118.05816,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "538",
+      "name": "Sunset Beach",
+      "county": "Orange",
+      "lat": 33.72471,
+      "lng": -118.07639,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "545",
+      "name": "Marina",
+      "county": "Monterey",
+      "lat": 36.69841,
+      "lng": -121.80962,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "546",
+      "name": "Jetty Road",
+      "county": "Monterey",
+      "lat": 36.80803,
+      "lng": -121.78874,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "556",
+      "name": "Watsonville",
+      "county": "Santa Cruz",
+      "lat": 36.85119,
+      "lng": -121.81022,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "557",
+      "name": "Port Watsonvile",
+      "county": "Santa Cruz",
+      "lat": 36.89547,
+      "lng": -121.83907,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "558",
+      "name": "La Selva Beach",
+      "county": "Santa Cruz",
+      "lat": 36.93181,
+      "lng": -121.86295,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "559",
+      "name": "Rio del Mar",
+      "county": "Santa Cruz",
+      "lat": 36.95698,
+      "lng": -121.88885,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "560",
+      "name": "Seacliff",
+      "county": "Santa Cruz",
+      "lat": 36.96891,
+      "lng": -121.90765,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "561",
+      "name": "Seacliff",
+      "county": "Santa Cruz",
+      "lat": 36.97167,
+      "lng": -121.91395,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "562",
+      "name": "Capitola",
+      "county": "Santa Cruz",
+      "lat": 36.97814,
+      "lng": -121.93862,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "563",
+      "name": "Capitola",
+      "county": "Santa Cruz",
+      "lat": 36.9717,
+      "lng": -121.94977,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "564",
+      "name": "Capitola Esplanade",
+      "county": "Santa Cruz",
+      "lat": 36.97125,
+      "lng": -121.95011,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "565",
+      "name": "Pleasure Point",
+      "county": "Santa Cruz",
+      "lat": 36.95564,
+      "lng": -121.9717,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "566",
+      "name": "Pleasure Point",
+      "county": "Santa Cruz",
+      "lat": 36.95609,
+      "lng": -121.97853,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "567",
+      "name": "20th Avenue",
+      "county": "Santa Cruz",
+      "lat": 36.95968,
+      "lng": -121.98611,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "568",
+      "name": "Sunny Cove Drive",
+      "county": "Santa Cruz",
+      "lat": 36.96034,
+      "lng": -121.98948,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "569",
+      "name": "Seabright",
+      "county": "Santa Cruz",
+      "lat": 36.96162,
+      "lng": -121.99801,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "570",
+      "name": "Seabright",
+      "county": "Santa Cruz",
+      "lat": 36.96306,
+      "lng": -122.00858,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "571",
+      "name": "Seabright",
+      "county": "Santa Cruz",
+      "lat": 36.96337,
+      "lng": -122.01484,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "572",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.96297,
+      "lng": -122.01974,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "573",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.9614,
+      "lng": -122.02386,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "574",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.95776,
+      "lng": -122.02566,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "575",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.95174,
+      "lng": -122.02849,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "576",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.95258,
+      "lng": -122.04134,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "577",
+      "name": "Santa Cruz",
+      "county": "Santa Cruz",
+      "lat": 36.94967,
+      "lng": -122.05785,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "578",
+      "name": "Davenport",
+      "county": "Santa Cruz",
+      "lat": 37.00909,
+      "lng": -122.19368,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "579",
+      "name": "Cabrillo Highway",
+      "county": "Santa Cruz",
+      "lat": 37.03921,
+      "lng": -122.2295,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "580",
+      "name": "Cabrillo Highway",
+      "county": "Santa Cruz",
+      "lat": 37.09609,
+      "lng": -122.27976,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "581",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.165614,
+      "lng": -117.359991,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "582",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.172928508,
+      "lng": -117.366051164,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "584",
+      "name": "Escondido Junction",
+      "county": "San Diego",
+      "lat": 33.177814074,
+      "lng": -117.3708564,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "586",
+      "name": "Escondido Junction",
+      "county": "San Diego",
+      "lat": 33.182386087,
+      "lng": -117.374571149,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "587",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.190325855,
+      "lng": -117.381868469,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "590",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.201559515,
+      "lng": -117.392202744,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "591",
+      "name": "Oceanside",
+      "county": "San Diego",
+      "lat": 33.2044,
+      "lng": -117.3941,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "595",
+      "name": "Seacliff",
+      "county": "San Francisco",
+      "lat": 37.7917,
+      "lng": -122.484926,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "596",
+      "name": "Seacliff",
+      "county": "San Francisco",
+      "lat": 37.79258,
+      "lng": -122.48465,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "597",
+      "name": "Seacliff",
+      "county": "San Francisco",
+      "lat": 37.78977,
+      "lng": -122.48741,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "598",
+      "name": "Seacliff",
+      "county": "San Francisco",
+      "lat": 37.78816,
+      "lng": -122.49136,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "599",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.77492,
+      "lng": -122.51351,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "600",
+      "name": "Sunset District",
+      "county": "San Francisco",
+      "lat": 37.7638,
+      "lng": -122.511,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "602",
+      "name": "Sunset District",
+      "county": "San Francisco",
+      "lat": 37.73567,
+      "lng": -122.50769,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "609",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54658,
+      "lng": -117.80147,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "617",
+      "name": "Surfside",
+      "county": "Orange",
+      "lat": 33.72719,
+      "lng": -118.08357,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "619",
+      "name": "Seal Beach",
+      "county": "Orange",
+      "lat": 33.73877,
+      "lng": -118.10789,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "620",
+      "name": "Seal Beach",
+      "county": "Orange",
+      "lat": 33.73664,
+      "lng": -118.10214,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "621",
+      "name": "Seal Beach",
+      "county": "Orange",
+      "lat": 33.73779,
+      "lng": -118.10628,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "624",
+      "name": "Niguel Shores",
+      "county": "Orange",
+      "lat": 33.47611,
+      "lng": -117.72583,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "625",
+      "name": "Sunset Beach",
+      "county": "Orange",
+      "lat": 33.71643,
+      "lng": -118.07235,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "626",
+      "name": "South San Francisco",
+      "county": "San Mateo",
+      "lat": 37.6639,
+      "lng": -122.383,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "632",
+      "name": "Cabrillo Highway South",
+      "county": "San Mateo",
+      "lat": 37.26696,
+      "lng": -122.4126758,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "635",
+      "name": "Princeton-by-the-Sea",
+      "county": "San Mateo",
+      "lat": 37.50207,
+      "lng": -122.492821,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "636",
+      "name": "Ross' Cove Trail",
+      "county": "San Mateo",
+      "lat": 37.50025,
+      "lng": -122.4958231,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "638",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.6653,
+      "lng": -117.2432,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "639",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.680475616,
+      "lng": -117.2488,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "641",
+      "name": "Azure Vista",
+      "county": "San Diego",
+      "lat": 32.719325627,
+      "lng": -117.256944364,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "643",
+      "name": "Ocean Beach",
+      "county": "San Diego",
+      "lat": 32.746736106,
+      "lng": -117.254942461,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "644",
+      "name": "Ocean Beach",
+      "county": "San Diego",
+      "lat": 32.7491121,
+      "lng": -117.253271417,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "645",
+      "name": "Ocean Beach",
+      "county": "San Diego",
+      "lat": 32.753911912,
+      "lng": -117.25301431,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "646",
+      "name": "Mission Beach",
+      "county": "San Diego",
+      "lat": 32.771314863,
+      "lng": -117.253558792,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "648",
+      "name": "Cabrillo Highway South",
+      "county": "San Mateo",
+      "lat": 37.29971,
+      "lng": -122.4063376,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "652",
+      "name": "Rockaway Beach",
+      "county": "San Mateo",
+      "lat": 37.612009,
+      "lng": -122.496908,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "656",
+      "name": "Miramar",
+      "county": "San Mateo",
+      "lat": 37.48842,
+      "lng": -122.4562204,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "658",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46195,
+      "lng": -117.68252,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "659",
+      "name": "Chelsea Pointe",
+      "county": "Orange",
+      "lat": 33.46959,
+      "lng": -117.71826,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "660",
+      "name": "South Cove",
+      "county": "Orange",
+      "lat": 33.46071,
+      "lng": -117.6965,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "661",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51162,
+      "lng": -117.75463,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "662",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51326,
+      "lng": -117.75723,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "663",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.45096,
+      "lng": -117.6612,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "664",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51418,
+      "lng": -117.76015,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "666",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.44762,
+      "lng": -117.65509,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "669",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.44125,
+      "lng": -117.64636,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "671",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.43065,
+      "lng": -117.63183,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "672",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.42074,
+      "lng": -117.62134,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "673",
+      "name": "Niguel Shores",
+      "county": "Orange",
+      "lat": 33.47926,
+      "lng": -117.72423,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "674",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46171,
+      "lng": -117.68454,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "675",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.40515,
+      "lng": -117.60689,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "677",
+      "name": "Three Arch Bay",
+      "county": "Orange",
+      "lat": 33.48908,
+      "lng": -117.73584,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "678",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46039,
+      "lng": -117.67812,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "679",
+      "name": "South Laguna",
+      "county": "Orange",
+      "lat": 33.49756,
+      "lng": -117.74138,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "681",
+      "name": "South Laguna",
+      "county": "Orange",
+      "lat": 33.50051,
+      "lng": -117.74504,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "682",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.457868,
+      "lng": -117.673368,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "683",
+      "name": "South Laguna",
+      "county": "Orange",
+      "lat": 33.50339,
+      "lng": -117.74719,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "684",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.46044,
+      "lng": -117.70739,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "685",
+      "name": "South Laguna",
+      "county": "Orange",
+      "lat": 33.50499,
+      "lng": -117.74845,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "687",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.50755,
+      "lng": -117.75087,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "689",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.50962,
+      "lng": -117.75237,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "690",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.4545,
+      "lng": -117.66827,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "691",
+      "name": "Salmon Creek",
+      "county": "Sonoma",
+      "lat": 38.35631,
+      "lng": -123.0685373,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "693",
+      "name": "Cabrillo Highway South",
+      "county": "San Mateo",
+      "lat": 37.32243,
+      "lng": -122.4040378,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "699",
+      "name": "Ocean View Plaza",
+      "county": "Monterey",
+      "lat": 36.60963,
+      "lng": -121.89537,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "702",
+      "name": "Pacific Grove Acres",
+      "county": "Monterey",
+      "lat": 36.63,
+      "lng": -121.93,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "703",
+      "name": "Cedros Ave Design District",
+      "county": "San Diego",
+      "lat": 32.991319,
+      "lng": -117.274819,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "704",
+      "name": "Cedros Ave Design District",
+      "county": "San Diego",
+      "lat": 32.996569,
+      "lng": -117.276194,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "705",
+      "name": "Cedros Ave Design District",
+      "county": "San Diego",
+      "lat": 33.001319,
+      "lng": -117.278388,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "706",
+      "name": "Cardiff-by-the-Sea",
+      "county": "San Diego",
+      "lat": 33.005833,
+      "lng": -117.278472,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "707",
+      "name": "Cardiff-by-the-Sea",
+      "county": "San Diego",
+      "lat": 33.0118911,
+      "lng": -117.2803,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "708",
+      "name": "Cardiff-by-the-Sea",
+      "county": "San Diego",
+      "lat": 33.0157,
+      "lng": -117.281912465,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "709",
+      "name": "Cardiff-by-the-Sea",
+      "county": "San Diego",
+      "lat": 33.019055,
+      "lng": -117.2842,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "710",
+      "name": "Sunset Palisades",
+      "county": "San Luis Obispo",
+      "lat": 35.16669,
+      "lng": -120.6936686,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "711",
+      "name": "Fairway Park",
+      "county": "San Mateo",
+      "lat": 37.62994,
+      "lng": -122.4946839,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "713",
+      "name": "Seahaven",
+      "county": "Marin",
+      "lat": 38.1166,
+      "lng": -122.873228,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "716",
+      "name": "Spanish Bay Road",
+      "county": "Monterey",
+      "lat": 36.6104,
+      "lng": -121.94788,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "718",
+      "name": "Sand City",
+      "county": "Monterey",
+      "lat": 36.61535,
+      "lng": -121.85452,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "719",
+      "name": "Pebble Beach",
+      "county": "Monterey",
+      "lat": 36.56601,
+      "lng": -121.94146,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "720",
+      "name": "Stewarts Point",
+      "county": "Sonoma",
+      "lat": 38.54697,
+      "lng": -123.2976107,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "725",
+      "name": "Half Moon Bay",
+      "county": "San Mateo",
+      "lat": 37.499732,
+      "lng": -122.468894,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "731",
+      "name": "Half Moon Bay",
+      "county": "San Mateo",
+      "lat": 37.4804,
+      "lng": -122.4518156,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "733",
+      "name": "Carmel Point",
+      "county": "Monterey",
+      "lat": 36.53965,
+      "lng": -121.93095,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "737",
+      "name": "Montecito",
+      "county": "Santa Barbara",
+      "lat": 34.416815,
+      "lng": -119.63439,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "738",
+      "name": "Santa Barbara",
+      "county": "Santa Barbara",
+      "lat": 34.402075,
+      "lng": -119.697167,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "739",
+      "name": "Pond Trail",
+      "county": "Santa Barbara",
+      "lat": 34.409695,
+      "lng": -119.881828,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "740",
+      "name": "El Capitan State Beach Road",
+      "county": "Santa Barbara",
+      "lat": 34.457864,
+      "lng": -120.022201,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "741",
+      "name": "West Main Street",
+      "county": "Santa Barbara",
+      "lat": 34.972529,
+      "lng": -120.649369,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "742",
+      "name": "Montecito",
+      "county": "Santa Barbara",
+      "lat": 34.417426,
+      "lng": -119.647827,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "743",
+      "name": "Isla Vista",
+      "county": "Santa Barbara",
+      "lat": 34.416985,
+      "lng": -119.825805,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "744",
+      "name": "Hope Ranch",
+      "county": "Santa Barbara",
+      "lat": 34.414633,
+      "lng": -119.780135,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "745",
+      "name": "Hollister Ranch Road",
+      "county": "Santa Barbara",
+      "lat": 34.470819,
+      "lng": -120.226901,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "746",
+      "name": "Jalama",
+      "county": "Santa Barbara",
+      "lat": 34.512227,
+      "lng": -120.503554,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "748",
+      "name": "Santa Barbara",
+      "county": "Santa Barbara",
+      "lat": 34.416563,
+      "lng": -119.666755,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "750",
+      "name": "Waterfront",
+      "county": "Santa Barbara",
+      "lat": 34.412114,
+      "lng": -119.686813,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "753",
+      "name": "Santa Barbara",
+      "county": "Santa Barbara",
+      "lat": 34.402583,
+      "lng": -119.742901,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "754",
+      "name": "Carpinteria",
+      "county": "Santa Barbara",
+      "lat": 34.390148,
+      "lng": -119.520418,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "755",
+      "name": "Aniso Trail",
+      "county": "Santa Barbara",
+      "lat": 34.462652,
+      "lng": -120.06988,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "763",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.57416,
+      "lng": -117.84055,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "769",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54218,
+      "lng": -117.78527,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "770",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54218,
+      "lng": -117.78527,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "771",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.58982,
+      "lng": -117.86869,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "772",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.59,
+      "lng": -117.86833,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "773",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.56396,
+      "lng": -117.82836,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "774",
+      "name": "Pelican Point",
+      "county": "Orange",
+      "lat": 33.582294,
+      "lng": -117.857175,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "775",
+      "name": "Pelican Point",
+      "county": "Orange",
+      "lat": 33.58221,
+      "lng": -117.85694,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "776",
+      "name": "Newport Beach",
+      "county": "Orange",
+      "lat": 33.57601,
+      "lng": -117.84062,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "779",
+      "name": "Mission Beach",
+      "county": "San Diego",
+      "lat": 32.77605,
+      "lng": -117.2382,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "781",
+      "name": "Ortega",
+      "county": "Santa Barbara",
+      "lat": 34.418315,
+      "lng": -119.594992,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "782",
+      "name": "Pacifica",
+      "county": "San Mateo",
+      "lat": 37.596579,
+      "lng": -122.505776,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "784",
+      "name": "San Mateo",
+      "county": "San Mateo",
+      "lat": 37.54965,
+      "lng": -122.28582,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "785",
+      "name": "Foster City",
+      "county": "San Mateo",
+      "lat": 37.5717,
+      "lng": -122.279,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "791",
+      "name": "San Francisco",
+      "county": "San Francisco",
+      "lat": 37.8069,
+      "lng": -122.4683,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "793",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.03312,
+      "lng": -118.73374,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "794",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.02896,
+      "lng": -118.75322221,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "795",
+      "name": "Malibu Riviera",
+      "county": "Los Angeles",
+      "lat": 34.01317,
+      "lng": -118.82099,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "796",
+      "name": "Trancas",
+      "county": "Los Angeles",
+      "lat": 34.02859,
+      "lng": -118.84194,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "797",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.04234,
+      "lng": -118.91619,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "798",
+      "name": "Unincorporated Santa Monica Mountains",
+      "county": "Los Angeles",
+      "lat": 34.04477,
+      "lng": -118.93326,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "799",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 34.03846,
+      "lng": -118.54452,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "800",
+      "name": "Pacific Palisades",
+      "county": "Los Angeles",
+      "lat": 34.0343,
+      "lng": -118.53569,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "801",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.01931,
+      "lng": -118.51008,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "802",
+      "name": "Santa Monica",
+      "county": "Los Angeles",
+      "lat": 34.0144,
+      "lng": -118.5039,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "803",
+      "name": "Venice Canal Historic District",
+      "county": "Los Angeles",
+      "lat": 33.98857,
+      "lng": -118.47822,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "804",
+      "name": "El Segundo",
+      "county": "Los Angeles",
+      "lat": 33.91534,
+      "lng": -118.42954,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "805",
+      "name": "Manhattan Beach",
+      "county": "Los Angeles",
+      "lat": 33.89401,
+      "lng": -118.41849,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "806",
+      "name": "Redondo Beach",
+      "county": "Los Angeles",
+      "lat": 33.85232,
+      "lng": -118.39977,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "812",
+      "name": "Princeton-by-the-Sea",
+      "county": "San Mateo",
+      "lat": 37.5037,
+      "lng": -122.4857,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "813",
+      "name": "Half Moon Bay",
+      "county": "San Mateo",
+      "lat": 37.5023,
+      "lng": -122.4764,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "820",
+      "name": "Solromar",
+      "county": "Ventura",
+      "lat": 34.051551,
+      "lng": -118.959972,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "821",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51045,
+      "lng": -117.75281,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "822",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51045,
+      "lng": -117.75281,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "823",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51051,
+      "lng": -117.75286,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "824",
+      "name": "Huntington Beach",
+      "county": "Orange",
+      "lat": 33.6832,
+      "lng": -118.035,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "826",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.52965,
+      "lng": -117.77347,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "827",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.52965,
+      "lng": -117.77347,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "828",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.52963,
+      "lng": -117.77359,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "831",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51689,
+      "lng": -117.76118,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "834",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.53697,
+      "lng": -117.78061,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "837",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.45311,
+      "lng": -117.66536,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "840",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.45403,
+      "lng": -117.66666,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "843",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.45619,
+      "lng": -117.67056,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "846",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.4603,
+      "lng": -117.67764,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "847",
+      "name": "South Cove",
+      "county": "Orange",
+      "lat": 33.46139,
+      "lng": -117.68928,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "850",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.51919,
+      "lng": -117.76302,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "853",
+      "name": "Pacific Coast Highway",
+      "county": "Orange",
+      "lat": 33.56023,
+      "lng": -117.82205,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "854",
+      "name": "Emerald Bay",
+      "county": "Orange",
+      "lat": 33.55099,
+      "lng": -117.80801,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "857",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54475,
+      "lng": -117.79458,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "863",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.42261,
+      "lng": -117.62372,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "864",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54191,
+      "lng": -117.78547,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "867",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.4241,
+      "lng": -117.62558,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "871",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.52809,
+      "lng": -117.77275,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "874",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.4193,
+      "lng": -117.62059,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "875",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.44103,
+      "lng": -117.6452,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "876",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.44103,
+      "lng": -117.6452,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "877",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.44059,
+      "lng": -117.64559,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "881",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.40814,
+      "lng": -117.60979,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "888",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.4818,
+      "lng": -117.725,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "890",
+      "name": "Dana Point",
+      "county": "Orange",
+      "lat": 33.48172,
+      "lng": -117.72595,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "891",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46155,
+      "lng": -117.683931,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "892",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46155,
+      "lng": -117.6842,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "893",
+      "name": "Capistrano Beach",
+      "county": "Orange",
+      "lat": 33.46155,
+      "lng": -117.68411,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "894",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.41735,
+      "lng": -117.61893,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "897",
+      "name": "Laguna Beach",
+      "county": "Orange",
+      "lat": 33.54087,
+      "lng": -117.78361,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "900",
+      "name": "South Laguna",
+      "county": "Orange",
+      "lat": 33.50415,
+      "lng": -117.74812,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "901",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.43147,
+      "lng": -117.63287,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "903",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.43147,
+      "lng": -117.63287,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "933",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.96195,
+      "lng": -122.02317,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "934",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.9623,
+      "lng": -122.02355,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "935",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.962081,
+      "lng": -122.022131,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "936",
+      "name": "Downtown",
+      "county": "Santa Cruz",
+      "lat": 36.959846,
+      "lng": -122.025329,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "940",
+      "name": "Bayview District",
+      "county": "San Francisco",
+      "lat": 37.74703,
+      "lng": -122.38793,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "941",
+      "name": "Miramar",
+      "county": "San Mateo",
+      "lat": 37.489,
+      "lng": -122.4562,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "944",
+      "name": "Mission Bay",
+      "county": "San Francisco",
+      "lat": 37.7719,
+      "lng": -122.3967,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "959",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.9611547,
+      "lng": -118.4562179,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "962",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0368898,
+      "lng": -118.676899,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "963",
+      "name": "Foster City",
+      "county": "San Mateo",
+      "lat": 37.56337,
+      "lng": -122.26047,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "974",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.427066,
+      "lng": -117.628383,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "975",
+      "name": "San Clemente",
+      "county": "Orange",
+      "lat": 33.422174,
+      "lng": -117.622351,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "977",
+      "name": "William Burke Marina Walk Promenade",
+      "county": "Los Angeles",
+      "lat": 33.979889,
+      "lng": -118.4577173,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "978",
+      "name": "Palawan Way",
+      "county": "Los Angeles",
+      "lat": 33.9819795,
+      "lng": -118.4569488,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "979",
+      "name": "Venice Canal Historic District",
+      "county": "Los Angeles",
+      "lat": 33.9935842,
+      "lng": -118.4824055,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "980",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0306,
+      "lng": -118.7111,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "989",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0329,
+      "lng": -118.741,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "992",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0253,
+      "lng": -118.7656,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "993",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0383,
+      "lng": -118.6731,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1003",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0378,
+      "lng": -118.8747,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1004",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0171,
+      "lng": -118.7897,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1005",
+      "name": "Las Flores",
+      "county": "Los Angeles",
+      "lat": 34.0362,
+      "lng": -118.6364,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1006",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.0253392,
+      "lng": -118.5977,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1007",
+      "name": "Malibu",
+      "county": "Los Angeles",
+      "lat": 34.02530393,
+      "lng": -118.5962,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1012",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 33.9444,
+      "lng": -118.4442,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1013",
+      "name": "Los Angeles",
+      "county": "Los Angeles",
+      "lat": 34.02530412,
+      "lng": -118.566,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1032",
+      "name": "Foster City",
+      "county": "San Mateo",
+      "lat": 37.558744,
+      "lng": -122.254003,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1033",
+      "name": "Foster City",
+      "county": "San Mateo",
+      "lat": 37.56658,
+      "lng": -122.26061,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1034",
+      "name": "Beach",
+      "county": "Monterey",
+      "lat": 36.842,
+      "lng": -121.807,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1036",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.631769,
+      "lng": -117.141885,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1037",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.626401,
+      "lng": -117.139424,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1038",
+      "name": "Coronado",
+      "county": "San Diego",
+      "lat": 32.674066,
+      "lng": -117.1723,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1097",
+      "name": "Eden Gardens",
+      "county": "San Diego",
+      "lat": 32.98210361,
+      "lng": -117.27319855,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1101",
+      "name": "Dogpatch",
+      "county": "San Francisco",
+      "lat": 37.763431,
+      "lng": -122.386861,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1103",
+      "name": "Ocean Beach",
+      "county": "San Diego",
+      "lat": 32.739448,
+      "lng": -117.254989,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1108",
+      "name": "Mission Beach",
+      "county": "San Diego",
+      "lat": 32.760746,
+      "lng": -117.247827,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1120",
+      "name": "Pedro Valley",
+      "county": "San Mateo",
+      "lat": 37.597587,
+      "lng": -122.504712,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1121",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.75968,
+      "lng": -117.254057,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1149",
+      "name": "Rio del Mar",
+      "county": "Santa Cruz",
+      "lat": 36.961725,
+      "lng": -121.895663,
+      "shorelineBearing": 270
+    },
+    {
+      "id": "1150",
+      "name": "San Diego",
+      "county": "San Diego",
+      "lat": 32.801389,
+      "lng": -117.259444,
+      "shorelineBearing": 270
+    }
+  ]
+}

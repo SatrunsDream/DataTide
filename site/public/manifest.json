@@ -1,0 +1,17 @@
+{
+  "name": "DataSurf",
+  "short_name": "DataSurf",
+  "description": "California beach water quality and surf outlook — decision support, not an official advisory.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF8F1",
+  "theme_color": "#0E7490",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

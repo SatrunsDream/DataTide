@@ -1,8 +1,10 @@
 # INTERFACES.md
 
-Contracts for **tabular modeling**: column semantics, keys, time cutoff, and **train/serve** parity. Enables another LLM or engineer to implement ETL and `app/` without guessing.
+Contracts for **tabular modeling**: column semantics, keys, time cutoff, and **train/serve** parity. Enables another LLM or engineer to implement ETL and the **`site/`** web UI without guessing.
 
 **Primary keys:** Derive from **Tier 1** California beach water quality data: **monitoring results** joined to **monitoring stations** and **beach detail** (`context/DATASETS.md`). Do not treat Surfrider BWTF or CCE as the primary key spine unless explicitly scoping a side experiment.
+
+**Demo / UI mock data:** For a plain-language pipeline summary, example JSON, and glossary for tools like Gemini, see **`MODEL_OUTPUTS_FOR_DEMO.md`**.
 
 ---
 
@@ -58,7 +60,7 @@ Names are **suggested**; rename consistently in `configs/*.yaml` and code.
 
 ---
 
-## Model outputs (for `app/` or batch)
+## Model outputs (for `site/` or batch)
 
 | Field | Type | Meaning |
 |-------|------|---------|

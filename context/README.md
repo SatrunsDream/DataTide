@@ -1,6 +1,6 @@
 # DataTide
 
-End-to-end data science layout: exploration and reporting in `notebooks/` (by phase), reusable code in `src/`, governed data under `data/`, generated outputs in `artifacts/`, and an `app/` layer for later deployment.
+End-to-end data science layout: exploration and reporting in `notebooks/` (by phase), reusable code in `src/`, governed data under `data/`, generated outputs in `artifacts/`, Python serving scaffold in `app/`, and the **consumer web UI** in `site/` (React/Vite).
 
 **Documentation in this folder:** operational rules in [`rules_templet.md`](rules_templet.md) (see [`development_rules.md`](development_rules.md)), repo map and results log in [`structure.md`](structure.md), decisions in [`DECISIONS.md`](DECISIONS.md), assumptions in [`ASSUMPTIONS.md`](ASSUMPTIONS.md), changelog in [`CHANGELOG.md`](CHANGELOG.md). Supporting notes: [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md), [`DATASETS.md`](DATASETS.md) (**tiered source stack—start with State Water Board `lab.data.ca.gov` Tier 1**), [`GROUND_TRUTH_SCHEMA.md`](GROUND_TRUTH_SCHEMA.md) (**processed Parquet: columns, sources, joins, overlapping vs distinct fields**), [`plan.md`](plan.md) (**Bayesian modeling plan + critique; see DECISIONS/ASSUMPTIONS for adopted summary**), [`APP_PRODUCT.md`](APP_PRODUCT.md) (**consumer app / web: personas, screens, design, Open-Meteo roadmap**), [`MODEL_OUTPUTS_FOR_DEMO.md`](MODEL_OUTPUTS_FOR_DEMO.md) (**modeling pipeline summary + expected API fields + fake JSON for demos**), [`GLOSSARY.md`](GLOSSARY.md), [`INTERFACES.md`](INTERFACES.md), [`STATUS.md`](STATUS.md), [`RISKS.md`](RISKS.md).
 
@@ -106,7 +106,8 @@ df = pd.read_parquet("data/processed/datatide_ground_truth.parquet")
 | Config | `configs/` |
 | Data tiers | `data/raw`, `data/interim`, `data/processed`, `data/external` |
 | Outputs | `artifacts/` |
-| App / serving | `app/` |
+| Web UI (React) | `site/` |
+| App / serving (Python) | `app/` |
 | Containers | `docker/` |
 | Research papers | `resources/paper/` |
 
